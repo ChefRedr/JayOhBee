@@ -1,0 +1,831 @@
+# Seed target-company list (one name per line, # for comments).
+# Import with: python -m jobbot import-companies data/companies_seed.txt
+# Edit freely — this is a starting point, replace/extend with your own targets.
+
+# --- Big tech ---
+Google
+Microsoft
+Amazon
+Apple
+Meta
+Netflix
+NVIDIA
+Adobe
+Salesforce
+Oracle
+IBM
+Intel
+AMD
+Qualcomm
+Broadcom
+Cisco
+Dell Technologies
+HP
+HPE
+VMware
+ServiceNow
+Workday
+SAP
+Intuit
+PayPal
+Block
+eBay
+Uber
+Lyft
+Airbnb
+DoorDash
+Instacart
+Pinterest
+Snap
+Reddit
+Spotify
+Zoom
+Dropbox
+Box
+Atlassian
+Shopify
+Twilio
+Okta
+Splunk
+Datadog
+MongoDB
+Elastic
+Confluent
+Snowflake
+Databricks
+Palantir
+Cloudflare
+Fastly
+Akamai
+DigitalOcean
+GitLab
+GitHub
+HashiCorp
+Docker
+JFrog
+New Relic
+PagerDuty
+Dynatrace
+Sumo Logic
+Grafana Labs
+Chronosphere
+Honeycomb
+
+# --- AI / ML ---
+OpenAI
+Anthropic
+Cohere
+Hugging Face
+Scale AI
+Perplexity
+Mistral AI
+Runway
+Character AI
+Adept
+Inflection AI
+Cerebras
+SambaNova Systems
+Groq
+Lambda
+CoreWeave
+Together AI
+Weights & Biases
+Anyscale
+Modal
+Replicate
+Pinecone
+Weaviate
+LangChain
+Glean
+Sierra
+Harvey
+Abridge
+Ambience Healthcare
+Cresta
+Writer
+Jasper
+Synthesia
+ElevenLabs
+Luma AI
+Pika
+Suno
+Physical Intelligence
+Figure AI
+Skild AI
+Waabi
+Applied Intuition
+Wayve
+
+# --- Fintech ---
+Stripe
+Plaid
+Brex
+Ramp
+Mercury
+Chime
+Robinhood
+Coinbase
+Kraken
+Gemini
+Circle
+Affirm
+Klarna
+Marqeta
+Modern Treasury
+Unit
+Lithic
+Alloy
+Persona
+Middesk
+Column
+Increase
+Check
+Gusto
+Rippling
+Deel
+Remote
+Justworks
+Human Interest
+Guideline
+Betterment
+Wealthfront
+Addepar
+Carta
+AngelList
+Forge
+iCapital
+Vanguard
+Fidelity Investments
+Charles Schwab
+BlackRock
+State Street
+BNY Mellon
+Goldman Sachs
+Morgan Stanley
+JPMorgan Chase
+Bank of America
+Citi
+Wells Fargo
+Capital One
+American Express
+Discover
+Visa
+Mastercard
+FIS
+Fiserv
+Global Payments
+Adyen
+Checkout.com
+Wise
+Revolut
+Monzo
+Nubank
+SoFi
+Upgrade
+Avant
+Upstart
+Oportun
+LendingClub
+Prosper
+Earnest
+Splash Financial
+Toast
+Square
+Clover
+Bill.com
+Expensify
+Navan
+Airbase
+Mesh Payments
+Extend
+AvidXchange
+Tipalti
+Melio
+Payoneer
+Flywire
+Ripple
+Anchorage Digital
+Fireblocks
+Chainalysis
+TRM Labs
+Alchemy
+Consensys
+Uniswap Labs
+OpenSea
+Magic Eden
+
+# --- Trading / quant ---
+Jane Street
+Two Sigma
+Citadel
+Citadel Securities
+Hudson River Trading
+Jump Trading
+DRW
+IMC Trading
+Optiver
+Akuna Capital
+Five Rings
+Old Mission Capital
+Tower Research Capital
+Virtu Financial
+Susquehanna International Group
+DE Shaw
+Point72
+Millennium Management
+Bridgewater Associates
+AQR Capital Management
+Radix Trading
+Belvedere Trading
+Group One Trading
+Wolverine Trading
+Flow Traders
+XTX Markets
+Squarepoint Capital
+Balyasny Asset Management
+Schonfeld
+ExodusPoint
+Voleon
+PDT Partners
+Cubist Systematic Strategies
+
+# --- Enterprise SaaS / productivity ---
+Slack
+Notion
+Airtable
+Asana
+Monday.com
+ClickUp
+Linear
+Figma
+Canva
+Miro
+Loom
+Calendly
+Zapier
+Retool
+Webflow
+Squarespace
+Wix
+Contentful
+Sanity
+Amplitude
+Mixpanel
+Heap
+Segment
+Braze
+Iterable
+Klaviyo
+Attentive
+Mailchimp
+HubSpot
+Zendesk
+Freshworks
+Front
+Intercom
+Drift
+Qualtrics
+SurveyMonkey
+Typeform
+DocuSign
+PandaDoc
+Ironclad
+Icertis
+Coupa
+Zuora
+Chargebee
+Recurly
+Stripe Billing
+Avalara
+Vertex
+Sovos
+Workiva
+Smartsheet
+Lucid Software
+Envoy
+Verkada
+Rhombus
+Samsara
+Motive
+Procore
+Autodesk
+PTC
+Ansys
+Cadence Design Systems
+Synopsys
+MathWorks
+Unity
+Epic Games
+Roblox
+Riot Games
+Blizzard Entertainment
+Electronic Arts
+Take-Two Interactive
+Zynga
+Scopely
+Niantic
+Discord
+Twitch
+Valve
+
+# --- Security ---
+CrowdStrike
+Palo Alto Networks
+Fortinet
+Zscaler
+SentinelOne
+Rapid7
+Tenable
+Qualys
+Proofpoint
+Mimecast
+KnowBe4
+Arctic Wolf
+Expel
+Red Canary
+Huntress
+Snyk
+Veracode
+Checkmarx
+Semgrep
+Socket
+Chainguard
+Wiz
+Orca Security
+Lacework
+Aqua Security
+Sysdig
+Tailscale
+1Password
+Bitwarden
+Dashlane
+Yubico
+Duo Security
+Abnormal Security
+Material Security
+Vanta
+Drata
+Secureframe
+OneTrust
+BigID
+Transcend
+Cyera
+Axonius
+JupiterOne
+runZero
+Censys
+Shodan
+GreyNoise
+Recorded Future
+Flashpoint
+Dragos
+Claroty
+Armis
+
+# --- Infrastructure / dev tools ---
+Vercel
+Netlify
+Render
+Fly.io
+Railway
+Heroku
+Supabase
+PlanetScale
+Neon
+Turso
+Convex
+Fauna
+CockroachDB
+SingleStore
+TimescaleDB
+ClickHouse
+Redis
+Aiven
+Temporal
+Prefect
+Dagster
+Astronomer
+dbt Labs
+Fivetran
+Airbyte
+Hightouch
+Census
+Rudderstack
+Snowplow
+Starburst
+Dremio
+Firebolt
+Materialize
+Imply
+StarTree
+Redpanda
+WarpStream
+Estuary
+Cribl
+Vector
+Postman
+Insomnia
+Kong
+Apollo GraphQL
+Hasura
+StepZen
+Speakeasy
+Stainless
+Buildkite
+CircleCI
+Harness
+LaunchDarkly
+Statsig
+Eppo
+Optimizely
+Split
+Flagsmith
+Sentry
+Rollbar
+Bugsnag
+LogRocket
+FullStory
+Hotjar
+Pendo
+Gainsight
+Totango
+
+# --- Consumer / marketplace ---
+Amazon Web Services
+Wayfair
+Chewy
+Etsy
+Poshmark
+Mercari
+OfferUp
+Faire
+Whatnot
+StockX
+GOAT
+Grailed
+Depop
+ThredUp
+Rent the Runway
+Stitch Fix
+Warby Parker
+Allbirds
+Glossier
+Away
+Casper
+Peloton
+Whoop
+Oura
+Strava
+AllTrails
+Zwift
+Tonal
+Calm
+Headspace
+Noom
+Ro
+Hims & Hers
+Nurx
+Capsule
+Alto Pharmacy
+GoodRx
+Zocdoc
+One Medical
+Carbon Health
+Forward
+Tempus
+Color
+Invitae
+23andMe
+Ancestry
+Grubhub
+Gopuff
+Getir
+Shipt
+Deliverr
+Flexport
+Convoy
+Project44
+FourKites
+Samsara Logistics
+Zipline
+Nuro
+Waymo
+Cruise
+Aurora
+Zoox
+Motional
+May Mobility
+Kodiak Robotics
+Gatik
+Einride
+TuSimple
+Plus
+Embark
+Rivian
+Lucid Motors
+Tesla
+Ford
+General Motors
+Toyota Connected
+Honda Innovations
+BMW Technology
+Mercedes-Benz R&D
+Volkswagen Group of America
+Scout Motors
+Slate Auto
+Redwood Materials
+QuantumScape
+Sila Nanotechnologies
+Form Energy
+Commonwealth Fusion Systems
+Helion Energy
+TAE Technologies
+X Energy
+Oklo
+NuScale Power
+Radiant
+Terrestrial Energy
+
+# --- Aerospace / defense-adjacent ---
+SpaceX
+Blue Origin
+Rocket Lab
+Firefly Aerospace
+Relativity Space
+Stoke Space
+ABL Space Systems
+Astranis
+Planet Labs
+Spire Global
+BlackSky
+Iceye
+Capella Space
+Umbra
+Muon Space
+K2 Space
+True Anomaly
+Varda Space Industries
+Axiom Space
+Sierra Space
+Vast
+Impulse Space
+Astrobotic
+Intuitive Machines
+Firehawk Aerospace
+Hermeus
+Boom Supersonic
+Joby Aviation
+Archer Aviation
+Wisk Aero
+Beta Technologies
+Electra
+Merlin Labs
+Reliable Robotics
+Xwing
+Shield AI
+Anduril
+Skydio
+Brinc
+Flock Safety
+Axon
+Mark43
+Peregrine
+SoundThinking
+Palantir Technologies
+Rebellion Defense
+Second Front Systems
+Govini
+Hadrian
+Vannevar Labs
+Primer AI
+HawkEye 360
+Slingshot Aerospace
+LeoLabs
+Kayhan Space
+Epsilon3
+First Resonance
+
+# --- Health / bio ---
+Epic Systems
+Cerner
+Athenahealth
+Veeva Systems
+Definitive Healthcare
+Doximity
+Included Health
+Omada Health
+Livongo
+Teladoc Health
+Amwell
+Talkiatry
+Spring Health
+Lyra Health
+Headway
+Alma
+Grow Therapy
+SonderMind
+Octave
+Brightline
+Cortica
+Elemy
+Cerebral
+Done
+Cedar
+Waystar
+Availity
+Change Healthcare
+Olive
+Notable
+Regard
+Nabla
+Suki
+DeepScribe
+Freed
+Heidi Health
+Corti
+Viz.ai
+Aidoc
+Rad AI
+Qure.ai
+PathAI
+Paige
+Ibex Medical Analytics
+Benchling
+Ginkgo Bioworks
+Zymergen
+Recursion
+Insitro
+Isomorphic Labs
+Schrodinger
+Atomwise
+Valo Health
+BenevolentAI
+Insilico Medicine
+Generate Biomedicines
+Absci
+Profluent
+EvolutionaryScale
+Arc Institute
+Altos Labs
+Retro Biosciences
+NewLimit
+Gordian Biotechnology
+Dyno Therapeutics
+Octant
+Manifold Bio
+Nabsys
+Element Biosciences
+Ultima Genomics
+Pacific Biosciences
+Oxford Nanopore
+10x Genomics
+Illumina
+Twist Bioscience
+Synthego
+Inscripta
+Mammoth Biosciences
+Scribe Therapeutics
+Prime Medicine
+Beam Therapeutics
+Editas Medicine
+Intellia Therapeutics
+Verve Therapeutics
+Tessera Therapeutics
+Flagship Pioneering
+
+# --- Media / education / misc ---
+The New York Times
+The Washington Post
+Bloomberg
+Thomson Reuters
+Dow Jones
+Axios
+Vox Media
+BuzzFeed
+Substack
+Medium
+Patreon
+Kickstarter
+GoFundMe
+Eventbrite
+Ticketmaster
+Live Nation
+Fandango
+Letterboxd
+Goodreads
+Audible
+Scribd
+Coursera
+Udemy
+Udacity
+Khan Academy
+Duolingo
+Babbel
+Quizlet
+Chegg
+Course Hero
+Brainly
+Photomath
+Mathpix
+Gauth
+Numerade
+Outlier
+Study.com
+MasterClass
+Skillshare
+Codecademy
+DataCamp
+Pluralsight
+LinkedIn
+Indeed
+Glassdoor
+ZipRecruiter
+Greenhouse Software
+Lever
+Ashby
+Gem
+SeekOut
+HiringBranch
+Paradox
+HireVue
+Karat
+CodeSignal
+HackerRank
+CodePath
+Triplebyte
+Hired
+Wellfound
+Otta
+Handshake
+RippleMatch
+WayUp
+Parker Dewey
+Forage
+Braintrust
+Toptal
+Andela
+Turing
+Crossover
+X-Team
+Gigster
+Catalant
+Upwork
+Fiverr
+Thumbtack
+TaskRabbit
+Angi
+Houzz
+Zillow
+Redfin
+Compass
+Opendoor
+Offerpad
+Divvy Homes
+Landis
+Roofstock
+Mynd
+Belong
+AvantStay
+Vacasa
+Evolve
+Sonder
+Placemakr
+Kasa
+Blueground
+Zeus Living
+Common
+Bungalow
+Padsplit
+Apartment List
+Zumper
+RentPath
+CoStar Group
+VTS
+Cherre
+Crexi
+Reonomy
+Matterport
+OpenSpace
+StructionSite
+DroneDeploy
+Skycatch
+Propeller Aero
+Trimble
+Bentley Systems
+Nemetschek
+Bluebeam
+PlanGrid
+Fieldwire
+Buildertrend
+CoConstruct
+Houzz Pro
+ServiceTitan
+Jobber
+Housecall Pro
+Workiz
+FieldEdge
+SimPRO
+AroFlo
+Tradify
+Fergus
+NextMinute

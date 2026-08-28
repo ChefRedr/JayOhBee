@@ -1,0 +1,501 @@
+rank,company
+1,Anthropic
+2,OpenAI
+3,Databricks
+4,Stripe
+5,NVIDIA
+6,Meta
+7,Google
+8,Microsoft
+9,Apple
+10,Amazon
+11,Palantir
+12,Netflix
+13,Cloudflare
+14,Snowflake
+15,Roblox
+16,Uber
+17,Airbnb
+18,DoorDash
+19,Coinbase
+20,Figma
+21,Anduril
+22,Ramp
+23,Rippling
+24,Discord
+25,SpaceX
+26,Perplexity
+27,Scale AI
+28,CoreWeave
+29,Jane Street
+30,Hudson River Trading
+31,Citadel Securities
+32,Two Sigma
+33,Datadog
+34,MongoDB
+35,Confluent
+36,GitLab
+37,Atlassian
+38,Canva
+39,Notion
+40,Vercel
+41,Plaid
+42,Brex
+43,Mercury
+44,Revolut
+45,Robinhood
+46,Block
+47,Adobe
+48,Salesforce
+49,ServiceNow
+50,CrowdStrike
+51,Palo Alto Networks
+52,Zscaler
+53,Okta
+54,Samsara
+55,Twilio
+56,Intuit
+57,Workday
+58,Oracle
+59,IBM
+60,AMD
+61,Broadcom
+62,Qualcomm
+63,Arm
+64,Tesla
+65,Waymo
+66,Zoox
+67,Applied Intuition
+68,Aurora Innovation
+69,Cerebras Systems
+70,Groq
+71,Lambda
+72,Together AI
+73,Mistral AI
+74,ElevenLabs
+75,Harvey
+76,Sierra
+77,Glean
+78,Writer
+79,Airtable
+80,Miro
+81,Asana
+82,Linear
+83,Retool
+84,Postman
+85,Grafana Labs
+86,dbt Labs
+87,Cockroach Labs
+88,Temporal
+89,Sentry
+90,Supabase
+91,Neo4j
+92,Redis
+93,Elastic
+94,Fastly
+95,Akamai
+96,DigitalOcean
+97,Cloudinary
+98,Hugging Face
+99,Tailscale
+100,1Password
+101,Thinking Machines Lab
+102,Safe Superintelligence
+103,Physical Intelligence
+104,Skild AI
+105,Figure AI
+106,Apptronik
+107,Waabi
+108,Nuro
+109,Skydio
+110,Shield AI
+111,Saronic
+112,Varda Space Industries
+113,Hadrian
+114,Mach Industries
+115,Castelion
+116,Chainguard
+117,Cyera
+118,Island
+119,Abnormal AI
+120,Huntress
+121,Drata
+122,Vanta
+123,Verkada
+124,Flock Safety
+125,Axonius
+126,Semgrep
+127,Coder
+128,Sourcegraph
+129,Replit
+130,Modal
+131,Replicate
+132,Baseten
+133,Fireworks AI
+134,Anyscale
+135,Pinecone
+136,Weaviate
+137,Qdrant
+138,LangChain
+139,LlamaIndex
+140,Exa
+141,Runway
+142,Pika
+143,Synthesia
+144,Suno
+145,Midjourney
+146,Cohere
+147,Sakana AI
+148,Mercor
+149,Cognition AI
+150,Decagon
+151,Affirm
+152,Chime
+153,SoFi
+154,Adyen
+155,Checkout.com
+156,Wise
+157,Nubank
+158,Klarna
+159,Marqeta
+160,Toast
+161,BILL
+162,Gusto
+163,Navan
+164,Deel
+165,Carta
+166,Alloy
+167,Lithic
+168,Modern Treasury
+169,Airwallex
+170,Bluevine
+171,Highnote
+172,Column
+173,Synctera
+174,Unit
+175,Treasury Prime
+176,Kalshi
+177,Kraken
+178,Gemini
+179,Circle
+180,Ripple
+181,Anchorage Digital
+182,Fireblocks
+183,Chainalysis
+184,Uniswap Labs
+185,Alchemy
+186,Phantom
+187,Consensys
+188,MoonPay
+189,Jump Trading
+190,DRW
+191,Optiver
+192,IMC Trading
+193,Susquehanna International Group
+194,Tower Research Capital
+195,Five Rings
+196,Headlands Technologies
+197,XTX Markets
+198,Virtu Financial
+199,Akuna Capital
+200,Old Mission
+201,HubSpot
+202,Zoom
+203,Dropbox
+204,Box
+205,monday.com
+206,Coda
+207,ClickUp
+208,Grammarly
+209,DocuSign
+210,Zendesk
+211,Intercom
+212,Klaviyo
+213,Braze
+214,Amplitude
+215,Mixpanel
+216,LaunchDarkly
+217,PagerDuty
+218,Dynatrace
+219,Pulumi
+220,CircleCI
+221,Harness
+222,Docker
+223,GitHub
+224,JetBrains
+225,CloudBees
+226,Sonar
+227,Snyk
+228,Rubrik
+229,SentinelOne
+230,Tenable
+231,Rapid7
+232,Netskope
+233,Cato Networks
+234,Illumio
+235,Orca Security
+236,BigID
+237,OneTrust
+238,Veeam
+239,Cohesity
+240,Pure Storage
+241,Nutanix
+242,NetApp
+243,Cloudera
+244,UiPath
+245,Automation Anywhere
+246,Celonis
+247,Anaplan
+248,Boomi
+249,Five9
+250,Genesys
+251,Shopify
+252,ByteDance
+253,TikTok
+254,Spotify
+255,Reddit
+256,Pinterest
+257,Snap
+258,LinkedIn
+259,Duolingo
+260,Match Group
+261,Bumble
+262,Etsy
+263,eBay
+264,Instacart
+265,Whatnot
+266,Faire
+267,StockX
+268,GOAT Group
+269,Wayfair
+270,Chewy
+271,Zillow
+272,Yelp
+273,Expedia Group
+274,Booking.com
+275,Hopper
+276,Lyft
+277,Gopuff
+278,Epic Games
+279,Valve
+280,Riot Games
+281,Electronic Arts
+282,Take-Two Interactive
+283,Unity
+284,Scopely
+285,Supercell
+286,Sony Interactive Entertainment
+287,Nintendo
+288,Tencent
+289,NetEase
+290,HoYoverse
+291,Roku
+292,Disney
+293,Warner Bros. Discovery
+294,Paramount Skydance
+295,Comcast/NBCUniversal
+296,SiriusXM
+297,Mercado Libre
+298,Coupang
+299,Sea Limited
+300,Grab
+301,Intel
+302,Micron Technology
+303,Marvell Technology
+304,MediaTek
+305,Texas Instruments
+306,Analog Devices
+307,NXP Semiconductors
+308,STMicroelectronics
+309,Infineon Technologies
+310,GlobalFoundries
+311,TSMC
+312,Samsung Semiconductor
+313,SK hynix
+314,ASML
+315,Synopsys
+316,Cadence Design Systems
+317,Lam Research
+318,Applied Materials
+319,KLA
+320,Western Digital
+321,Seagate Technology
+322,Dell Technologies
+323,HP Inc.
+324,Hewlett Packard Enterprise
+325,Cisco
+326,Arista Networks
+327,Supermicro
+328,Boston Dynamics
+329,Agility Robotics
+330,Dexterity
+331,Zipline
+332,Gecko Robotics
+333,Bright Machines
+334,Carbon Robotics
+335,Serve Robotics
+336,Symbotic
+337,Rocket Lab
+338,Blue Origin
+339,Sierra Space
+340,Relativity Space
+341,Firefly Aerospace
+342,Stoke Space
+343,Axiom Space
+344,Vast
+345,Planet Labs
+346,BlackSky
+347,Capella Space
+348,Astranis
+349,Loft Orbital
+350,Impulse Space
+351,Tempus AI
+352,Recursion
+353,Insitro
+354,Generate Biomedicines
+355,Isomorphic Labs
+356,Cradle
+357,Benchling
+358,Veeva Systems
+359,Epic Systems
+360,Flatiron Health
+361,Illumina
+362,Guardant Health
+363,Ginkgo Bioworks
+364,Schrödinger
+365,Moderna
+366,Eli Lilly
+367,Regeneron
+368,Amgen
+369,Roche
+370,Novartis
+371,AstraZeneca
+372,Medtronic
+373,Dexcom
+374,Intuitive Surgical
+375,GE HealthCare
+376,Siemens Healthineers
+377,Oscar Health
+378,Devoted Health
+379,Included Health
+380,Hinge Health
+381,Ro
+382,Headway
+383,Alma
+384,Abridge
+385,OpenEvidence
+386,Hippocratic AI
+387,Ambience Healthcare
+388,Commure
+389,Waystar
+390,Zocdoc
+391,Redwood Materials
+392,Form Energy
+393,Commonwealth Fusion Systems
+394,Helion Energy
+395,Fervo Energy
+396,Crusoe
+397,Twelve
+398,Palmetto
+399,Watershed
+400,Charm Industrial
+401,Bloomberg
+402,Goldman Sachs
+403,JPMorgan Chase
+404,Capital One
+405,BlackRock
+406,Morgan Stanley
+407,Bank of America
+408,Citi
+409,Fidelity Investments
+410,Vanguard
+411,Charles Schwab
+412,Visa
+413,Mastercard
+414,American Express
+415,PayPal
+416,Fiserv
+417,FIS
+418,Nasdaq
+419,CME Group
+420,Intercontinental Exchange
+421,S&P Global
+422,Moody's
+423,Progressive
+424,GEICO
+425,Liberty Mutual
+426,USAA
+427,State Farm
+428,Northwestern Mutual
+429,Walmart Global Tech
+430,Target
+431,Costco
+432,The Home Depot
+433,Lowe's
+434,Nike
+435,Starbucks
+436,FedEx
+437,UPS
+438,DHL
+439,Flexport
+440,project44
+441,FourKites
+442,Motive
+443,Verizon
+444,AT&T
+445,T-Mobile
+446,Charter Communications
+447,Lumen Technologies
+448,Equinix
+449,Digital Realty
+450,American Tower
+451,SAP
+452,Autodesk
+453,Dassault Systèmes
+454,PTC
+455,MathWorks
+456,Esri
+457,Rivian
+458,Lucid Motors
+459,Ford Motor Company
+460,General Motors
+461,Toyota Research Institute
+462,Mercedes-Benz
+463,BMW Group
+464,Porsche
+465,Stellantis
+466,Aptiv
+467,Mobileye
+468,Magna International
+469,Lockheed Martin
+470,Northrop Grumman
+471,RTX
+472,Boeing
+473,General Dynamics
+474,L3Harris Technologies
+475,Leidos
+476,Booz Allen Hamilton
+477,CACI
+478,SAIC
+479,Siemens
+480,Honeywell
+481,GE Vernova
+482,GE Aerospace
+483,Caterpillar
+484,John Deere
+485,ABB
+486,Schneider Electric
+487,Rockwell Automation
+488,Emerson
+489,Bosch
+490,Delta Air Lines
+491,United Airlines
+492,American Airlines
+493,Southwest Airlines
+494,McKinsey & Company
+495,Boston Consulting Group
+496,Accenture
+497,Deloitte
+498,PwC
+499,EY
+500,KPMG

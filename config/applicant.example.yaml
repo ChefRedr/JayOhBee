@@ -1,0 +1,57 @@
+# Copy this file to config/applicant.yaml (gitignored) and fill it in.
+# NEVER commit the real file — it contains personal information.
+
+first_name: ""
+last_name: ""
+preferred_name: ""
+
+email: ""
+phone: ""
+
+address: ""
+city: ""
+state: ""
+zip: ""
+country: "United States"
+
+linkedin_url: ""
+github_url: ""
+portfolio_url: ""
+
+school: ""
+degree: "Bachelor of Science"
+major: "Computer Science"
+graduation_month: "May"
+graduation_year: "2026"
+
+# e.g. "US Citizen", "Green Card", "F-1 OPT"
+work_authorization: ""
+requires_sponsorship_now: "no"
+requires_sponsorship_future: "no"
+
+minimum_salary: ""
+
+willing_to_relocate: "yes"
+preferred_locations: []
+
+# Absolute path to your resume PDF (keep the file outside the repo,
+# or inside the gitignored resumes/ directory).
+resume_path: ""
+
+# Predefined answers for common application questions. The bot ONLY answers
+# questions it can map to one of these keys (or the identity fields above).
+# Anything else sends the application to manual review — it never guesses.
+answers:
+  authorized_to_work_us: "yes"
+  require_sponsorship: "no"
+  previously_employed_here: "no"
+  willing_to_relocate: "yes"
+  over_18: "yes"
+  # gpa: "3.8"
+  # how_did_you_hear: "Company careers page"
+  # Uncomment ONLY if you want EEO questions answered automatically;
+  # otherwise they route to manual review:
+  # gender: "Decline to self-identify"
+  # race: "Decline to self-identify"
+  # veteran_status: "I am not a protected veteran"
+  # disability_status: "I do not want to answer"

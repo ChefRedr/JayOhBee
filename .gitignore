@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.python-version
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets & personal data — never commit these
+.env
+config/applicant.yaml
+config/applicant.local.yaml
+*service_account*.json
+*credentials*.json
+*.pem
+resume/
+resumes/
+*.pdf
+
+# Local state
+state/
+*.db
+*.sqlite3
+
+# Debug artifacts (screenshots may contain personal data)
+artifacts/
+screenshots/
+*.png
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,86 @@
+# Deterministic eligibility rules. All matching is case-insensitive.
+
+# A job title must match at least one positive term (always accepted),
+# OR one adjacent term combined with an entry-level marker in the title
+# or description.
+positive_title_terms:
+  - software engineer
+  - software developer
+  - software engineer i
+  - software engineer 1
+  - software engineer ii
+  - new grad
+  - new graduate
+  - university graduate
+  - college graduate
+  - early career
+  - entry level
+  - entry-level
+  - associate software engineer
+  - graduate software engineer
+  - full stack engineer
+  - full-stack engineer
+  - fullstack engineer
+  - frontend engineer
+  - front-end engineer
+  - front end engineer
+
+adjacent_title_terms:
+  - backend engineer
+  - back-end engineer
+  - platform engineer
+  - infrastructure engineer
+  - systems engineer
+  - site reliability engineer
+  - machine learning engineer
+
+# Adjacent titles are only accepted when one of these appears in the
+# title or description.
+entry_level_markers:
+  - new grad
+  - new graduate
+  - university grad
+  - college grad
+  - early career
+  - entry level
+  - entry-level
+  - "engineer i"
+  - "engineer 1"
+  - associate
+  - graduate
+  - junior
+  - "0-1 years"
+  - "0-2 years"
+  - "0 to 1 year"
+  - "0 to 2 years"
+
+# A title containing any of these is always rejected.
+negative_title_terms:
+  - senior
+  - sr.
+  - "sr "
+  - staff
+  - principal
+  - lead
+  - manager
+  - director
+  - architect
+  - distinguished
+  - head of
+  - vp
+  - vice president
+  - fellow
+  - iii
+  - " iv"
+  - " v,"
+
+# Looking for full-time roles, so drop internships/co-ops.
+reject_internships: true
+
+# Reject postings whose description requires more than this many years
+# of experience (e.g. "3+ years", "5 years of experience").
+max_years_experience: 2
+
+# Optional location gating. Empty allow-list means every location passes.
+location_allow: []
+location_deny: []
