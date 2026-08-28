@@ -115,7 +115,18 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                 option_labels = []
                 for r_idx in range(radios.count()):
                     option_labels.append(radios.nth(r_idx).evaluate(
-                        "el => (el.closest('label') || el.parentElement)?.textContent?.trim() || ''"
+                        """el => {
+                          const lab = el.id ? document.querySelector(
+                            `label[for="${CSS.escape(el.id)}"]`) : null;
+                          const cands = [lab, el.closest('label'),
+                                         el.parentElement?.nextElementSibling,
+                                         el.nextElementSibling, el.parentElement];
+                          for (const c of cands) {
+                            const t = c?.textContent?.trim();
+                            if (t) return t;
+                          }
+                          return '';
+                        }"""
                     ))
                 answer = resolve(label, profile)
                 if answer and (choice := pick_option(answer.value, option_labels)):
