@@ -263,6 +263,13 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
                     report.unknown_required.append(f"checkbox: {label or 'unknown'}")
                 continue
 
+            # react-select renders an anonymous internal input next to the
+            # labeled combobox (no id/name/label, but marked required) — it is
+            # not a real question, and treating it as one blocks every form
+            # that contains a dropdown
+            if not label and not el.get_attribute("id") and not el.get_attribute("name"):
+                continue
+
             # text-like inputs and textareas
             if el.input_value():
                 continue  # pre-filled (e.g. parsed from resume)
@@ -270,6 +277,27 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
             if answer:
                 el.fill(answer.value)
                 report.filled.append(label)
+                # combobox inputs (greenhouse dropdown questions) filter an
+                # option list — commit the typed answer by picking the match
+                with contextlib.suppress(Exception):
+                    import time as _time
+
+                    _time.sleep(0.6)  # page may be a FrameLocator (no wait_for_timeout)
+                    # visible only: hidden pickers (e.g. phone country lists)
+                    # keep [role=option] nodes in the DOM at all times
+                    options_loc = page.locator("[role='option']:visible")
+                    if options_loc.count() > 0:
+                        options = options_loc.all_inner_texts()
+                        choice = pick_option(answer.value, options)
+                        if choice is None and len(options) == 1:
+                            choice = options[0]
+                        if choice is not None:
+                            options_loc.nth(options.index(choice)).click()
+                        else:
+                            el.fill("")  # cannot commit a value safely
+                            report.filled.pop()
+                            if required:
+                                report.unknown_required.append(f"select: {label or 'unknown'}")
             elif required:
                 report.unknown_required.append(f"field: {label or 'unknown'}")
         except Exception as exc:  # noqa: BLE001 — one odd widget shouldn't kill the attempt

@@ -68,7 +68,11 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
         ("require_sponsorship", ["sponsorship", "sponsor"], a.get("require_sponsorship", "")),
         ("previously_employed_here", ["previously employed", "ever worked for", "former employee",
                                       "currently or previously"], a.get("previously_employed_here", "")),
-        ("willing_to_relocate", ["relocat"], a.get("willing_to_relocate", p.willing_to_relocate)),
+        ("willing_to_relocate", ["relocate", "relocation", "relocating"],
+         a.get("willing_to_relocate", p.willing_to_relocate)),
+        ("interviewed_before", ["interviewed at", "interviewed with", "interviewed here",
+                                "previously interviewed", "applied or interviewed"],
+         a.get("interviewed_before", "")),
         ("over_18", ["18 years", "over 18", "at least 18"], a.get("over_18", "")),
         # factual: an applicant with a future graduation date is a student/new grad
         ("student_or_new_grad", ["student or new grad", "student or recent grad"],
