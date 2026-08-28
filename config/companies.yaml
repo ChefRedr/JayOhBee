@@ -22,14 +22,15 @@
   rank: 485
 - name: Abnormal AI
   slug: abnormal-ai
-  careers_url: null
+  careers_url: https://www.abnormal.ai
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 119
 - name: Abridge
   slug: abridge
@@ -44,7 +45,7 @@
   rank: 384
 - name: Accenture
   slug: accenture
-  careers_url: null
+  careers_url: https://www.accenture.com/us-en/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -134,14 +135,15 @@
   rank: 169
 - name: Akamai
   slug: akamai
-  careers_url: null
+  careers_url: https://www.akamai.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 95
 - name: Akuna Capital
   slug: akuna-capital
@@ -178,7 +180,7 @@
   rank: 166
 - name: Alma
   slug: alma
-  careers_url: null
+  careers_url: https://helloalma.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -224,7 +226,7 @@
   rank: 60
 - name: American Airlines
   slug: american-airlines
-  careers_url: null
+  careers_url: https://jobs.aa.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -258,7 +260,7 @@
   rank: 450
 - name: Amgen
   slug: amgen
-  careers_url: null
+  careers_url: https://careers.amgen.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -280,7 +282,7 @@
   rank: 214
 - name: Analog Devices
   slug: analog-devices
-  careers_url: null
+  careers_url: https://www.analog.com/en/about-adi/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -302,25 +304,25 @@
   rank: 247
 - name: Anchorage Digital
   slug: anchorage-digital
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.anchorage.com
+  jobs_url: https://jobs.lever.co/anchorage
+  provider: lever
+  provider_identifier: anchorage
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 30 jobs at discovery
   rank: 181
 - name: Anduril
   slug: anduril
-  careers_url: null
+  careers_url: https://www.anduril.com/careers/
   jobs_url: null
-  provider: unknown
+  provider: greenhouse
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected greenhouse but could not verify an identifier
   rank: 21
 - name: Anthropic
   slug: anthropic
@@ -335,15 +337,14 @@
   rank: 1
 - name: Anyscale
   slug: anyscale
-  careers_url: null
-  jobs_url: null
-  provider: lever
+  careers_url: https://www.anyscale.com
+  jobs_url: https://jobs.ashbyhq.com/anyscale
+  provider: ashby
   provider_identifier: anyscale
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:anyscale with 1 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 20 jobs at discovery
   rank: 134
 - name: Apple
   slug: apple
@@ -359,18 +360,18 @@
   rank: 9
 - name: Applied Intuition
   slug: applied-intuition
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.appliedintuition.com/careers
+  jobs_url: https://jobs.ashbyhq.com/applied/9534b49a-9feb-4063-ac33-a9c4d94a1352
+  provider: ashby
+  provider_identifier: applied
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 298 jobs at discovery
   rank: 67
 - name: Applied Materials
   slug: applied-materials
-  careers_url: null
+  careers_url: https://careers.appliedmaterials.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -392,7 +393,7 @@
   rank: 106
 - name: Aptiv
   slug: aptiv
-  careers_url: null
+  careers_url: https://www.aptiv.com/en/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -403,7 +404,7 @@
   rank: 466
 - name: Arista Networks
   slug: arista-networks
-  careers_url: null
+  careers_url: https://www.arista.com/en/careers
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: aristanetworks
@@ -415,14 +416,14 @@
   rank: 326
 - name: Arm
   slug: arm
-  careers_url: null
+  careers_url: https://careers.arm.com/
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 63
 - name: Asana
   slug: asana
@@ -437,7 +438,7 @@
   rank: 81
 - name: ASML
   slug: asml
-  careers_url: null
+  careers_url: https://www.asml.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -459,7 +460,7 @@
   rank: 348
 - name: AstraZeneca
   slug: astrazeneca
-  careers_url: null
+  careers_url: https://careers.astrazeneca.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -470,7 +471,7 @@
   rank: 371
 - name: AT&T
   slug: at-t
-  careers_url: null
+  careers_url: https://www.att.jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -493,14 +494,15 @@
   rank: 37
 - name: Aurora Innovation
   slug: aurora-innovation
-  careers_url: null
+  careers_url: https://aurora.tech/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 68
 - name: Autodesk
   slug: autodesk
@@ -516,7 +518,7 @@
   rank: 452
 - name: Automation Anywhere
   slug: automation-anywhere
-  careers_url: null
+  careers_url: https://www.automationanywhere.com/company/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -527,7 +529,7 @@
   rank: 245
 - name: Axiom Space
   slug: axiom-space
-  careers_url: null
+  careers_url: https://www.axiomspace.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -549,7 +551,7 @@
   rank: 125
 - name: Bank of America
   slug: bank-of-america
-  careers_url: null
+  careers_url: https://careers.bankofamerica.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -593,18 +595,18 @@
   rank: 236
 - name: BILL
   slug: bill
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.bill.com
+  jobs_url: https://job-boards.greenhouse.io/embed/job_board?for=billcom
+  provider: greenhouse
+  provider_identifier: billcom
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 49 jobs at discovery
   rank: 161
 - name: BlackRock
   slug: blackrock
-  careers_url: null
+  careers_url: https://careers.blackrock.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -649,7 +651,7 @@
   rank: 401
 - name: Blue Origin
   slug: blue-origin
-  careers_url: null
+  careers_url: https://www.blueorigin.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -660,14 +662,15 @@
   rank: 338
 - name: Bluevine
   slug: bluevine
-  careers_url: null
+  careers_url: https://www.bluevine.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 170
 - name: BMW Group
   slug: bmw-group
@@ -682,7 +685,7 @@
   rank: 463
 - name: Boeing
   slug: boeing
-  careers_url: null
+  careers_url: https://jobs.boeing.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -693,7 +696,7 @@
   rank: 472
 - name: Booking.com
   slug: booking-com
-  careers_url: null
+  careers_url: https://careers.booking.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -704,7 +707,7 @@
   rank: 274
 - name: Boomi
   slug: boomi
-  careers_url: null
+  careers_url: https://boomi.com/company/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -715,7 +718,7 @@
   rank: 248
 - name: Booz Allen Hamilton
   slug: booz-allen-hamilton
-  careers_url: null
+  careers_url: https://careers.boozallen.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -737,7 +740,7 @@
   rank: 489
 - name: Boston Consulting Group
   slug: boston-consulting-group
-  careers_url: null
+  careers_url: https://careers.bcg.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -748,7 +751,7 @@
   rank: 495
 - name: Boston Dynamics
   slug: boston-dynamics
-  careers_url: null
+  careers_url: https://bostondynamics.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -759,7 +762,7 @@
   rank: 328
 - name: Box
   slug: box
-  careers_url: null
+  careers_url: https://careers.box.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -816,7 +819,7 @@
   rank: 61
 - name: Bumble
   slug: bumble
-  careers_url: null
+  careers_url: https://team.bumble.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -827,7 +830,7 @@
   rank: 261
 - name: ByteDance
   slug: bytedance
-  careers_url: null
+  careers_url: https://jobs.bytedance.com
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: bytedance
@@ -839,7 +842,7 @@
   rank: 252
 - name: CACI
   slug: caci
-  careers_url: null
+  careers_url: https://careers.caci.com
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: caci
@@ -851,7 +854,7 @@
   rank: 477
 - name: Cadence Design Systems
   slug: cadence-design-systems
-  careers_url: null
+  careers_url: https://www.cadence.com/en_US/home/company/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -862,19 +865,18 @@
   rank: 316
 - name: Canva
   slug: canva
-  careers_url: null
+  careers_url: https://www.canva.com/careers/
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: canva
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:canva with 262 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Canva'); 262 jobs
   rank: 38
 - name: Capella Space
   slug: capella-space
-  careers_url: null
+  careers_url: https://www.capellaspace.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -920,18 +922,19 @@
   rank: 165
 - name: Castelion
   slug: castelion
-  careers_url: null
+  careers_url: https://www.castelion.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 115
 - name: Caterpillar
   slug: caterpillar
-  careers_url: null
+  careers_url: https://careers.caterpillar.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -964,25 +967,25 @@
   rank: 246
 - name: Cerebras Systems
   slug: cerebras-systems
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.cerebras.ai/careers
+  jobs_url: https://jobs.ashbyhq.com/cerebras/3f85f614-264f-4987-9fb5-320ee2798e97
+  provider: ashby
+  provider_identifier: cerebras
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 109 jobs at discovery
   rank: 69
 - name: Chainalysis
   slug: chainalysis
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.chainalysis.com/careers/
+  jobs_url: https://jobs.ashbyhq.com/chainalysis-careers
+  provider: ashby
+  provider_identifier: chainalysis-careers
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 47 jobs at discovery
   rank: 183
 - name: Chainguard
   slug: chainguard
@@ -997,7 +1000,7 @@
   rank: 116
 - name: Charles Schwab
   slug: charles-schwab
-  careers_url: null
+  careers_url: https://www.schwabjobs.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1020,7 +1023,7 @@
   rank: 400
 - name: Charter Communications
   slug: charter-communications
-  careers_url: null
+  careers_url: https://jobs.spectrum.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1031,18 +1034,19 @@
   rank: 446
 - name: Checkout.com
   slug: checkout-com
-  careers_url: null
+  careers_url: https://www.checkout.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 155
 - name: Chewy
   slug: chewy
-  careers_url: null
+  careers_url: https://careers.chewy.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1098,18 +1102,19 @@
   rank: 325
 - name: Citadel Securities
   slug: citadel-securities
-  careers_url: null
+  careers_url: https://www.citadelsecurities.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 31
 - name: Citi
   slug: citi
-  careers_url: null
+  careers_url: https://jobs.citi.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1131,7 +1136,7 @@
   rank: 207
 - name: CloudBees
   slug: cloudbees
-  careers_url: null
+  careers_url: https://www.cloudbees.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1142,7 +1147,7 @@
   rank: 225
 - name: Cloudera
   slug: cloudera
-  careers_url: null
+  careers_url: https://www.cloudera.com/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1175,7 +1180,7 @@
   rank: 97
 - name: CME Group
   slug: cme-group
-  careers_url: null
+  careers_url: https://www.cmegroup.com/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1197,7 +1202,7 @@
   rank: 87
 - name: Coda
   slug: coda
-  careers_url: null
+  careers_url: https://coda.io
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1219,14 +1224,15 @@
   rank: 127
 - name: Cognition AI
   slug: cognition-ai
-  careers_url: null
+  careers_url: https://cognition.ai
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 149
 - name: Cohere
   slug: cohere
@@ -1241,7 +1247,7 @@
   rank: 146
 - name: Cohesity
   slug: cohesity
-  careers_url: null
+  careers_url: https://www.cohesity.com/company/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1274,7 +1280,7 @@
   rank: 172
 - name: Comcast/NBCUniversal
   slug: comcast-nbcuniversal
-  careers_url: null
+  careers_url: https://jobs.comcast.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1285,7 +1291,7 @@
   rank: 295
 - name: Commonwealth Fusion Systems
   slug: commonwealth-fusion-systems
-  careers_url: null
+  careers_url: https://cfs.energy/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1397,14 +1403,15 @@
   rank: 396
 - name: Cyera
   slug: cyera
-  careers_url: null
+  careers_url: https://www.cyera.io
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 117
 - name: Dassault Systèmes
   slug: dassault-syst-mes
@@ -1441,14 +1448,15 @@
   rank: 33
 - name: dbt Labs
   slug: dbt-labs
-  careers_url: null
+  careers_url: https://www.getdbt.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 86
 - name: Decagon
   slug: decagon
@@ -1463,18 +1471,19 @@
   rank: 150
 - name: Deel
   slug: deel
-  careers_url: null
+  careers_url: https://www.deel.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 164
 - name: Dell Technologies
   slug: dell-technologies
-  careers_url: null
+  careers_url: https://jobs.dell.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1496,7 +1505,7 @@
   rank: 497
 - name: Delta Air Lines
   slug: delta-air-lines
-  careers_url: null
+  careers_url: https://careers.delta.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1507,7 +1516,7 @@
   rank: 490
 - name: Devoted Health
   slug: devoted-health
-  careers_url: null
+  careers_url: https://www.devoted.com/about-us/careers/
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: devotedhealth
@@ -1519,7 +1528,7 @@
   rank: 378
 - name: Dexcom
   slug: dexcom
-  careers_url: null
+  careers_url: https://careers.dexcom.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1552,7 +1561,7 @@
   rank: 438
 - name: Digital Realty
   slug: digital-realty
-  careers_url: null
+  careers_url: https://www.digitalrealty.com/about/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1563,14 +1572,15 @@
   rank: 449
 - name: DigitalOcean
   slug: digitalocean
-  careers_url: null
+  careers_url: https://www.digitalocean.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 96
 - name: Discord
   slug: discord
@@ -1585,7 +1595,7 @@
   rank: 24
 - name: Disney
   slug: disney
-  careers_url: null
+  careers_url: https://jobs.disneycareers.com
   jobs_url: null
   provider: greenhouse
   provider_identifier: disney
@@ -1608,7 +1618,7 @@
   rank: 222
 - name: DocuSign
   slug: docusign
-  careers_url: null
+  careers_url: https://careers.docusign.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1653,14 +1663,15 @@
   rank: 203
 - name: DRW
   slug: drw
-  careers_url: null
+  careers_url: https://www.drw.com/work-at-drw
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 190
 - name: Duolingo
   slug: duolingo
@@ -1675,7 +1686,7 @@
   rank: 259
 - name: Dynatrace
   slug: dynatrace
-  careers_url: null
+  careers_url: https://careers.dynatrace.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1744,7 +1755,7 @@
   rank: 366
 - name: Emerson
   slug: emerson
-  careers_url: null
+  careers_url: https://www.emerson.com/en-us/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1778,7 +1789,7 @@
   rank: 359
 - name: Equinix
   slug: equinix
-  careers_url: null
+  careers_url: https://careers.equinix.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1800,7 +1811,7 @@
   rank: 456
 - name: Etsy
   slug: etsy
-  careers_url: null
+  careers_url: https://careers.etsy.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1822,7 +1833,7 @@
   rank: 140
 - name: Expedia Group
   slug: expedia-group
-  careers_url: null
+  careers_url: https://careers.expediagroup.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1866,7 +1877,7 @@
   rank: 94
 - name: FedEx
   slug: fedex
-  careers_url: null
+  careers_url: https://careers.fedex.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1877,7 +1888,7 @@
   rank: 436
 - name: Fervo Energy
   slug: fervo-energy
-  careers_url: null
+  careers_url: https://fervoenergy.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1888,7 +1899,7 @@
   rank: 395
 - name: Fidelity Investments
   slug: fidelity-investments
-  careers_url: null
+  careers_url: https://jobs.fidelity.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1932,7 +1943,7 @@
   rank: 182
 - name: Firefly Aerospace
   slug: firefly-aerospace
-  careers_url: null
+  careers_url: https://fireflyspace.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1943,18 +1954,18 @@
   rank: 341
 - name: Fireworks AI
   slug: fireworks-ai
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://fireworks.ai
+  jobs_url: https://jobs.ashbyhq.com/fireworks/2d0a20e1-8b0a-40b0-9b5e-514bca715fba
+  provider: ashby
+  provider_identifier: fireworks
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 65 jobs at discovery
   rank: 133
 - name: FIS
   slug: fis
-  careers_url: null
+  careers_url: https://www.fisglobal.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1965,7 +1976,7 @@
   rank: 417
 - name: Fiserv
   slug: fiserv
-  careers_url: null
+  careers_url: https://careers.fiserv.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -1976,7 +1987,7 @@
   rank: 416
 - name: Five Rings
   slug: five-rings
-  careers_url: null
+  careers_url: https://fiverings.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2020,14 +2031,14 @@
   rank: 439
 - name: Flock Safety
   slug: flock-safety
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.flocksafety.com
+  jobs_url: https://jobs.ashbyhq.com/Flock%20Safety/form/flock-safety-talent-community
+  provider: ashby
+  provider_identifier: Flock%20Safety
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 28 jobs at discovery
   rank: 124
 - name: Ford Motor Company
   slug: ford-motor-company
@@ -2042,7 +2053,7 @@
   rank: 459
 - name: Form Energy
   slug: form-energy
-  careers_url: null
+  careers_url: https://formenergy.com/careers/
   jobs_url: null
   provider: ashby
   provider_identifier: formenergy
@@ -2110,7 +2121,7 @@
   rank: 332
 - name: GEICO
   slug: geico
-  careers_url: null
+  careers_url: https://careers.geico.com
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: geico
@@ -2133,7 +2144,7 @@
   rank: 178
 - name: General Dynamics
   slug: general-dynamics
-  careers_url: null
+  careers_url: https://www.gd.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2144,7 +2155,7 @@
   rank: 473
 - name: General Motors
   slug: general-motors
-  careers_url: null
+  careers_url: https://search-careers.gm.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2166,7 +2177,7 @@
   rank: 354
 - name: Genesys
   slug: genesys
-  careers_url: null
+  careers_url: https://www.genesys.com/company/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2188,7 +2199,7 @@
   rank: 363
 - name: GitHub
   slug: github
-  careers_url: null
+  careers_url: https://github.careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2210,15 +2221,14 @@
   rank: 36
 - name: Glean
   slug: glean
-  careers_url: null
+  careers_url: https://www.glean.com/careers
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: glean
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:glean with 1 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Glean'); 1 jobs
   rank: 77
 - name: GlobalFoundries
   slug: globalfoundries
@@ -2279,7 +2289,7 @@
   rank: 277
 - name: Grab
   slug: grab
-  careers_url: null
+  careers_url: https://grab.careers
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: grab
@@ -2302,7 +2312,7 @@
   rank: 85
 - name: Grammarly
   slug: grammarly
-  careers_url: null
+  careers_url: https://www.grammarly.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2313,18 +2323,19 @@
   rank: 208
 - name: Groq
   slug: groq
-  careers_url: null
+  careers_url: https://groq.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 70
 - name: Guardant Health
   slug: guardant-health
-  careers_url: null
+  careers_url: https://guardanthealth.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2346,18 +2357,18 @@
   rank: 162
 - name: Hadrian
   slug: hadrian
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.hadrian.co
+  jobs_url: https://jobs.ashbyhq.com/hadrian-automation/68286f52-3ea7-412e-a85f-04ab21c91994/application
+  provider: ashby
+  provider_identifier: hadrian-automation
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 138 jobs at discovery
   rank: 113
 - name: Harness
   slug: harness
-  careers_url: null
+  careers_url: https://www.harness.io/company/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2379,7 +2390,7 @@
   rank: 75
 - name: Headlands Technologies
   slug: headlands-technologies
-  careers_url: null
+  careers_url: https://www.headlandstech.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2401,7 +2412,7 @@
   rank: 382
 - name: Helion Energy
   slug: helion-energy
-  careers_url: null
+  careers_url: https://www.helionenergy.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2412,7 +2423,7 @@
   rank: 394
 - name: Hewlett Packard Enterprise
   slug: hewlett-packard-enterprise
-  careers_url: null
+  careers_url: https://careers.hpe.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2446,7 +2457,7 @@
   rank: 380
 - name: Hippocratic AI
   slug: hippocratic-ai
-  careers_url: null
+  careers_url: https://www.hippocraticai.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2457,7 +2468,7 @@
   rank: 386
 - name: Honeywell
   slug: honeywell
-  careers_url: null
+  careers_url: https://careers.honeywell.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2490,7 +2501,7 @@
   rank: 290
 - name: HP Inc.
   slug: hp-inc
-  careers_url: null
+  careers_url: https://jobs.hp.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2501,7 +2512,7 @@
   rank: 323
 - name: HubSpot
   slug: hubspot
-  careers_url: null
+  careers_url: https://www.hubspot.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2512,25 +2523,26 @@
   rank: 201
 - name: Hudson River Trading
   slug: hudson-river-trading
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.hudsonrivertrading.com/careers/
+  jobs_url: https://boards.greenhouse.io/hrttalentcommunity/jobs/3432773
+  provider: greenhouse
+  provider_identifier: hrttalentcommunity
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 3 jobs at discovery
   rank: 30
 - name: Hugging Face
   slug: hugging-face
-  careers_url: null
+  careers_url: https://apply.workable.com/huggingface/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 98
 - name: Huntress
   slug: huntress
@@ -2557,7 +2569,7 @@
   rank: 59
 - name: Illumina
   slug: illumina
-  careers_url: null
+  careers_url: https://www.illumina.com/company/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2579,7 +2591,7 @@
   rank: 234
 - name: IMC Trading
   slug: imc-trading
-  careers_url: null
+  careers_url: https://www.imc.com/us/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2590,7 +2602,7 @@
   rank: 192
 - name: Impulse Space
   slug: impulse-space
-  careers_url: null
+  careers_url: https://www.impulsespace.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2657,7 +2669,7 @@
   rank: 301
 - name: Intercom
   slug: intercom
-  careers_url: null
+  careers_url: https://www.intercom.com/careers
   jobs_url: null
   provider: greenhouse
   provider_identifier: intercom
@@ -2669,7 +2681,7 @@
   rank: 211
 - name: Intercontinental Exchange
   slug: intercontinental-exchange
-  careers_url: null
+  careers_url: https://www.ice.com/about/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2692,7 +2704,7 @@
   rank: 56
 - name: Intuitive Surgical
   slug: intuitive-surgical
-  careers_url: null
+  careers_url: https://careers.intuitive.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2703,14 +2715,15 @@
   rank: 374
 - name: Island
   slug: island
-  careers_url: null
+  careers_url: https://www.island.io
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 118
 - name: Isomorphic Labs
   slug: isomorphic-labs
@@ -2747,7 +2760,7 @@
   rank: 224
 - name: John Deere
   slug: john-deere
-  careers_url: null
+  careers_url: https://careers.deere.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2791,7 +2804,7 @@
   rank: 176
 - name: KLA
   slug: kla
-  careers_url: null
+  careers_url: https://www.kla.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2802,14 +2815,15 @@
   rank: 319
 - name: Klarna
   slug: klarna
-  careers_url: null
+  careers_url: https://www.klarna.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 158
 - name: Klaviyo
   slug: klaviyo
@@ -2824,7 +2838,7 @@
   rank: 212
 - name: KPMG
   slug: kpmg
-  careers_url: null
+  careers_url: https://www.kpmguscareers.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2835,18 +2849,18 @@
   rank: 500
 - name: Kraken
   slug: kraken
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.kraken.com/careers
+  jobs_url: https://jobs.ashbyhq.com/kraken.com
+  provider: ashby
+  provider_identifier: kraken.com
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 90 jobs at discovery
   rank: 177
 - name: L3Harris Technologies
   slug: l3harris-technologies
-  careers_url: null
+  careers_url: https://careers.l3harris.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2857,7 +2871,7 @@
   rank: 474
 - name: Lam Research
   slug: lam-research
-  careers_url: null
+  careers_url: https://careers.lamresearch.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2901,7 +2915,7 @@
   rank: 216
 - name: Leidos
   slug: leidos
-  careers_url: null
+  careers_url: https://careers.leidos.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2912,7 +2926,7 @@
   rank: 475
 - name: Liberty Mutual
   slug: liberty-mutual
-  careers_url: null
+  careers_url: https://jobs.libertymutualgroup.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2969,7 +2983,7 @@
   rank: 139
 - name: Lockheed Martin
   slug: lockheed-martin
-  careers_url: null
+  careers_url: https://www.lockheedmartinjobs.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -2992,7 +3006,7 @@
   rank: 349
 - name: Lowe's
   slug: lowe-s
-  careers_url: null
+  careers_url: https://talent.lowes.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3014,7 +3028,7 @@
   rank: 458
 - name: Lumen Technologies
   slug: lumen-technologies
-  careers_url: null
+  careers_url: https://jobs.lumen.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3036,14 +3050,15 @@
   rank: 276
 - name: Mach Industries
   slug: mach-industries
-  careers_url: null
+  careers_url: https://www.machindustries.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 114
 - name: Magna International
   slug: magna-international
@@ -3069,7 +3084,7 @@
   rank: 159
 - name: Marvell Technology
   slug: marvell-technology
-  careers_url: null
+  careers_url: https://careers.marvell.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3104,7 +3119,7 @@
   rank: 260
 - name: MathWorks
   slug: mathworks
-  careers_url: null
+  careers_url: https://www.mathworks.com/company/jobs.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3115,7 +3130,7 @@
   rank: 455
 - name: McKinsey & Company
   slug: mckinsey-company
-  careers_url: null
+  careers_url: https://www.mckinsey.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3137,7 +3152,7 @@
   rank: 304
 - name: Medtronic
   slug: medtronic
-  careers_url: null
+  careers_url: https://jobs.medtronic.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3204,7 +3219,7 @@
   rank: 6
 - name: Micron Technology
   slug: micron-technology
-  careers_url: null
+  careers_url: https://careers.micron.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3250,14 +3265,14 @@
   rank: 80
 - name: Mistral AI
   slug: mistral-ai
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://mistral.ai/careers
+  jobs_url: https://jobs.ashbyhq.com/mistral.ai
+  provider: ashby
+  provider_identifier: mistral.ai
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 172 jobs at discovery
   rank: 73
 - name: Mixpanel
   slug: mixpanel
@@ -3272,7 +3287,7 @@
   rank: 215
 - name: Mobileye
   slug: mobileye
-  careers_url: null
+  careers_url: https://www.mobileye.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3306,7 +3321,7 @@
   rank: 168
 - name: Moderna
   slug: moderna
-  careers_url: null
+  careers_url: https://www.modernatx.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3317,7 +3332,7 @@
   rank: 365
 - name: Monday.com
   slug: monday-com
-  careers_url: null
+  careers_url: https://monday.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3339,7 +3354,7 @@
   rank: 34
 - name: Moody's
   slug: moody-s
-  careers_url: null
+  careers_url: https://careers.moodys.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3384,7 +3399,7 @@
   rank: 442
 - name: Nasdaq
   slug: nasdaq
-  careers_url: null
+  careers_url: https://www.nasdaq.com/about/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3395,14 +3410,15 @@
   rank: 418
 - name: Navan
   slug: navan
-  careers_url: null
+  careers_url: https://navan.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 163
 - name: Neo4j
   slug: neo4j
@@ -3417,7 +3433,7 @@
   rank: 91
 - name: NetApp
   slug: netapp
-  careers_url: null
+  careers_url: https://careers.netapp.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3462,7 +3478,7 @@
   rank: 232
 - name: Nike
   slug: nike
-  careers_url: null
+  careers_url: https://jobs.nike.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3484,7 +3500,7 @@
   rank: 287
 - name: Northrop Grumman
   slug: northrop-grumman
-  careers_url: null
+  careers_url: https://www.northropgrumman.com/jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3495,7 +3511,7 @@
   rank: 470
 - name: Northwestern Mutual
   slug: northwestern-mutual
-  careers_url: null
+  careers_url: https://careers.northwesternmutual.com
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: northwesternmutual
@@ -3551,7 +3567,7 @@
   rank: 108
 - name: Nutanix
   slug: nutanix
-  careers_url: null
+  careers_url: https://www.nutanix.com/company/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3575,7 +3591,7 @@
   workday_site: NVIDIAExternalCareerSite
 - name: NXP Semiconductors
   slug: nxp-semiconductors
-  careers_url: null
+  careers_url: https://www.nxp.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3597,7 +3613,7 @@
   rank: 53
 - name: Old Mission
   slug: old-mission
-  careers_url: null
+  careers_url: https://www.oldmissioncapital.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3642,14 +3658,15 @@
   rank: 385
 - name: Optiver
   slug: optiver
-  careers_url: null
+  careers_url: https://optiver.com/working-at-optiver/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 191
 - name: Oracle
   slug: oracle
@@ -3675,7 +3692,7 @@
   rank: 235
 - name: Oscar Health
   slug: oscar-health
-  careers_url: null
+  careers_url: https://www.hioscar.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3867,7 +3884,7 @@
   rank: 84
 - name: Progressive
   slug: progressive
-  careers_url: null
+  careers_url: https://www.progressive.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3889,7 +3906,7 @@
   rank: 440
 - name: PTC
   slug: ptc
-  careers_url: null
+  careers_url: https://www.ptc.com/en/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3900,7 +3917,7 @@
   rank: 454
 - name: Pulumi
   slug: pulumi
-  careers_url: null
+  careers_url: https://www.pulumi.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3933,14 +3950,15 @@
   rank: 498
 - name: Qdrant
   slug: qdrant
-  careers_url: null
+  careers_url: https://qdrant.tech
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 137
 - name: Qualcomm
   slug: qualcomm
@@ -3967,7 +3985,7 @@
   rank: 22
 - name: Rapid7
   slug: rapid7
-  careers_url: null
+  careers_url: https://careers.rapid7.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -3978,7 +3996,7 @@
   rank: 231
 - name: Recursion
   slug: recursion
-  careers_url: null
+  careers_url: https://www.recursion.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4022,7 +4040,7 @@
   rank: 391
 - name: Regeneron
   slug: regeneron
-  careers_url: null
+  careers_url: https://careers.regeneron.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4033,7 +4051,7 @@
   rank: 367
 - name: Relativity Space
   slug: relativity-space
-  careers_url: null
+  careers_url: https://www.relativityspace.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4044,14 +4062,15 @@
   rank: 340
 - name: Replicate
   slug: replicate
-  careers_url: null
+  careers_url: https://replicate.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 131
 - name: Replit
   slug: replit
@@ -4066,25 +4085,27 @@
   rank: 129
 - name: Retool
   slug: retool
-  careers_url: null
+  careers_url: https://retool.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 83
 - name: Revolut
   slug: revolut
-  careers_url: null
+  careers_url: https://www.revolut.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 44
 - name: Riot Games
   slug: riot-games
@@ -4110,18 +4131,19 @@
   rank: 180
 - name: Rippling
   slug: rippling
-  careers_url: null
+  careers_url: https://www.rippling.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 23
 - name: Rivian
   slug: rivian
-  careers_url: null
+  careers_url: https://careers.rivian.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4187,7 +4209,7 @@
   rank: 337
 - name: Rockwell Automation
   slug: rockwell-automation
-  careers_url: null
+  careers_url: https://www.rockwellautomation.com/en-us/company/careers.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4209,7 +4231,7 @@
   rank: 291
 - name: RTX
   slug: rtx
-  careers_url: null
+  careers_url: https://careers.rtx.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4231,7 +4253,7 @@
   rank: 228
 - name: Runway
   slug: runway
-  careers_url: null
+  careers_url: https://runwayml.com
   jobs_url: null
   provider: ashby
   provider_identifier: runway
@@ -4243,7 +4265,7 @@
   rank: 141
 - name: S&P Global
   slug: s-p-global
-  careers_url: null
+  careers_url: https://careers.spglobal.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4265,7 +4287,7 @@
   rank: 102
 - name: SAIC
   slug: saic
-  careers_url: null
+  careers_url: https://jobs.saic.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4276,14 +4298,15 @@
   rank: 478
 - name: Sakana AI
   slug: sakana-ai
-  careers_url: null
+  careers_url: https://sakana.ai
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 147
 - name: Salesforce
   slug: salesforce
@@ -4355,7 +4378,7 @@
   rank: 27
 - name: Schneider Electric
   slug: schneider-electric
-  careers_url: null
+  careers_url: https://www.se.com/us/en/about-us/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4399,7 +4422,7 @@
   rank: 299
 - name: Seagate Technology
   slug: seagate-technology
-  careers_url: null
+  careers_url: https://www.seagate.com/jobs/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4421,7 +4444,7 @@
   rank: 126
 - name: SentinelOne
   slug: sentinelone
-  careers_url: null
+  careers_url: https://www.sentinelone.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4460,10 +4483,9 @@
   provider: smartrecruiters
   provider_identifier: servicenow
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:servicenow with 558 jobs — confirm the board
-    actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('ServiceNow'); 558 jobs
   rank: 49
 - name: Shield AI
   slug: shield-ai
@@ -4490,7 +4512,7 @@
   rank: 251
 - name: Siemens
   slug: siemens
-  careers_url: null
+  careers_url: https://jobs.siemens.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4523,7 +4545,7 @@
   rank: 76
 - name: Sierra Space
   slug: sierra-space
-  careers_url: null
+  careers_url: https://www.sierraspace.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4534,7 +4556,7 @@
   rank: 339
 - name: SiriusXM
   slug: siriusxm
-  careers_url: null
+  careers_url: https://careers.siriusxm.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4556,14 +4578,15 @@
   rank: 313
 - name: Skild AI
   slug: skild-ai
-  careers_url: null
+  careers_url: https://www.skild.ai/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 104
 - name: Skydio
   slug: skydio
@@ -4601,7 +4624,7 @@
   rank: 14
 - name: Snyk
   slug: snyk
-  careers_url: null
+  careers_url: https://snyk.io/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4623,7 +4646,7 @@
   rank: 153
 - name: Sonar
   slug: sonar
-  careers_url: null
+  careers_url: https://www.sonarsource.com/company/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4634,7 +4657,7 @@
   rank: 226
 - name: Sony Interactive Entertainment
   slug: sony-interactive-entertainment
-  careers_url: null
+  careers_url: https://sonyinteractive.com/en/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4645,18 +4668,18 @@
   rank: 286
 - name: Sourcegraph
   slug: sourcegraph
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://sourcegraph.com
+  jobs_url: https://job-boards.greenhouse.io/sourcegraph91/jobs/6103567004
+  provider: greenhouse
+  provider_identifier: sourcegraph91
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 9 jobs at discovery
   rank: 128
 - name: Southwest Airlines
   slug: southwest-airlines
-  careers_url: null
+  careers_url: https://careers.southwestair.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4689,7 +4712,7 @@
   rank: 254
 - name: Starbucks
   slug: starbucks
-  careers_url: null
+  careers_url: https://careers.starbucks.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4700,7 +4723,7 @@
   rank: 435
 - name: State Farm
   slug: state-farm
-  careers_url: null
+  careers_url: https://jobs.statefarm.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4722,7 +4745,7 @@
   rank: 465
 - name: STMicroelectronics
   slug: stmicroelectronics
-  careers_url: null
+  careers_url: https://careers.st.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4744,7 +4767,7 @@
   rank: 267
 - name: Stoke Space
   slug: stoke-space
-  careers_url: null
+  careers_url: https://www.stokespace.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4788,7 +4811,7 @@
   rank: 90
 - name: Supercell
   slug: supercell
-  careers_url: null
+  careers_url: https://supercell.com/en/careers/
   jobs_url: null
   provider: ashby
   provider_identifier: supercell
@@ -4811,7 +4834,7 @@
   rank: 327
 - name: Susquehanna International Group
   slug: susquehanna-international-group
-  careers_url: null
+  careers_url: https://sig.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4822,7 +4845,7 @@
   rank: 193
 - name: Symbotic
   slug: symbotic
-  careers_url: null
+  careers_url: https://www.symbotic.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4833,18 +4856,19 @@
   rank: 336
 - name: Synctera
   slug: synctera
-  careers_url: null
+  careers_url: https://synctera.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 173
 - name: Synopsys
   slug: synopsys
-  careers_url: null
+  careers_url: https://careers.synopsys.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4866,7 +4890,7 @@
   rank: 143
 - name: T-Mobile
   slug: t-mobile
-  careers_url: null
+  careers_url: https://careers.t-mobile.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4888,7 +4912,7 @@
   rank: 99
 - name: Take-Two Interactive
   slug: take-two-interactive
-  careers_url: null
+  careers_url: https://careers.take2games.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4899,7 +4923,7 @@
   rank: 282
 - name: Target
   slug: target
-  careers_url: null
+  careers_url: https://corporate.target.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4922,7 +4946,7 @@
   rank: 88
 - name: Tempus AI
   slug: tempus-ai
-  careers_url: null
+  careers_url: https://www.tempus.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4933,7 +4957,7 @@
   rank: 351
 - name: Tenable
   slug: tenable
-  careers_url: null
+  careers_url: https://careers.tenable.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4967,7 +4991,7 @@
   rank: 64
 - name: Texas Instruments
   slug: texas-instruments
-  careers_url: null
+  careers_url: https://careers.ti.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -4978,7 +5002,7 @@
   rank: 305
 - name: The Home Depot
   slug: the-home-depot
-  careers_url: null
+  careers_url: https://careers.homedepot.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5000,7 +5024,7 @@
   rank: 101
 - name: TikTok
   slug: tiktok
-  careers_url: null
+  careers_url: https://careers.tiktok.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5044,7 +5068,7 @@
   rank: 194
 - name: Toyota Research Institute
   slug: toyota-research-institute
-  careers_url: null
+  careers_url: https://www.tri.global/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5055,14 +5079,14 @@
   rank: 461
 - name: Treasury Prime
   slug: treasury-prime
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.treasuryprime.com
+  jobs_url: https://job-boards.greenhouse.io/treasuryprime/jobs/4879747008
+  provider: greenhouse
+  provider_identifier: treasuryprime
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 0 jobs at discovery
   rank: 175
 - name: TSMC
   slug: tsmc
@@ -5099,14 +5123,15 @@
   rank: 55
 - name: Two Sigma
   slug: two-sigma
-  careers_url: null
+  careers_url: https://careers.twosigma.com/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 32
 - name: Uber
   slug: uber
@@ -5115,10 +5140,9 @@
   provider: smartrecruiters
   provider_identifier: uber
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:uber with 1 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Uber'); 1 jobs
   rank: 16
 - name: UiPath
   slug: uipath
@@ -5133,14 +5157,15 @@
   rank: 244
 - name: Uniswap Labs
   slug: uniswap-labs
-  careers_url: null
+  careers_url: https://uniswap.org
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 184
 - name: Unit
   slug: unit
@@ -5155,7 +5180,7 @@
   rank: 174
 - name: United Airlines
   slug: united-airlines
-  careers_url: null
+  careers_url: https://careers.united.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5166,7 +5191,7 @@
   rank: 491
 - name: Unity
   slug: unity
-  careers_url: null
+  careers_url: https://careers.unity.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5177,7 +5202,7 @@
   rank: 283
 - name: UPS
   slug: ups
-  careers_url: null
+  careers_url: https://www.jobs-ups.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5188,7 +5213,7 @@
   rank: 437
 - name: USAA
   slug: usaa
-  careers_url: null
+  careers_url: https://www.usaajobs.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5210,7 +5235,7 @@
   rank: 279
 - name: Vanguard
   slug: vanguard
-  careers_url: null
+  careers_url: https://www.vanguardjobs.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5232,14 +5257,14 @@
   rank: 122
 - name: Varda Space Industries
   slug: varda-space-industries
-  careers_url: null
+  careers_url: https://www.varda.com/careers
   jobs_url: null
-  provider: unknown
+  provider: greenhouse
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected greenhouse but could not verify an identifier
   rank: 112
 - name: Vast
   slug: vast
@@ -5254,7 +5279,7 @@
   rank: 344
 - name: Veeam
   slug: veeam
-  careers_url: null
+  careers_url: https://careers.veeam.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5265,7 +5290,7 @@
   rank: 238
 - name: Veeva Systems
   slug: veeva-systems
-  careers_url: null
+  careers_url: https://careers.veeva.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5287,7 +5312,7 @@
   rank: 40
 - name: Verizon
   slug: verizon
-  careers_url: null
+  careers_url: https://www.verizon.com/about/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5309,7 +5334,7 @@
   rank: 123
 - name: Virtu Financial
   slug: virtu-financial
-  careers_url: null
+  careers_url: https://www.virtu.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5343,7 +5368,7 @@
   rank: 107
 - name: Walmart Global Tech
   slug: walmart-global-tech
-  careers_url: null
+  careers_url: https://careers.walmart.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5354,7 +5379,7 @@
   rank: 429
 - name: Warner Bros. Discovery
   slug: warner-bros-discovery
-  careers_url: null
+  careers_url: https://careers.wbd.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5376,7 +5401,7 @@
   rank: 399
 - name: Wayfair
   slug: wayfair
-  careers_url: null
+  careers_url: https://www.aboutwayfair.com/careers
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: wayfair
@@ -5399,7 +5424,7 @@
   rank: 65
 - name: Waystar
   slug: waystar
-  careers_url: null
+  careers_url: https://www.waystar.com/about-us/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5421,7 +5446,7 @@
   rank: 136
 - name: Western Digital
   slug: western-digital
-  careers_url: null
+  careers_url: https://jobs.westerndigital.com
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: westerndigital
@@ -5433,7 +5458,7 @@
   rank: 320
 - name: Whatnot
   slug: whatnot
-  careers_url: null
+  careers_url: https://www.whatnot.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5479,7 +5504,7 @@
   rank: 78
 - name: XTX Markets
   slug: xtx-markets
-  careers_url: null
+  careers_url: https://www.xtxmarkets.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5490,7 +5515,7 @@
   rank: 197
 - name: Yelp
   slug: yelp
-  careers_url: null
+  careers_url: https://www.yelp.careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5501,7 +5526,7 @@
   rank: 272
 - name: Zendesk
   slug: zendesk
-  careers_url: null
+  careers_url: https://www.zendesk.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5512,7 +5537,7 @@
   rank: 210
 - name: Zillow
   slug: zillow
-  careers_url: null
+  careers_url: https://www.zillow.com/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
@@ -5523,7 +5548,7 @@
   rank: 271
 - name: Zipline
   slug: zipline
-  careers_url: null
+  careers_url: https://www.flyzipline.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null

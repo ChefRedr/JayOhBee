@@ -116,7 +116,7 @@ def _is_required(element, label: str) -> bool:
             return True
         if (element.get_attribute("aria-required") or "").lower() == "true":
             return True
-    return "*" in label or "required" in label.lower()
+    return "*" in label or "✱" in label or "required" in label.lower()
 
 
 def _clean_label(label: str) -> str:
@@ -144,11 +144,13 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
     for i in range(controls.count()):
         el = controls.nth(i)
         try:
-            if not el.is_visible():
-                continue
             tag = el.evaluate("el => el.tagName.toLowerCase()")
             itype = (el.get_attribute("type") or "text").lower()
             if itype in ("hidden", "submit", "button", "search"):
+                continue
+            # file inputs are often display:none behind a styled upload button
+            # (e.g. Ashby); every other control must be visible to count
+            if itype != "file" and not el.is_visible():
                 continue
             raw_label = _label_for(page, el)
             label = _clean_label(raw_label)

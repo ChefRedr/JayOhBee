@@ -75,10 +75,13 @@ def _greenhouse_board_name(token: str) -> str | None:
 
 
 def _smartrecruiters_company_name(ident: str) -> str | None:
-    resp = _fetch(f"https://api.smartrecruiters.com/v1/companies/{ident}")
+    # postings embed the owning company's display name
+    resp = _fetch(f"https://api.smartrecruiters.com/v1/companies/{ident}/postings?limit=1")
     if resp is not None and resp.status_code == 200:
         try:
-            return resp.json().get("name")
+            content = resp.json().get("content") or []
+            if content:
+                return (content[0].get("company") or {}).get("name")
         except ValueError:
             return None
     return None
