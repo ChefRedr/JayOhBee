@@ -140,11 +140,21 @@ dispatch. Runners are ephemeral, so the SQLite database is persisted on a
 dedicated `state` branch: restored at the start of each run, force-pushed as a
 single fresh commit at the end.
 
-Secrets to configure: `APPLICANT_YAML`, `RESUME_BASE64` (resume path in the
-profile must be `/home/runner/resume.pdf`), optionally
-`GOOGLE_SERVICE_ACCOUNT_JSON`, `SHEETS_SPREADSHEET_ID`, and the `SMTP_*` /
-`NOTIFY_EMAIL_*` set. Enable submissions by setting the repository **variable**
-`AUTO_APPLY=true` once you've watched a few dry runs.
+Secrets to configure: `APPLICANT_YAML` (its `resume_path` must be
+`/home/runner/resume.pdf`), `RESUME_BASE64_1..N` (GitHub caps secrets at 48KB,
+so the resume is split into ≤40KB base64 chunks):
+
+```bash
+base64 -i resumes/resume.pdf | tr -d '\n' > /tmp/r.b64
+split -b 40000 /tmp/r.b64 /tmp/r.part.
+i=1; for f in /tmp/r.part.*; do gh secret set "RESUME_BASE64_$i" < "$f"; i=$((i+1)); done
+rm /tmp/r.b64 /tmp/r.part.*
+gh secret set APPLICANT_YAML < config/applicant.yaml
+```
+
+Optionally add `GOOGLE_SERVICE_ACCOUNT_JSON`, `SHEETS_SPREADSHEET_ID`, and the
+`SMTP_*` / `NOTIFY_EMAIL_*` set. Enable submissions by setting the repository
+**variable** `AUTO_APPLY=true` once you've watched a few dry runs.
 
 ## Tests
 
