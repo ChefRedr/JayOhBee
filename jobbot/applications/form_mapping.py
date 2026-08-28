@@ -35,7 +35,7 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
         ("full_name", ["full name", "your name", "legal name"], p.full_name),
         ("preferred_name", ["preferred name"], p.preferred_name or p.first_name),
         ("email", ["email"], p.email),
-        ("phone", ["phone", "mobile number"], p.phone),
+        ("phone", ["phone", "mobile number", "best number to reach"], p.phone),
         ("linkedin", ["linkedin"], p.linkedin_url),
         ("github", ["github"], p.github_url),
         ("portfolio", ["portfolio", "personal website", "website url", "personal site"], p.portfolio_url),
@@ -107,6 +107,11 @@ def resolve(label: str, profile: ApplicantProfile) -> Resolved | None:
     # so "company name" etc. never receives the applicant's name
     if norm in ("name", "your name") and profile.full_name:
         return Resolved(value=profile.full_name, matched_topic="full_name")
+    if norm in ("location", "where will you be working from") and (profile.city or profile.state):
+        return Resolved(
+            value=", ".join(x for x in (profile.city, profile.state) if x),
+            matched_topic="location",
+        )
     for topic, patterns, value in _rules(profile):
         if any(_matches(pat, norm) for pat in patterns):
             if value:

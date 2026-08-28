@@ -192,32 +192,44 @@ class AshbyApplicationAdapter(ApplicationAdapter):
                         ApplicationStatus.NEEDS_REVIEW, reason="submit button not found",
                         application_url=url,
                     )
+                submit.scroll_into_view_if_needed()
+                page.wait_for_timeout(300)
                 clicked = True  # from here on, submission state is unknown on error
                 submit.click()
-                page.wait_for_timeout(6000)
 
-                if visible_captcha(page):
-                    return ApplicationResult(
-                        ApplicationStatus.NEEDS_REVIEW, reason="CAPTCHA challenge after submit",
-                        application_url=url,
-                    )
-                # client-side validation rejection: form still there with error
-                # marks — nothing was submitted
-                errors = page.locator("[aria-invalid='true'], [class*='error' i]:visible")
-                if page.locator("[class*='_fieldEntry']").count() > 0 and errors.count() > 0:
-                    save_debug_screenshot(page, f"validation_{job.company}_{job.external_id}")
-                    return ApplicationResult(
-                        ApplicationStatus.NEEDS_REVIEW,
-                        reason="form validation rejected the submission — required "
-                               "fields could not be answered automatically",
-                        application_url=url,
-                    )
-                body = page.inner_text("body").lower()
-                for marker in CONFIRMATION_MARKERS:
-                    if marker in body:
+                # ashby submits via XHR; poll for an outcome rather than a fixed wait
+                for _ in range(12):
+                    page.wait_for_timeout(2000)
+                    if visible_captcha(page):
                         return ApplicationResult(
-                            ApplicationStatus.SUBMITTED, application_url=url,
-                            evidence=f"confirmation text: {marker!r}",
+                            ApplicationStatus.NEEDS_REVIEW, reason="CAPTCHA challenge after submit",
+                            application_url=url,
+                        )
+                    body = page.inner_text("body").lower()
+                    for marker in CONFIRMATION_MARKERS:
+                        if marker in body:
+                            return ApplicationResult(
+                                ApplicationStatus.SUBMITTED, application_url=url,
+                                evidence=f"confirmation text: {marker!r}",
+                            )
+                    errors = page.locator("[aria-invalid='true'], [class*='error' i]:visible")
+                    if page.locator("[class*='_fieldEntry']").count() > 0 and errors.count() > 0:
+                        save_debug_screenshot(page, f"validation_{job.company}_{job.external_id}")
+                        return ApplicationResult(
+                            ApplicationStatus.NEEDS_REVIEW,
+                            reason="form validation rejected the submission — required "
+                                   "fields could not be answered automatically",
+                            application_url=url,
+                        )
+                    if page.locator("[class*='_fieldEntry']").count() == 0:
+                        # form replaced with something without our markers —
+                        # likely submitted, but demand human confirmation
+                        save_debug_screenshot(page, f"formgone_{job.company}_{job.external_id}")
+                        return ApplicationResult(
+                            ApplicationStatus.NEEDS_REVIEW,
+                            reason="form closed after submit but no confirmation text "
+                                   "matched — verify manually",
+                            application_url=url,
                         )
                 save_debug_screenshot(page, f"noconfirm_{job.company}_{job.external_id}")
                 return ApplicationResult(
