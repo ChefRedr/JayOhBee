@@ -16,7 +16,7 @@ from urllib.parse import urljoin, urlparse
 import httpx
 from bs4 import BeautifulSoup
 
-from jobbot.config import load_companies, save_companies
+from jobbot.config import REPO_ROOT, load_companies, save_companies
 from jobbot.discovery.detect import ATSCandidate, detect_from_html, detect_from_url
 from jobbot.models.company import Company, DiscoveryStatus, Provider
 from jobbot.sources import get_source
@@ -74,12 +74,55 @@ def _greenhouse_board_name(token: str) -> str | None:
     return None
 
 
+def _smartrecruiters_company_name(ident: str) -> str | None:
+    resp = _fetch(f"https://api.smartrecruiters.com/v1/companies/{ident}")
+    if resp is not None and resp.status_code == 200:
+        try:
+            return resp.json().get("name")
+        except ValueError:
+            return None
+    return None
+
+
+def _page_title(url: str) -> str | None:
+    resp = _fetch(url)
+    if resp is None or resp.status_code != 200:
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    parts = []
+    if soup.title and soup.title.string:
+        parts.append(soup.title.string)
+    og = soup.find("meta", property="og:site_name") or soup.find("meta", property="og:title")
+    if og and og.get("content"):
+        parts.append(og["content"])
+    return " | ".join(parts) or None
+
+
 def _names_match(company_name: str, board_name: str | None) -> bool:
     if not board_name:
         return False
     a = "".join(ch for ch in company_name.lower() if ch.isalnum())
     b = "".join(ch for ch in board_name.lower() if ch.isalnum())
-    return bool(a and b) and (a in b or b in a)
+    if not (a and b):
+        return False
+    if a in b or b in a:
+        return True
+    # fall back to the company's distinctive first word ("Scale AI" -> "scale")
+    first = "".join(ch for ch in company_name.lower().split()[0] if ch.isalnum())
+    return len(first) >= 4 and first in b
+
+
+def _probe_board_name(provider: Provider, ident: str) -> str | None:
+    """Independent evidence of who owns a probed board, per provider."""
+    if provider == Provider.GREENHOUSE:
+        return _greenhouse_board_name(ident)
+    if provider == Provider.SMARTRECRUITERS:
+        return _smartrecruiters_company_name(ident)
+    if provider == Provider.LEVER:
+        return _page_title(f"https://jobs.lever.co/{ident}")
+    if provider == Provider.ASHBY:
+        return _page_title(f"https://jobs.ashbyhq.com/{ident}")
+    return None
 
 
 def _slug_variants(company: Company) -> list[str]:
@@ -174,12 +217,11 @@ def discover_company(company: Company) -> Company:
         company.provider = cand.provider
         company.provider_identifier = cand.identifier
         company.extra.update(cand.extra)
-        if cand.provider == Provider.GREENHOUSE and _names_match(
-            company.name, _greenhouse_board_name(cand.identifier)
-        ):
+        board_name = _probe_board_name(cand.provider, cand.identifier)
+        if _names_match(company.name, board_name):
             company.discovery_status = DiscoveryStatus.VERIFIED
             company.last_verified = date.today().isoformat()
-            company.notes = f"slug probe; greenhouse board name matches; {count} jobs"
+            company.notes = f"slug probe; board name matches ({board_name!r}); {count} jobs"
         else:
             company.discovery_status = DiscoveryStatus.NEEDS_REVIEW
             company.notes = (
@@ -212,6 +254,16 @@ def run_discovery(limit: int | None = None, rediscover: bool = False) -> dict[st
         if c.enabled and (rediscover or c.discovery_status != DiscoveryStatus.VERIFIED)
     ]
     todo.sort(key=lambda c: c.extra.get("rank") or 10_000)
+
+    # curated careers-URL hints for companies with nothing configured
+    hints_path = REPO_ROOT / "data" / "careers_urls.yaml"
+    if hints_path.exists():
+        import yaml
+
+        hints = yaml.safe_load(hints_path.read_text()) or {}
+        for c in todo:
+            if not c.careers_url and c.slug in hints:
+                c.careers_url = hints[c.slug]
     if limit:
         todo = todo[:limit]
     log.info("discovering sources for %d companies", len(todo))

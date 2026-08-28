@@ -42,6 +42,7 @@ jobs:
     timeout-minutes: 110
     env:
       AUTO_APPLY: ${{ vars.AUTO_APPLY || 'false' }}
+      JOBBOT_SCREENSHOTS: ${{ vars.JOBBOT_SCREENSHOTS || 'false' }}
       SHEETS_SPREADSHEET_ID: ${{ secrets.SHEETS_SPREADSHEET_ID }}
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -87,6 +88,15 @@ jobs:
 
       - name: Run jobbot
         run: python -m jobbot ${{ github.event.inputs.command || 'run' }}
+
+      - name: Upload debug screenshots (treat as sensitive)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-screenshots
+          path: artifacts/
+          if-no-files-found: ignore
+          retention-days: 5
 
       - name: Persist state to state branch
         if: always()

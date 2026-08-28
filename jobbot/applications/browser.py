@@ -27,6 +27,23 @@ RESUME_HINTS = ("resume", "cv")
 COVER_HINTS = ("cover letter", "cover_letter", "coverletter")
 
 
+def save_debug_screenshot(page, name: str) -> None:
+    """Save a screenshot to artifacts/ when JOBBOT_SCREENSHOTS is enabled.
+    Screenshots can contain personal data — the directory is gitignored and
+    should be treated as sensitive if uploaded as CI artifacts."""
+    import os
+    import re as _re
+    from pathlib import Path
+
+    if os.environ.get("JOBBOT_SCREENSHOTS", "").lower() not in ("1", "true", "yes"):
+        return
+    with contextlib.suppress(Exception):
+        out = Path("artifacts")
+        out.mkdir(exist_ok=True)
+        safe = _re.sub(r"[^A-Za-z0-9_-]", "_", name)[:120]
+        page.screenshot(path=str(out / f"{safe}.png"), full_page=True)
+
+
 @dataclass
 class FillReport:
     filled: list[str] = field(default_factory=list)

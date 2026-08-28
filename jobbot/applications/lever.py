@@ -8,7 +8,7 @@ from __future__ import annotations
 import logging
 
 from jobbot.applications.base import ApplicationAdapter
-from jobbot.applications.browser import fill_form, launch_page, visible_captcha
+from jobbot.applications.browser import fill_form, launch_page, save_debug_screenshot, visible_captcha
 from jobbot.config import ApplicantProfile
 from jobbot.models.application import ApplicationResult, ApplicationStatus
 from jobbot.models.job import Job
@@ -39,6 +39,7 @@ class LeverApplicationAdapter(ApplicationAdapter):
                         application_url=url,
                     )
                 if report.unknown_required:
+                    save_debug_screenshot(page, f"review_{job.company}_{job.external_id}")
                     return ApplicationResult(
                         ApplicationStatus.NEEDS_REVIEW,
                         reason="unknown required fields: " + "; ".join(report.unknown_required[:6]),
@@ -73,6 +74,7 @@ class LeverApplicationAdapter(ApplicationAdapter):
                         ApplicationStatus.SUBMITTED, application_url=url,
                         evidence=f"confirmation at {page.url}",
                     )
+                save_debug_screenshot(page, f"noconfirm_{job.company}_{job.external_id}")
                 return ApplicationResult(
                     ApplicationStatus.NEEDS_REVIEW,
                     reason="submitted but no confirmation detected — verify manually",

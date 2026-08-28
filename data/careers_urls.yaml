@@ -1,0 +1,55 @@
+# Curated official careers URLs, keyed by registry slug. Used only as
+# discovery hints for companies that have no careers_url configured —
+# discovery still inspects each page and verifies the ATS by actually
+# fetching jobs before anything is marked verified.
+google: https://careers.google.com
+meta: https://www.metacareers.com/jobs
+microsoft: https://careers.microsoft.com
+apple: https://jobs.apple.com
+amazon: https://www.amazon.jobs
+netflix: https://jobs.netflix.com
+nvidia: https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite
+salesforce: https://careers.salesforce.com/en/jobs/
+adobe: https://careers.adobe.com/us/en/search-results
+oracle: https://careers.oracle.com/jobs
+ibm: https://www.ibm.com/careers/search
+intel: https://jobs.intel.com
+amd: https://careers.amd.com
+qualcomm: https://careers.qualcomm.com
+broadcom: https://www.broadcom.com/company/careers
+cisco: https://jobs.cisco.com
+workday: https://workday.wd5.myworkdayjobs.com/en-US/Workday
+servicenow: https://careers.servicenow.com/jobs
+intuit: https://jobs.intuit.com
+paypal: https://careers.pypl.com
+ebay: https://careers.ebayinc.com
+sap: https://jobs.sap.com
+tesla: https://www.tesla.com/careers/search
+uber: https://www.uber.com/us/en/careers/list/
+lyft: https://www.lyft.com/careers
+airbnb: https://careers.airbnb.com
+doordash: https://careers.doordash.com/jobs
+linkedin: https://careers.linkedin.com
+snap: https://careers.snap.com
+pinterest: https://www.pinterestcareers.com/jobs
+twilio: https://www.twilio.com/en-us/company/jobs
+visa: https://corporate.visa.com/en/jobs.html
+mastercard: https://careers.mastercard.com
+jpmorgan-chase: https://careers.jpmorgan.com
+goldman-sachs: https://www.goldmansachs.com/careers
+morgan-stanley: https://www.morganstanley.com/careers
+capital-one: https://www.capitalonecareers.com
+american-express: https://www.americanexpress.com/en-us/careers/
+bloomberg: https://www.bloomberg.com/careers
+epic-systems: https://careers.epic.com
+roblox: https://careers.roblox.com
+palantir: https://www.palantir.com/careers/
+spotify: https://www.lifeatspotify.com/jobs
+atlassian: https://www.atlassian.com/company/careers/all-jobs
+shopify: https://www.shopify.com/careers
+zoom: https://careers.zoom.us
+crowdstrike: https://www.crowdstrike.com/careers/
+palo-alto-networks: https://jobs.paloaltonetworks.com
+fortinet: https://www.fortinet.com/corporate/careers
+autodesk: https://www.autodesk.com/careers
+electronic-arts: https://careers.ea.com
