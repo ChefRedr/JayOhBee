@@ -1,23 +1,33 @@
-"""Greenhouse hosted application form (boards.greenhouse.io /
-job-boards.greenhouse.io). Fills the applicant-facing form with Playwright."""
+"""Greenhouse application forms.
+
+Three hosting shapes, all handled here:
+  - boards.greenhouse.io / job-boards.greenhouse.io hosted pages (form inline)
+  - company careers pages embedding the form in a greenhouse iframe
+    (job-boards.greenhouse.io/embed/job_app?for=...) — the common case for
+    custom domains with ?gh_jid= URLs
+  - closed postings, which render only a newsletter box (blocked by the
+    min-fields guard in fill_form)
+"""
 from __future__ import annotations
 
 import logging
 
 from jobbot.applications.base import ApplicationAdapter
-from jobbot.applications.browser import fill_form, launch_page, save_debug_screenshot, visible_captcha
+from jobbot.applications.browser import (
+    CONFIRMATION_MARKERS,
+    dismiss_consent_banner,
+    fill_form,
+    launch_page,
+    save_debug_screenshot,
+    visible_captcha,
+)
 from jobbot.config import ApplicantProfile
 from jobbot.models.application import ApplicationResult, ApplicationStatus
 from jobbot.models.job import Job
 
 log = logging.getLogger("jobbot.apply.greenhouse")
 
-CONFIRMATION_MARKERS = [
-    "thank you for applying",
-    "your application has been submitted",
-    "application submitted",
-    "we have received your application",
-]
+EMBED_IFRAME = "iframe[src*='greenhouse'][src*='job_app'], iframe#grnhse_iframe"
 
 
 class GreenhouseApplicationAdapter(ApplicationAdapter):
@@ -29,15 +39,23 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
         try:
             with launch_page() as page:
                 page.goto(url, wait_until="domcontentloaded", timeout=60_000)
-                # hosted pages sometimes need the Apply button clicked to reveal the form
+                page.wait_for_timeout(2500)
+                dismiss_consent_banner(page)
+
+                # reveal the form if the page needs an Apply click first
                 for sel in ("#apply_button", "a[href='#app']", "button:has-text('Apply')"):
                     loc = page.locator(sel)
                     if loc.count() > 0 and loc.first.is_visible():
                         loc.first.click()
                         break
-                page.wait_for_timeout(1500)
+                page.wait_for_timeout(2000)
 
-                report = fill_form(page, profile, form_selector="form")
+                # custom-domain sites embed the real form in a greenhouse iframe
+                target = page
+                if page.locator(EMBED_IFRAME).count() > 0:
+                    target = page.frame_locator(EMBED_IFRAME)
+
+                report = fill_form(target, profile, form_selector="form")
                 if report.blocked_reason:
                     return ApplicationResult(
                         ApplicationStatus.NEEDS_REVIEW, reason=report.blocked_reason,
@@ -57,7 +75,7 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
                         application_url=url,
                     )
 
-                submit = page.locator(
+                submit = target.locator(
                     "input[type='submit'], button[type='submit'], #submit_app, "
                     "button:has-text('Submit application'), button:has-text('Submit Application')"
                 ).first
@@ -75,7 +93,12 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
                         ApplicationStatus.NEEDS_REVIEW, reason="CAPTCHA challenge after submit",
                         application_url=url,
                     )
-                body = page.inner_text("body").lower()
+                body = ""
+                for scope in (target, page):
+                    try:
+                        body += " " + scope.locator("body").first.inner_text().lower()
+                    except Exception:  # noqa: BLE001 — iframe may be gone after submit
+                        continue
                 for marker in CONFIRMATION_MARKERS:
                     if marker in body:
                         return ApplicationResult(

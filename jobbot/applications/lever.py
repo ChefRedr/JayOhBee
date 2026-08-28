@@ -8,18 +8,21 @@ from __future__ import annotations
 import logging
 
 from jobbot.applications.base import ApplicationAdapter
-from jobbot.applications.browser import fill_form, launch_page, save_debug_screenshot, visible_captcha
+from jobbot.applications.browser import (
+    CONFIRMATION_MARKERS,
+    dismiss_consent_banner,
+    fill_form,
+    launch_page,
+    save_debug_screenshot,
+    visible_captcha,
+)
 from jobbot.config import ApplicantProfile
 from jobbot.models.application import ApplicationResult, ApplicationStatus
 from jobbot.models.job import Job
 
 log = logging.getLogger("jobbot.apply.lever")
 
-CONFIRMATION_MARKERS = [
-    "application submitted",
-    "thank you for your interest",
-    "your application has been received",
-]
+
 
 
 class LeverApplicationAdapter(ApplicationAdapter):
@@ -32,6 +35,7 @@ class LeverApplicationAdapter(ApplicationAdapter):
             with launch_page() as page:
                 page.goto(url, wait_until="domcontentloaded", timeout=60_000)
                 page.wait_for_timeout(1500)
+                dismiss_consent_banner(page)
 
                 report = fill_form(page, profile, form_selector="form#application-form, form")
                 if report.blocked_reason:

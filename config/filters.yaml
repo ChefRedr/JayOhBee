@@ -56,6 +56,36 @@ entry_level_markers:
 
 # A title containing any of these is always rejected.
 negative_title_terms:
+  # non-software engineering disciplines and non-SWE "engineer" roles
+  - civil
+  - structural
+  - mechanical
+  - electrical
+  - hardware
+  - manufacturing
+  - industrial engineer
+  - propulsion
+  - avionics
+  - thermal
+  - materials engineer
+  - facilities
+  - geotechnical
+  - chemical engineer
+  - biomedical
+  - optical
+  - mechatronics
+  - technical support
+  - support engineer
+  - solutions engineer
+  - sales engineer
+  - field engineer
+  - network engineer
+  - help desk
+  - desktop support
+  - quality engineer
+  - process engineer
+  - it support
+  # seniority
   - senior
   - sr.
   - "sr "

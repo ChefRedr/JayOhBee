@@ -26,6 +26,37 @@ CAPTCHA_SELECTORS = [
 RESUME_HINTS = ("resume", "cv")
 COVER_HINTS = ("cover letter", "cover_letter", "coverletter")
 
+# success evidence across ATS confirmation pages; matched case-insensitively
+CONFIRMATION_MARKERS = [
+    "thank you for applying",
+    "thank you for your application",
+    "thank you for submitting",
+    "thanks for applying",
+    "your application has been submitted",
+    "application submitted",
+    "application received",
+    "application complete",
+    "successfully submitted",
+    "we have received your application",
+    "we've received your application",
+    "your application has been received",
+]
+
+CONSENT_SELECTORS = (
+    "button:has-text('Allow All'), button:has-text('Accept All'), "
+    "button:has-text('Accept Cookies'), button:has-text('I Accept')"
+)
+
+
+def dismiss_consent_banner(page) -> None:
+    """Cookie banners can cover the form/submit button; accepting one is an
+    ordinary UI interaction."""
+    with contextlib.suppress(Exception):
+        btn = page.locator(CONSENT_SELECTORS).first
+        if btn.count() > 0 and btn.is_visible():
+            btn.click()
+            page.wait_for_timeout(800)
+
 
 def save_debug_screenshot(page, name: str) -> None:
     """Save a screenshot to artifacts/ when JOBBOT_SCREENSHOTS is enabled.
@@ -87,6 +118,17 @@ def _label_for(page, element) -> str:
         aria = element.get_attribute("aria-label")
         if aria:
             return aria
+        labelledby = element.get_attribute("aria-labelledby")
+        if labelledby:
+            handle = element.element_handle()
+            if handle:
+                text = handle.evaluate(
+                    "(el, ids) => ids.split(' ').map(i => "
+                    "document.getElementById(i)?.textContent || '').join(' ')",
+                    labelledby,
+                )
+                if text and text.strip():
+                    return text.strip()
         el_id = element.get_attribute("id")
         if el_id:
             lab = page.locator(f"label[for='{el_id}']")
@@ -142,12 +184,21 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
     # pages can carry search/newsletter forms before the application form —
     # pick the matching form with the most controls, not the first in the DOM
     form = forms.first
+    best = form.locator("input, select, textarea").count()
     if forms.count() > 1:
         best = -1
         for f_idx in range(forms.count()):
             n = forms.nth(f_idx).locator("input, select, textarea").count()
             if n > best:
                 best, form = n, forms.nth(f_idx)
+    if best < 3:
+        # a real application form has at least name/email/resume; a 1-2 field
+        # form is a newsletter/search box (or the posting is closed)
+        report.blocked_reason = (
+            f"no usable application form (best form has {best} fields — "
+            "posting may be closed)"
+        )
+        return report
 
     radio_groups: dict[str, dict] = {}
     controls = form.locator("input, select, textarea")

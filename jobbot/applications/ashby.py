@@ -25,12 +25,7 @@ from jobbot.models.job import Job
 
 log = logging.getLogger("jobbot.apply.ashby")
 
-CONFIRMATION_MARKERS = [
-    "application submitted",
-    "your application has been submitted",
-    "thank you for applying",
-    "we have received your application",
-]
+from jobbot.applications.browser import CONFIRMATION_MARKERS  # noqa: E402
 
 
 def _clean(label: str) -> str:
