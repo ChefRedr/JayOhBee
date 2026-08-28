@@ -75,6 +75,14 @@ class LeverApplicationAdapter(ApplicationAdapter):
                         application_url=url,
                     )
                 body = page.inner_text("body").lower()
+                if "flagged as possible spam" in body:
+                    save_debug_screenshot(page, f"spamflag_{job.company}_{job.external_id}")
+                    return ApplicationResult(
+                        ApplicationStatus.NEEDS_REVIEW,
+                        reason="ATS flagged the submission as possible spam "
+                               "(datacenter IP) — not submitted",
+                        application_url=url,
+                    )
                 if "/thanks" in page.url or any(m in body for m in CONFIRMATION_MARKERS):
                     return ApplicationResult(
                         ApplicationStatus.SUBMITTED, application_url=url,
