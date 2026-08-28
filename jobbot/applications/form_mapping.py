@@ -57,6 +57,9 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
                                       "currently or previously"], a.get("previously_employed_here", "")),
         ("willing_to_relocate", ["relocat"], a.get("willing_to_relocate", p.willing_to_relocate)),
         ("over_18", ["18 years", "over 18", "at least 18"], a.get("over_18", "")),
+        # factual: an applicant with a future graduation date is a student/new grad
+        ("student_or_new_grad", ["student or new grad", "student or recent grad"],
+         a.get("student_or_new_grad", "yes" if p.graduation_year else "")),
         ("gpa", ["gpa", "grade point"], a.get("gpa", "")),
         ("salary", ["salary", "compensation expectation", "expected pay"],
          a.get("salary", p.minimum_salary)),
@@ -87,6 +90,10 @@ def resolve(label: str, profile: ApplicantProfile) -> Resolved | None:
             return None
     if "high school" in norm:  # never answer high-school questions with the university
         return None
+    # a bare "Name" field (Ashby style) means the full name; only exact match,
+    # so "company name" etc. never receives the applicant's name
+    if norm in ("name", "your name") and profile.full_name:
+        return Resolved(value=profile.full_name, matched_topic="full_name")
     for topic, patterns, value in _rules(profile):
         if any(_matches(pat, norm) for pat in patterns):
             if value:

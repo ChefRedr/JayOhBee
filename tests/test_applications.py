@@ -42,8 +42,15 @@ def _profile():
 @pytest.fixture
 def fake_page():
     page = MagicMock()
-    page.locator.return_value.count.return_value = 1
-    page.locator.return_value.first.count.return_value = 1
+
+    def locator(selector, *args, **kwargs):
+        m = MagicMock()
+        # no validation errors on the fake page unless a test overrides it
+        m.count.return_value = 0 if "aria-invalid" in selector else 1
+        m.first.count.return_value = 1
+        return m
+
+    page.locator.side_effect = locator
     page.inner_text.return_value = ""
     with patch("jobbot.applications.ashby.launch_page") as lp, \
          patch("jobbot.applications.ashby.visible_captcha", return_value=False), \

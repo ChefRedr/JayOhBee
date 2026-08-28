@@ -53,7 +53,22 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
         try:
             label_loc = entry.locator("label, [class*='label']").first
             raw_label = label_loc.inner_text().strip() if label_loc.count() else entry.inner_text()[:80]
-            required = "✱" in raw_label or "*" in raw_label
+            # Ashby renders the required asterisk via CSS/child spans, not in
+            # the label text — inspect the DOM, not just textContent
+            required = "✱" in raw_label or "*" in raw_label or bool(entry.evaluate(
+                """e => {
+                  const lab = e.querySelector('label, [class*="label"]');
+                  if (lab) {
+                    if (/[*✱]/.test(lab.textContent)) return true;
+                    try {
+                      const after = getComputedStyle(lab, '::after').content;
+                      if (after && /[*✱]/.test(after)) return true;
+                    } catch (err) {}
+                  }
+                  return !!e.querySelector(
+                    '[class*="required" i], [aria-required="true"], [required]');
+                }"""
+            ))
             label = _clean(raw_label)
 
             file_input = entry.locator("input[type='file']")
@@ -77,7 +92,12 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                     report.unknown_required.append(f"select: {label or 'unknown'}")
                 continue
 
-            text_input = entry.locator("input:not([type='file']):not([type='hidden']), textarea")
+            # text/textarea first: mixed entries (e.g. phone with a country
+            # radio picker) are answered through their text input
+            text_input = entry.locator(
+                "input:not([type='file']):not([type='hidden']):not([type='radio'])"
+                ":not([type='checkbox']), textarea"
+            )
             if text_input.count() > 0:
                 el = text_input.first
                 if el.input_value():
@@ -88,6 +108,21 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                     report.filled.append(label)
                 elif required:
                     report.unknown_required.append(f"field: {label or 'unknown'}")
+                continue
+
+            radios = entry.locator("input[type='radio']")
+            if radios.count() > 0:
+                option_labels = []
+                for r_idx in range(radios.count()):
+                    option_labels.append(radios.nth(r_idx).evaluate(
+                        "el => (el.closest('label') || el.parentElement)?.textContent?.trim() || ''"
+                    ))
+                answer = resolve(label, profile)
+                if answer and (choice := pick_option(answer.value, option_labels)):
+                    radios.nth(option_labels.index(choice)).check(force=True)
+                    report.filled.append(label)
+                elif required:
+                    report.unknown_required.append(f"choice: {label or 'unknown'}")
                 continue
 
             # yes/no (or similar) button group
@@ -164,6 +199,17 @@ class AshbyApplicationAdapter(ApplicationAdapter):
                 if visible_captcha(page):
                     return ApplicationResult(
                         ApplicationStatus.NEEDS_REVIEW, reason="CAPTCHA challenge after submit",
+                        application_url=url,
+                    )
+                # client-side validation rejection: form still there with error
+                # marks — nothing was submitted
+                errors = page.locator("[aria-invalid='true'], [class*='error' i]:visible")
+                if page.locator("[class*='_fieldEntry']").count() > 0 and errors.count() > 0:
+                    save_debug_screenshot(page, f"validation_{job.company}_{job.external_id}")
+                    return ApplicationResult(
+                        ApplicationStatus.NEEDS_REVIEW,
+                        reason="form validation rejected the submission — required "
+                               "fields could not be answered automatically",
                         application_url=url,
                     )
                 body = page.inner_text("body").lower()
