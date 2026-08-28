@@ -5,10 +5,9 @@
   provider: ashby
   provider_identifier: 1password
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:1password with 63 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('1Password Jobs | 1Password Jobs'); 63 jobs
   rank: 100
 - name: ABB
   slug: abb
@@ -17,8 +16,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 485
 - name: Abnormal AI
   slug: abnormal-ai
@@ -35,11 +35,12 @@
   slug: abridge
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: abridge
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Abridge Jobs | Abridge Jobs'); 45 jobs
   rank: 384
 - name: Accenture
   slug: accenture
@@ -48,20 +49,23 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
-  last_verified: null
-  rank: 496
-- name: Adobe
-  slug: adobe
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
-  enabled: true
   discovery_status: failed
   last_verified: null
   notes: no careers_url configured and slug probes found nothing
+  rank: 496
+- name: Adobe
+  slug: adobe
+  careers_url: https://careers.adobe.com/us/en/search-results
+  jobs_url: https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Tokyo/Account-Manager--Channel-Sales_R169839/apply
+  provider: workday
+  provider_identifier: adobe
+  enabled: true
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 47
+  workday_host: adobe.wd5.myworkdayjobs.com
+  workday_site: external_experienced
 - name: Adyen
   slug: adyen
   careers_url: null
@@ -88,11 +92,12 @@
   slug: agility-robotics
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: agilityrobotics
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 65 jobs
   rank: 329
 - name: Airbnb
   slug: airbnb
@@ -123,10 +128,9 @@
   provider: ashby
   provider_identifier: airwallex
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:airwallex with 605 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Airwallex Jobs | Airwallex Jobs'); 605 jobs
   rank: 169
 - name: Akamai
   slug: akamai
@@ -143,21 +147,23 @@
   slug: akuna-capital
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: akunacapital
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 35 jobs
   rank: 199
 - name: Alchemy
   slug: alchemy
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: alchemy
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Alchemy Jobs | Alchemy Jobs'); 22 jobs
   rank: 185
 - name: Alloy
   slug: alloy
@@ -177,40 +183,44 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 383
 - name: Amazon
   slug: amazon
-  careers_url: null
+  careers_url: https://www.amazon.jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 10
 - name: Ambience Healthcare
   slug: ambience-healthcare
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: ambiencehealthcare
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Ambience Healthcare Jobs | Ambience Healthcare
+    Jobs'); 17 jobs
   rank: 387
 - name: AMD
   slug: amd
-  careers_url: null
+  careers_url: https://careers.amd.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 60
 - name: American Airlines
   slug: american-airlines
@@ -219,18 +229,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 492
 - name: American Express
   slug: american-express
-  careers_url: null
+  careers_url: https://www.americanexpress.com/en-us/careers/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 414
 - name: American Tower
   slug: american-tower
@@ -239,8 +252,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 450
 - name: Amgen
   slug: amgen
@@ -249,18 +263,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 368
 - name: Amplitude
   slug: amplitude
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: amplitude
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 35 jobs
   rank: 214
 - name: Analog Devices
   slug: analog-devices
@@ -269,18 +285,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 306
 - name: Anaplan
   slug: anaplan
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: anaplan
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 150 jobs
   rank: 247
 - name: Anchorage Digital
   slug: anchorage-digital
@@ -289,8 +307,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 181
 - name: Anduril
   slug: anduril
@@ -328,14 +347,15 @@
   rank: 134
 - name: Apple
   slug: apple
-  careers_url: null
+  careers_url: https://jobs.apple.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 9
 - name: Applied Intuition
   slug: applied-intuition
@@ -355,8 +375,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 318
 - name: Apptronik
   slug: apptronik
@@ -376,18 +397,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 466
 - name: Arista Networks
   slug: arista-networks
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: aristanetworks
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:aristanetworks with 229 jobs — confirm the
+    board actually belongs to this company
   rank: 326
 - name: Arm
   slug: arm
@@ -418,18 +442,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 314
 - name: Astranis
   slug: astranis
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: astranis
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 90 jobs
   rank: 348
 - name: AstraZeneca
   slug: astrazeneca
@@ -438,8 +464,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 371
 - name: AT&T
   slug: at-t
@@ -448,19 +475,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 444
 - name: Atlassian
   slug: atlassian
-  careers_url: null
+  careers_url: https://www.atlassian.com/company/careers/all-jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 37
 - name: Aurora Innovation
   slug: aurora-innovation
@@ -475,13 +504,15 @@
   rank: 68
 - name: Autodesk
   slug: autodesk
-  careers_url: null
+  careers_url: https://www.autodesk.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 452
 - name: Automation Anywhere
   slug: automation-anywhere
@@ -490,8 +521,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 245
 - name: Axiom Space
   slug: axiom-space
@@ -500,8 +532,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 343
 - name: Axonius
   slug: axonius
@@ -521,8 +554,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 407
 - name: Baseten
   slug: baseten
@@ -531,30 +565,31 @@
   provider: ashby
   provider_identifier: baseten
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:baseten with 80 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Baseten Jobs | Baseten Jobs'); 80 jobs
   rank: 132
 - name: Benchling
   slug: benchling
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: benchling
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Benchling Jobs | Benchling Jobs'); 57 jobs
   rank: 357
 - name: BigID
   slug: bigid
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: bigid
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 7 jobs
   rank: 236
 - name: BILL
   slug: bill
@@ -574,18 +609,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 405
 - name: BlackSky
   slug: blacksky
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: blacksky
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 23 jobs
   rank: 346
 - name: Block
   slug: block
@@ -600,13 +637,15 @@
   rank: 46
 - name: Bloomberg
   slug: bloomberg
-  careers_url: null
+  careers_url: https://www.bloomberg.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 401
 - name: Blue Origin
   slug: blue-origin
@@ -615,8 +654,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 338
 - name: Bluevine
   slug: bluevine
@@ -636,8 +676,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 463
 - name: Boeing
   slug: boeing
@@ -646,8 +687,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 472
 - name: Booking.com
   slug: booking-com
@@ -656,8 +698,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 274
 - name: Boomi
   slug: boomi
@@ -666,8 +709,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 248
 - name: Booz Allen Hamilton
   slug: booz-allen-hamilton
@@ -676,8 +720,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 476
 - name: Bosch
   slug: bosch
@@ -686,8 +731,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 489
 - name: Boston Consulting Group
   slug: boston-consulting-group
@@ -696,8 +742,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 495
 - name: Boston Dynamics
   slug: boston-dynamics
@@ -706,8 +753,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 328
 - name: Box
   slug: box
@@ -716,18 +764,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 204
 - name: Braze
   slug: braze
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: braze
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 283 jobs
   rank: 213
 - name: Brex
   slug: brex
@@ -744,22 +794,25 @@
   slug: bright-machines
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: brightmachines
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Bright Machines | Bright Machines jobs');
+    11 jobs
   rank: 333
 - name: Broadcom
   slug: broadcom
-  careers_url: null
+  careers_url: https://www.broadcom.com/company/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 61
 - name: Bumble
   slug: bumble
@@ -768,28 +821,33 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 261
 - name: ByteDance
   slug: bytedance
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: bytedance
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:bytedance with 2 jobs — confirm the board
+    actually belongs to this company
   rank: 252
 - name: CACI
   slug: caci
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: caci
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:caci with 14 jobs — confirm the board actually
+    belongs to this company
   rank: 477
 - name: Cadence Design Systems
   slug: cadence-design-systems
@@ -798,8 +856,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 316
 - name: Canva
   slug: canva
@@ -810,7 +869,7 @@
   enabled: true
   discovery_status: needs_review
   last_verified: null
-  notes: slug probe hit smartrecruiters:canva with 261 jobs — confirm the board actually
+  notes: slug probe hit smartrecruiters:canva with 262 jobs — confirm the board actually
     belongs to this company
   rank: 38
 - name: Capella Space
@@ -820,28 +879,33 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 347
 - name: Capital One
   slug: capital-one
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://www.capitalonecareers.com
+  jobs_url: https://capitalone.wd12.myworkdayjobs.com/Capital_One/login
+  provider: workday
+  provider_identifier: capitalone
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 1839 jobs at discovery
   rank: 404
+  workday_host: capitalone.wd12.myworkdayjobs.com
+  workday_site: Capital_One
 - name: Carbon Robotics
   slug: carbon-robotics
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: carbonrobotics
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 16 jobs
   rank: 334
 - name: Carta
   slug: carta
@@ -872,28 +936,31 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 483
 - name: Cato Networks
   slug: cato-networks
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: catonetworks
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 112 jobs
   rank: 233
 - name: Celonis
   slug: celonis
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: celonis
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 282 jobs
   rank: 246
 - name: Cerebras Systems
   slug: cerebras-systems
@@ -913,8 +980,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 183
 - name: Chainguard
   slug: chainguard
@@ -934,18 +1002,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 411
 - name: Charm Industrial
   slug: charm-industrial
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: charmindustrial
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Charm Industrial | Charm Industrial jobs');
+    7 jobs
   rank: 400
 - name: Charter Communications
   slug: charter-communications
@@ -954,8 +1025,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 446
 - name: Checkout.com
   slug: checkout-com
@@ -975,8 +1047,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 270
 - name: Chime
   slug: chime
@@ -993,31 +1066,35 @@
   slug: circle
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: circle
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Circle Jobs | Circle Jobs'); 7 jobs
   rank: 179
 - name: CircleCI
   slug: circleci
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: circleci
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 4 jobs
   rank: 220
 - name: Cisco
   slug: cisco
-  careers_url: null
+  careers_url: https://jobs.cisco.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 325
 - name: Citadel Securities
   slug: citadel-securities
@@ -1037,18 +1114,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 408
 - name: ClickUp
   slug: clickup
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: clickup
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('ClickUp Jobs | ClickUp Jobs'); 67 jobs
   rank: 207
 - name: CloudBees
   slug: cloudbees
@@ -1057,8 +1136,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 225
 - name: Cloudera
   slug: cloudera
@@ -1067,8 +1147,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 243
 - name: Cloudflare
   slug: cloudflare
@@ -1088,10 +1169,9 @@
   provider: lever
   provider_identifier: cloudinary
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:cloudinary with 22 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Cloudinary | Cloudinary jobs'); 22 jobs
   rank: 97
 - name: CME Group
   slug: cme-group
@@ -1100,8 +1180,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 419
 - name: Cockroach Labs
   slug: cockroach-labs
@@ -1121,8 +1202,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 206
 - name: Coder
   slug: coder
@@ -1131,10 +1213,9 @@
   provider: ashby
   provider_identifier: coder
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:coder with 26 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Coder Jobs | Coder Jobs'); 26 jobs
   rank: 127
 - name: Cognition AI
   slug: cognition-ai
@@ -1154,10 +1235,9 @@
   provider: ashby
   provider_identifier: cohere
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:cohere with 146 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Cohere Jobs | Cohere Jobs'); 146 jobs
   rank: 146
 - name: Cohesity
   slug: cohesity
@@ -1166,8 +1246,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 239
 - name: Coinbase
   slug: coinbase
@@ -1187,10 +1268,9 @@
   provider: ashby
   provider_identifier: column
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:column with 21 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Column Jobs | Column Jobs'); 21 jobs
   rank: 172
 - name: Comcast/NBCUniversal
   slug: comcast-nbcuniversal
@@ -1199,8 +1279,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 295
 - name: Commonwealth Fusion Systems
   slug: commonwealth-fusion-systems
@@ -1209,18 +1290,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 393
 - name: Commure
   slug: commure
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: commure
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Commure Jobs | Commure Jobs'); 72 jobs
   rank: 388
 - name: Confluent
   slug: confluent
@@ -1229,20 +1312,20 @@
   provider: ashby
   provider_identifier: confluent
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:confluent with 27 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Confluent Jobs | Confluent Jobs'); 27 jobs
   rank: 35
 - name: Consensys
   slug: consensys
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: consensys
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 5 jobs
   rank: 187
 - name: CoreWeave
   slug: coreweave
@@ -1262,18 +1345,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 431
 - name: Coupang
   slug: coupang
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: coupang
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 642 jobs
   rank: 298
 - name: Cradle
   slug: cradle
@@ -1282,29 +1367,33 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
-  last_verified: null
-  rank: 356
-- name: CrowdStrike
-  slug: crowdstrike
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
-  enabled: true
   discovery_status: failed
   last_verified: null
   notes: no careers_url configured and slug probes found nothing
+  rank: 356
+- name: CrowdStrike
+  slug: crowdstrike
+  careers_url: https://www.crowdstrike.com/careers/
+  jobs_url: https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers
+  provider: workday
+  provider_identifier: crowdstrike
+  enabled: true
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 50
+  workday_host: crowdstrike.wd5.myworkdayjobs.com
+  workday_site: crowdstrikecareers
 - name: Crusoe
   slug: crusoe
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: crusoe
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Crusoe Jobs | Crusoe Jobs'); 363 jobs
   rank: 396
 - name: Cyera
   slug: cyera
@@ -1324,8 +1413,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 453
 - name: Databricks
   slug: databricks
@@ -1367,10 +1457,9 @@
   provider: ashby
   provider_identifier: decagon
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:decagon with 137 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Decagon Jobs | Decagon Jobs'); 137 jobs
   rank: 150
 - name: Deel
   slug: deel
@@ -1390,8 +1479,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 322
 - name: Deloitte
   slug: deloitte
@@ -1400,8 +1490,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 497
 - name: Delta Air Lines
   slug: delta-air-lines
@@ -1410,18 +1501,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 490
 - name: Devoted Health
   slug: devoted-health
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: devotedhealth
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:devotedhealth with 2 jobs — confirm the board
+    actually belongs to this company
   rank: 378
 - name: Dexcom
   slug: dexcom
@@ -1430,18 +1524,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 373
 - name: Dexterity
   slug: dexterity
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: dexterity
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Dexterity | Dexterity jobs'); 33 jobs
   rank: 330
 - name: DHL
   slug: dhl
@@ -1450,8 +1546,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 438
 - name: Digital Realty
   slug: digital-realty
@@ -1460,8 +1557,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 449
 - name: DigitalOcean
   slug: digitalocean
@@ -1489,21 +1587,24 @@
   slug: disney
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: disney
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit greenhouse:disney with 2 jobs — confirm the board actually
+    belongs to this company
   rank: 292
 - name: Docker
   slug: docker
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: docker
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Docker Jobs | Docker Jobs'); 59 jobs
   rank: 222
 - name: DocuSign
   slug: docusign
@@ -1512,19 +1613,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 209
 - name: DoorDash
   slug: doordash
-  careers_url: null
+  careers_url: https://careers.doordash.com/jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 18
 - name: Drata
   slug: drata
@@ -1533,20 +1636,20 @@
   provider: ashby
   provider_identifier: drata
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:drata with 47 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Drata Jobs | Drata Jobs'); 47 jobs
   rank: 121
 - name: Dropbox
   slug: dropbox
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: dropbox
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 40 jobs
   rank: 203
 - name: DRW
   slug: drw
@@ -1555,8 +1658,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 190
 - name: Duolingo
   slug: duolingo
@@ -1576,18 +1680,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 218
 - name: eBay
   slug: ebay
-  careers_url: null
+  careers_url: https://careers.ebayinc.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 263
 - name: Elastic
   slug: elastic
@@ -1602,13 +1709,15 @@
   rank: 93
 - name: Electronic Arts
   slug: electronic-arts
-  careers_url: null
+  careers_url: https://careers.ea.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 281
 - name: ElevenLabs
   slug: elevenlabs
@@ -1617,10 +1726,10 @@
   provider: ashby
   provider_identifier: elevenlabs
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:elevenlabs with 249 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('ElevenLabs Jobs | ElevenLabs Jobs'); 249
+    jobs
   rank: 74
 - name: Eli Lilly
   slug: eli-lilly
@@ -1629,8 +1738,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 366
 - name: Emerson
   slug: emerson
@@ -1639,28 +1749,32 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 488
 - name: Epic Games
   slug: epic-games
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: epicgames
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 167 jobs
   rank: 278
 - name: Epic Systems
   slug: epic-systems
-  careers_url: null
+  careers_url: https://careers.epic.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 359
 - name: Equinix
   slug: equinix
@@ -1669,18 +1783,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 448
 - name: Esri
   slug: esri
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: esri
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 428 jobs
   rank: 456
 - name: Etsy
   slug: etsy
@@ -1689,8 +1805,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 262
 - name: Exa
   slug: exa
@@ -1699,10 +1816,9 @@
   provider: ashby
   provider_identifier: exa
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:exa with 54 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Exa Jobs | Exa Jobs'); 54 jobs
   rank: 140
 - name: Expedia Group
   slug: expedia-group
@@ -1711,8 +1827,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 273
 - name: EY
   slug: ey
@@ -1721,18 +1838,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 499
 - name: Faire
   slug: faire
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: faire
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 64 jobs
   rank: 266
 - name: Fastly
   slug: fastly
@@ -1752,8 +1871,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 436
 - name: Fervo Energy
   slug: fervo-energy
@@ -1762,8 +1882,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 395
 - name: Fidelity Investments
   slug: fidelity-investments
@@ -1772,8 +1893,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 409
 - name: Figma
   slug: figma
@@ -1801,11 +1923,12 @@
   slug: fireblocks
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: fireblocks
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 70 jobs
   rank: 182
 - name: Firefly Aerospace
   slug: firefly-aerospace
@@ -1814,8 +1937,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 341
 - name: Fireworks AI
   slug: fireworks-ai
@@ -1835,8 +1959,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 417
 - name: Fiserv
   slug: fiserv
@@ -1845,8 +1970,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 416
 - name: Five Rings
   slug: five-rings
@@ -1855,38 +1981,42 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 195
 - name: Five9
   slug: five9
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: five9
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 134 jobs
   rank: 249
 - name: Flatiron Health
   slug: flatiron-health
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: flatironhealth
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 31 jobs
   rank: 360
 - name: Flexport
   slug: flexport
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: flexport
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 161 jobs
   rank: 439
 - name: Flock Safety
   slug: flock-safety
@@ -1906,28 +2036,32 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 459
 - name: Form Energy
   slug: form-energy
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: formenergy
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit ashby:formenergy with 181 jobs — confirm the board actually
+    belongs to this company
   rank: 392
 - name: FourKites
   slug: fourkites
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: fourkites
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 15 jobs
   rank: 441
 - name: GE Aerospace
   slug: ge-aerospace
@@ -1936,8 +2070,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 482
 - name: GE HealthCare
   slug: ge-healthcare
@@ -1946,8 +2081,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 375
 - name: GE Vernova
   slug: ge-vernova
@@ -1956,38 +2092,44 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 481
 - name: Gecko Robotics
   slug: gecko-robotics
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: gecko-robotics
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Gecko Robotics Jobs | Gecko Robotics Jobs');
+    20 jobs
   rank: 332
 - name: GEICO
   slug: geico
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: geico
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:geico with 1 jobs — confirm the board actually
+    belongs to this company
   rank: 424
 - name: Gemini
   slug: gemini
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: gemini
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 39 jobs
   rank: 178
 - name: General Dynamics
   slug: general-dynamics
@@ -1996,8 +2138,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 473
 - name: General Motors
   slug: general-motors
@@ -2006,18 +2149,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 460
 - name: Generate Biomedicines
   slug: generate-biomedicines
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: generatebiomedicines
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 15 jobs
   rank: 354
 - name: Genesys
   slug: genesys
@@ -2026,18 +2171,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 250
 - name: Ginkgo Bioworks
   slug: ginkgo-bioworks
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: ginkgobioworks
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 19 jobs
   rank: 363
 - name: GitHub
   slug: github
@@ -2046,8 +2193,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 223
 - name: GitLab
   slug: gitlab
@@ -2079,59 +2227,67 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 310
 - name: GOAT Group
   slug: goat-group
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: goatgroup
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 13 jobs
   rank: 268
 - name: Goldman Sachs
   slug: goldman-sachs
-  careers_url: null
+  careers_url: https://www.goldmansachs.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 402
 - name: Google
   slug: google
-  careers_url: null
+  careers_url: https://careers.google.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 7
 - name: Gopuff
   slug: gopuff
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: gopuff
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Gopuff | Gopuff jobs'); 816 jobs
   rank: 277
 - name: Grab
   slug: grab
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: grab
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:grab with 401 jobs — confirm the board actually
+    belongs to this company
   rank: 300
 - name: Grafana Labs
   slug: grafana-labs
@@ -2151,8 +2307,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 208
 - name: Groq
   slug: groq
@@ -2172,8 +2329,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 362
 - name: Gusto
   slug: gusto
@@ -2204,8 +2362,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 221
 - name: Harvey
   slug: harvey
@@ -2214,10 +2373,9 @@
   provider: ashby
   provider_identifier: harvey
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:harvey with 348 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Harvey Jobs | Harvey Jobs'); 348 jobs
   rank: 75
 - name: Headlands Technologies
   slug: headlands-technologies
@@ -2226,18 +2384,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 196
 - name: Headway
   slug: headway
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: headway
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Headway Jobs | Headway Jobs'); 84 jobs
   rank: 382
 - name: Helion Energy
   slug: helion-energy
@@ -2246,8 +2406,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 394
 - name: Hewlett Packard Enterprise
   slug: hewlett-packard-enterprise
@@ -2256,8 +2417,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 324
 - name: Highnote
   slug: highnote
@@ -2274,11 +2436,13 @@
   slug: hinge-health
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: hinge-health
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Hinge Health Jobs | Hinge Health Jobs');
+    72 jobs
   rank: 380
 - name: Hippocratic AI
   slug: hippocratic-ai
@@ -2287,8 +2451,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 386
 - name: Honeywell
   slug: honeywell
@@ -2297,28 +2462,31 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 480
 - name: Hopper
   slug: hopper
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: hopper
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Hopper Jobs | Hopper Jobs'); 43 jobs
   rank: 275
 - name: HoYoverse
   slug: hoyoverse
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: hoyoverse
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('HoYoverse Jobs | HoYoverse Jobs'); 10 jobs
   rank: 290
 - name: HP Inc.
   slug: hp-inc
@@ -2327,8 +2495,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 323
 - name: HubSpot
   slug: hubspot
@@ -2337,8 +2506,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 201
 - name: Hudson River Trading
   slug: hudson-river-trading
@@ -2375,14 +2545,15 @@
   rank: 120
 - name: IBM
   slug: ibm
-  careers_url: null
+  careers_url: https://www.ibm.com/careers/search
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 59
 - name: Illumina
   slug: illumina
@@ -2391,18 +2562,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 361
 - name: Illumio
   slug: illumio
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: illumio
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Illumio Jobs | Illumio Jobs'); 69 jobs
   rank: 234
 - name: IMC Trading
   slug: imc-trading
@@ -2411,8 +2584,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 192
 - name: Impulse Space
   slug: impulse-space
@@ -2421,18 +2595,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 350
 - name: Included Health
   slug: included-health
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: includedhealth
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Included Health | Included Health jobs');
+    151 jobs
   rank: 379
 - name: Infineon Technologies
   slug: infineon-technologies
@@ -2441,48 +2618,54 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 309
 - name: Insitro
   slug: insitro
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: insitro
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('insitro Jobs | insitro Jobs'); 15 jobs
   rank: 353
 - name: Instacart
   slug: instacart
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: instacart
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 119 jobs
   rank: 264
 - name: Intel
   slug: intel
-  careers_url: null
+  careers_url: https://jobs.intel.com
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: detected workday but could not verify an identifier
   rank: 301
 - name: Intercom
   slug: intercom
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: intercom
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit greenhouse:intercom with 120 jobs — confirm the board actually
+    belongs to this company
   rank: 211
 - name: Intercontinental Exchange
   slug: intercontinental-exchange
@@ -2491,19 +2674,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 420
 - name: Intuit
   slug: intuit
-  careers_url: null
+  careers_url: https://jobs.intuit.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 56
 - name: Intuitive Surgical
   slug: intuitive-surgical
@@ -2512,8 +2697,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 374
 - name: Island
   slug: island
@@ -2530,11 +2716,12 @@
   slug: isomorphic-labs
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: isomorphiclabs
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 29 jobs
   rank: 355
 - name: Jane Street
   slug: jane-street
@@ -2551,11 +2738,12 @@
   slug: jetbrains
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: jetbrains
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 75 jobs
   rank: 224
 - name: John Deere
   slug: john-deere
@@ -2564,38 +2752,42 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 484
 - name: JPMorgan Chase
   slug: jpmorgan-chase
-  careers_url: null
+  careers_url: https://careers.jpmorgan.com
   jobs_url: null
-  provider: unknown
+  provider: oracle
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: detected oracle but could not verify an identifier
   rank: 403
 - name: Jump Trading
   slug: jump-trading
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: jumptrading
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 110 jobs
   rank: 189
 - name: Kalshi
   slug: kalshi
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: kalshi
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 27 jobs
   rank: 176
 - name: KLA
   slug: kla
@@ -2604,8 +2796,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 319
 - name: Klarna
   slug: klarna
@@ -2622,11 +2815,12 @@
   slug: klaviyo
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: klaviyo
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 148 jobs
   rank: 212
 - name: KPMG
   slug: kpmg
@@ -2635,8 +2829,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 500
 - name: Kraken
   slug: kraken
@@ -2645,8 +2840,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 177
 - name: L3Harris Technologies
   slug: l3harris-technologies
@@ -2655,8 +2851,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 474
 - name: Lam Research
   slug: lam-research
@@ -2665,8 +2862,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 317
 - name: Lambda
   slug: lambda
@@ -2675,10 +2873,9 @@
   provider: ashby
   provider_identifier: lambda
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:lambda with 75 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Lambda Jobs | Lambda Jobs'); 75 jobs
   rank: 71
 - name: LangChain
   slug: langchain
@@ -2687,20 +2884,20 @@
   provider: ashby
   provider_identifier: langchain
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:langchain with 108 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('LangChain Jobs | LangChain Jobs'); 108 jobs
   rank: 138
 - name: LaunchDarkly
   slug: launchdarkly
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: launchdarkly
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 52 jobs
   rank: 216
 - name: Leidos
   slug: leidos
@@ -2709,8 +2906,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 475
 - name: Liberty Mutual
   slug: liberty-mutual
@@ -2719,8 +2917,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 425
 - name: Linear
   slug: linear
@@ -2729,20 +2928,21 @@
   provider: ashby
   provider_identifier: linear
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:linear with 29 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Linear Jobs | Linear Jobs'); 29 jobs
   rank: 82
 - name: LinkedIn
   slug: linkedin
-  careers_url: null
+  careers_url: https://careers.linkedin.com
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: linkedin
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit greenhouse:linkedin with 53 jobs — confirm the board actually
+    belongs to this company
   rank: 258
 - name: Lithic
   slug: lithic
@@ -2762,10 +2962,10 @@
   provider: ashby
   provider_identifier: llamaindex
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:llamaindex with 15 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('LlamaIndex Jobs | LlamaIndex Jobs'); 15
+    jobs
   rank: 139
 - name: Lockheed Martin
   slug: lockheed-martin
@@ -2774,18 +2974,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 469
 - name: Loft Orbital
   slug: loft-orbital
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: loftorbital
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Loft Orbital Solutions | Loft Orbital Solutions
+    jobs'); 60 jobs
   rank: 349
 - name: Lowe's
   slug: lowe-s
@@ -2794,18 +2997,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 433
 - name: Lucid Motors
   slug: lucid-motors
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: lucidmotors
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 332 jobs
   rank: 458
 - name: Lumen Technologies
   slug: lumen-technologies
@@ -2814,18 +3019,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 447
 - name: Lyft
   slug: lyft
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: lyft
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 166 jobs
   rank: 276
 - name: Mach Industries
   slug: mach-industries
@@ -2845,8 +3052,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 468
 - name: Marqeta
   slug: marqeta
@@ -2866,28 +3074,33 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 303
 - name: Mastercard
   slug: mastercard
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://careers.mastercard.com
+  jobs_url: https://mastercard.wd1.myworkdayjobs.com/CorporateCareers
+  provider: workday
+  provider_identifier: mastercard
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 413
+  workday_host: mastercard.wd1.myworkdayjobs.com
+  workday_site: CorporateCareers
 - name: Match Group
   slug: match-group
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: matchgroup
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Match Group | Match Group jobs'); 70 jobs
   rank: 260
 - name: MathWorks
   slug: mathworks
@@ -2896,8 +3109,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 455
 - name: McKinsey & Company
   slug: mckinsey-company
@@ -2906,8 +3120,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 494
 - name: MediaTek
   slug: mediatek
@@ -2916,8 +3131,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 304
 - name: Medtronic
   slug: medtronic
@@ -2926,8 +3142,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 372
 - name: Mercado Libre
   slug: mercado-libre
@@ -2936,8 +3153,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 297
 - name: Mercedes-Benz
   slug: mercedes-benz
@@ -2946,8 +3164,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 462
 - name: Mercor
   slug: mercor
@@ -2956,10 +3175,9 @@
   provider: ashby
   provider_identifier: mercor
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:mercor with 92 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Mercor Jobs | Mercor Jobs'); 92 jobs
   rank: 148
 - name: Mercury
   slug: mercury
@@ -2974,14 +3192,15 @@
   rank: 43
 - name: Meta
   slug: meta
-  careers_url: null
+  careers_url: https://www.metacareers.com/jobs
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 6
 - name: Micron Technology
   slug: micron-technology
@@ -2990,19 +3209,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 302
 - name: Microsoft
   slug: microsoft
-  careers_url: null
+  careers_url: https://careers.microsoft.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 8
 - name: Midjourney
   slug: midjourney
@@ -3011,10 +3232,10 @@
   provider: ashby
   provider_identifier: midjourney
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:midjourney with 16 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Midjourney Jobs | Midjourney Jobs'); 16
+    jobs
   rank: 145
 - name: Miro
   slug: miro
@@ -3023,10 +3244,9 @@
   provider: ashby
   provider_identifier: miro
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:miro with 37 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Miro Jobs | Miro Jobs'); 37 jobs
   rank: 80
 - name: Mistral AI
   slug: mistral-ai
@@ -3043,11 +3263,12 @@
   slug: mixpanel
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: mixpanel
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 91 jobs
   rank: 215
 - name: Mobileye
   slug: mobileye
@@ -3056,8 +3277,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 467
 - name: Modal
   slug: modal
@@ -3066,10 +3288,9 @@
   provider: ashby
   provider_identifier: modal
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:modal with 31 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Modal Jobs | Modal Jobs'); 31 jobs
   rank: 130
 - name: Modern Treasury
   slug: modern-treasury
@@ -3078,10 +3299,10 @@
   provider: ashby
   provider_identifier: moderntreasury
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:moderntreasury with 8 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Modern Treasury Jobs | Modern Treasury Jobs');
+    8 jobs
   rank: 168
 - name: Moderna
   slug: moderna
@@ -3090,8 +3311,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 365
 - name: Monday.com
   slug: monday-com
@@ -3100,8 +3322,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 205
 - name: MongoDB
   slug: mongodb
@@ -3121,38 +3344,43 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 422
 - name: MoonPay
   slug: moonpay
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: moonpay
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('MoonPay | MoonPay jobs'); 22 jobs
   rank: 188
 - name: Morgan Stanley
   slug: morgan-stanley
-  careers_url: null
+  careers_url: https://www.morganstanley.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 406
 - name: Motive
   slug: motive
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: motive
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 6 jobs
   rank: 442
 - name: Nasdaq
   slug: nasdaq
@@ -3161,8 +3389,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 418
 - name: Navan
   slug: navan
@@ -3193,8 +3422,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 242
 - name: NetEase
   slug: netease
@@ -3203,29 +3433,32 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 289
 - name: Netflix
   slug: netflix
-  careers_url: null
+  careers_url: https://jobs.netflix.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 12
 - name: Netskope
   slug: netskope
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: netskope
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 141 jobs
   rank: 232
 - name: Nike
   slug: nike
@@ -3234,18 +3467,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 434
 - name: Nintendo
   slug: nintendo
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: nintendo
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 49 jobs
   rank: 287
 - name: Northrop Grumman
   slug: northrop-grumman
@@ -3254,18 +3489,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 470
 - name: Northwestern Mutual
   slug: northwestern-mutual
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: northwesternmutual
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:northwesternmutual with 69 jobs — confirm
+    the board actually belongs to this company
   rank: 428
 - name: Notion
   slug: notion
@@ -3274,10 +3512,9 @@
   provider: ashby
   provider_identifier: notion
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:notion with 135 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Notion Jobs | Notion Jobs'); 135 jobs
   rank: 39
 - name: Novartis
   slug: novartis
@@ -3286,8 +3523,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 370
 - name: Nubank
   slug: nubank
@@ -3296,10 +3534,9 @@
   provider: ashby
   provider_identifier: nubank
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:nubank with 121 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Nubank Jobs | Nubank Jobs'); 121 jobs
   rank: 157
 - name: Nuro
   slug: nuro
@@ -3319,11 +3556,25 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 241
 - name: NVIDIA
   slug: nvidia
+  careers_url: https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite
+  jobs_url: https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite
+  provider: workday
+  provider_identifier: nvidia
+  enabled: true
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
+  rank: 5
+  workday_host: nvidia.wd5.myworkdayjobs.com
+  workday_site: NVIDIAExternalCareerSite
+- name: NXP Semiconductors
+  slug: nxp-semiconductors
   careers_url: null
   jobs_url: null
   provider: unknown
@@ -3332,16 +3583,6 @@
   discovery_status: failed
   last_verified: null
   notes: no careers_url configured and slug probes found nothing
-  rank: 5
-- name: NXP Semiconductors
-  slug: nxp-semiconductors
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
-  enabled: true
-  discovery_status: pending
-  last_verified: null
   rank: 307
 - name: Okta
   slug: okta
@@ -3361,18 +3602,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 200
 - name: OneTrust
   slug: onetrust
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: onetrust
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 80 jobs
   rank: 237
 - name: OpenAI
   slug: openai
@@ -3381,20 +3624,21 @@
   provider: ashby
   provider_identifier: openai
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:openai with 748 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('OpenAI Jobs | OpenAI Jobs'); 748 jobs
   rank: 2
 - name: OpenEvidence
   slug: openevidence
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: openevidence
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('OpenEvidence Jobs | OpenEvidence Jobs');
+    8 jobs
   rank: 385
 - name: Optiver
   slug: optiver
@@ -3403,29 +3647,31 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
-  last_verified: null
-  rank: 191
-- name: Oracle
-  slug: oracle
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
-  enabled: true
   discovery_status: failed
   last_verified: null
   notes: no careers_url configured and slug probes found nothing
+  rank: 191
+- name: Oracle
+  slug: oracle
+  careers_url: https://careers.oracle.com/jobs
+  jobs_url: null
+  provider: oracle
+  provider_identifier: null
+  enabled: true
+  discovery_status: needs_review
+  last_verified: null
+  notes: detected oracle but could not verify an identifier
   rank: 58
 - name: Orca Security
   slug: orca-security
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: orcasecurity
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 12 jobs
   rank: 235
 - name: Oscar Health
   slug: oscar-health
@@ -3434,43 +3680,58 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 377
 - name: PagerDuty
   slug: pagerduty
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: pagerduty
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 42 jobs
   rank: 217
 - name: Palantir
   slug: palantir
-  careers_url: null
-  jobs_url: null
+  careers_url: https://www.palantir.com/careers/
+  jobs_url: https://jobs.lever.co/palantir/61eaa54c-e1b7-4064-afad-f7df3d48d652
   provider: lever
   provider_identifier: palantir
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:palantir with 307 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 307 jobs at discovery
   rank: 11
 - name: Palmetto
   slug: palmetto
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: palmetto
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 1 jobs
   rank: 398
 - name: Palo Alto Networks
   slug: palo-alto-networks
+  careers_url: https://jobs.paloaltonetworks.com
+  jobs_url: https://paloaltonetworks.wd5.myworkdayjobs.com/en-US/panwexternalcareers/introduceYourself?clientRequestID=06f06ca6dae2441d99391ed600fc2265
+  provider: workday
+  provider_identifier: paloaltonetworks
+  enabled: true
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 1447 jobs at discovery
+  rank: 51
+  workday_host: paloaltonetworks.wd5.myworkdayjobs.com
+  workday_site: panwexternalcareers
+- name: Paramount Skydance
+  slug: paramount-skydance
   careers_url: null
   jobs_url: null
   provider: unknown
@@ -3479,26 +3740,18 @@
   discovery_status: failed
   last_verified: null
   notes: no careers_url configured and slug probes found nothing
-  rank: 51
-- name: Paramount Skydance
-  slug: paramount-skydance
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
-  enabled: true
-  discovery_status: pending
-  last_verified: null
   rank: 294
 - name: PayPal
   slug: paypal
-  careers_url: null
+  careers_url: https://careers.pypl.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 415
 - name: Perplexity
   slug: perplexity
@@ -3507,20 +3760,21 @@
   provider: ashby
   provider_identifier: perplexity
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:perplexity with 99 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Perplexity Jobs | Perplexity Jobs'); 99
+    jobs
   rank: 26
 - name: Phantom
   slug: phantom
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: phantom
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Phantom Jobs | Phantom Jobs'); 15 jobs
   rank: 186
 - name: Physical Intelligence
   slug: physical-intelligence
@@ -3529,10 +3783,10 @@
   provider: ashby
   provider_identifier: physicalintelligence
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:physicalintelligence with 33 jobs — confirm the board
-    actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Physical Intelligence Jobs | Physical Intelligence
+    Jobs'); 33 jobs
   rank: 103
 - name: Pika
   slug: pika
@@ -3541,10 +3795,9 @@
   provider: ashby
   provider_identifier: pika
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:pika with 10 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Pika Jobs | Pika Jobs'); 10 jobs
   rank: 142
 - name: Pinecone
   slug: pinecone
@@ -3553,20 +3806,20 @@
   provider: ashby
   provider_identifier: pinecone
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:pinecone with 7 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Pinecone Jobs | Pinecone Jobs'); 7 jobs
   rank: 135
 - name: Pinterest
   slug: pinterest
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: pinterest
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 215 jobs
   rank: 256
 - name: Plaid
   slug: plaid
@@ -3575,20 +3828,20 @@
   provider: ashby
   provider_identifier: plaid
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:plaid with 100 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Plaid Jobs | Plaid Jobs'); 100 jobs
   rank: 41
 - name: Planet Labs
   slug: planet-labs
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: planetlabs
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 106 jobs
   rank: 345
 - name: Porsche
   slug: porsche
@@ -3597,8 +3850,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 464
 - name: Postman
   slug: postman
@@ -3618,18 +3872,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 423
 - name: Project44
   slug: project44
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: project44
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 30 jobs
   rank: 440
 - name: PTC
   slug: ptc
@@ -3638,8 +3894,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 454
 - name: Pulumi
   slug: pulumi
@@ -3648,18 +3905,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 219
 - name: Pure Storage
   slug: pure-storage
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: purestorage
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Everpure'); 321 jobs
   rank: 240
 - name: PwC
   slug: pwc
@@ -3668,8 +3927,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 498
 - name: Qdrant
   slug: qdrant
@@ -3684,14 +3944,15 @@
   rank: 137
 - name: Qualcomm
   slug: qualcomm
-  careers_url: null
+  careers_url: https://careers.qualcomm.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 62
 - name: Ramp
   slug: ramp
@@ -3711,8 +3972,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 231
 - name: Recursion
   slug: recursion
@@ -3721,18 +3983,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 352
 - name: Reddit
   slug: reddit
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: reddit
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 154 jobs
   rank: 255
 - name: Redis
   slug: redis
@@ -3741,20 +4005,20 @@
   provider: ashby
   provider_identifier: redis
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:redis with 20 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Redis Jobs | Redis Jobs'); 20 jobs
   rank: 92
 - name: Redwood Materials
   slug: redwood-materials
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: redwoodmaterials
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 149 jobs
   rank: 391
 - name: Regeneron
   slug: regeneron
@@ -3763,8 +4027,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 367
 - name: Relativity Space
   slug: relativity-space
@@ -3773,8 +4038,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 340
 - name: Replicate
   slug: replicate
@@ -3794,10 +4060,9 @@
   provider: ashby
   provider_identifier: replit
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:replit with 71 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Replit Jobs | Replit Jobs'); 71 jobs
   rank: 129
 - name: Retool
   slug: retool
@@ -3825,21 +4090,23 @@
   slug: riot-games
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: riotgames
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 165 jobs
   rank: 280
 - name: Ripple
   slug: ripple
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: ripple
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 127 jobs
   rank: 180
 - name: Rippling
   slug: rippling
@@ -3859,18 +4126,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 457
 - name: Ro
   slug: ro
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: ro
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Ro | Ro jobs'); 50 jobs
   rank: 381
 - name: Robinhood
   slug: robinhood
@@ -3901,18 +4170,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 369
 - name: Rocket Lab
   slug: rocket-lab
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: rocketlab
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 431 jobs
   rank: 337
 - name: Rockwell Automation
   slug: rockwell-automation
@@ -3921,18 +4192,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 487
 - name: Roku
   slug: roku
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: roku
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 246 jobs
   rank: 291
 - name: RTX
   slug: rtx
@@ -3941,18 +4214,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 471
 - name: Rubrik
   slug: rubrik
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: rubrik
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 130 jobs
   rank: 228
 - name: Runway
   slug: runway
@@ -3973,8 +4248,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 421
 - name: Safe Superintelligence
   slug: safe-superintelligence
@@ -3994,8 +4270,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 478
 - name: Sakana AI
   slug: sakana-ai
@@ -4010,14 +4287,15 @@
   rank: 147
 - name: Salesforce
   slug: salesforce
-  careers_url: null
+  careers_url: https://careers.salesforce.com/en/jobs/
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 48
 - name: Samsara
   slug: samsara
@@ -4034,21 +4312,23 @@
   slug: samsung-semiconductor
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: samsungsemiconductor
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 60 jobs
   rank: 312
 - name: SAP
   slug: sap
-  careers_url: null
+  careers_url: https://jobs.sap.com
   jobs_url: null
-  provider: unknown
+  provider: successfactors
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: detected successfactors but could not verify an identifier
   rank: 451
 - name: Saronic
   slug: saronic
@@ -4057,10 +4337,10 @@
   provider: ashby
   provider_identifier: saronic
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:saronic with 200 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Saronic Technologies Jobs | Saronic Technologies
+    Jobs'); 200 jobs
   rank: 111
 - name: Scale AI
   slug: scale-ai
@@ -4080,28 +4360,31 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 486
 - name: Schrödinger
   slug: schr-dinger
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: schrdinger
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 21 jobs
   rank: 364
 - name: Scopely
   slug: scopely
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: scopely
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 163 jobs
   rank: 284
 - name: Sea Limited
   slug: sea-limited
@@ -4110,8 +4393,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 299
 - name: Seagate Technology
   slug: seagate-technology
@@ -4120,8 +4404,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 321
 - name: Semgrep
   slug: semgrep
@@ -4130,10 +4415,9 @@
   provider: ashby
   provider_identifier: semgrep
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:semgrep with 11 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Semgrep Jobs | Semgrep Jobs'); 11 jobs
   rank: 126
 - name: SentinelOne
   slug: sentinelone
@@ -4142,8 +4426,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 229
 - name: Sentry
   slug: sentry
@@ -4152,24 +4437,25 @@
   provider: ashby
   provider_identifier: sentry
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:sentry with 41 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Sentry Jobs | Sentry Jobs'); 41 jobs
   rank: 89
 - name: Serve Robotics
   slug: serve-robotics
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: serverobotics
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Serve Robotics Jobs | Serve Robotics Jobs');
+    39 jobs
   rank: 335
 - name: ServiceNow
   slug: servicenow
-  careers_url: null
+  careers_url: https://careers.servicenow.com/jobs
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: servicenow
@@ -4186,20 +4472,21 @@
   provider: lever
   provider_identifier: shieldai
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:shieldai with 440 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Shield AI | Shield AI jobs'); 440 jobs
   rank: 110
 - name: Shopify
   slug: shopify
-  careers_url: null
+  careers_url: https://www.shopify.com/careers
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 251
 - name: Siemens
   slug: siemens
@@ -4208,8 +4495,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 479
 - name: Siemens Healthineers
   slug: siemens-healthineers
@@ -4218,8 +4506,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 376
 - name: Sierra
   slug: sierra
@@ -4228,10 +4517,9 @@
   provider: ashby
   provider_identifier: sierra
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:sierra with 200 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Sierra Jobs | Sierra Jobs'); 200 jobs
   rank: 76
 - name: Sierra Space
   slug: sierra-space
@@ -4240,8 +4528,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 339
 - name: SiriusXM
   slug: siriusxm
@@ -4250,8 +4539,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 296
 - name: SK hynix
   slug: sk-hynix
@@ -4260,8 +4550,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 313
 - name: Skild AI
   slug: skild-ai
@@ -4281,20 +4572,21 @@
   provider: ashby
   provider_identifier: skydio
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:skydio with 128 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Skydio Jobs | Skydio Jobs'); 128 jobs
   rank: 109
 - name: Snap
   slug: snap
-  careers_url: null
+  careers_url: https://careers.snap.com
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 257
 - name: Snowflake
   slug: snowflake
@@ -4303,10 +4595,9 @@
   provider: ashby
   provider_identifier: snowflake
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:snowflake with 385 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Snowflake Jobs | Snowflake Jobs'); 385 jobs
   rank: 14
 - name: Snyk
   slug: snyk
@@ -4315,8 +4606,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 227
 - name: SoFi
   slug: sofi
@@ -4336,8 +4628,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 226
 - name: Sony Interactive Entertainment
   slug: sony-interactive-entertainment
@@ -4346,8 +4639,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 286
 - name: Sourcegraph
   slug: sourcegraph
@@ -4367,8 +4661,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 493
 - name: SpaceX
   slug: spacex
@@ -4383,13 +4678,14 @@
   rank: 25
 - name: Spotify
   slug: spotify
-  careers_url: null
+  careers_url: https://www.lifeatspotify.com/jobs
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: lever
+  provider_identifier: spotify
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Spotify | Spotify jobs'); 89 jobs
   rank: 254
 - name: Starbucks
   slug: starbucks
@@ -4398,8 +4694,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 435
 - name: State Farm
   slug: state-farm
@@ -4408,8 +4705,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 427
 - name: Stellantis
   slug: stellantis
@@ -4418,8 +4716,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 465
 - name: STMicroelectronics
   slug: stmicroelectronics
@@ -4428,18 +4727,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 308
 - name: StockX
   slug: stockx
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: stockx
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 31 jobs
   rank: 267
 - name: Stoke Space
   slug: stoke-space
@@ -4448,8 +4749,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 342
 - name: Stripe
   slug: stripe
@@ -4469,10 +4771,9 @@
   provider: ashby
   provider_identifier: suno
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:suno with 60 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Suno Jobs | Suno Jobs'); 60 jobs
   rank: 144
 - name: Supabase
   slug: supabase
@@ -4481,20 +4782,21 @@
   provider: ashby
   provider_identifier: supabase
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:supabase with 58 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Supabase Jobs | Supabase Jobs'); 58 jobs
   rank: 90
 - name: Supercell
   slug: supercell
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: supercell
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit ashby:supercell with 43 jobs — confirm the board actually
+    belongs to this company
   rank: 285
 - name: Supermicro
   slug: supermicro
@@ -4503,8 +4805,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 327
 - name: Susquehanna International Group
   slug: susquehanna-international-group
@@ -4513,8 +4816,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 193
 - name: Symbotic
   slug: symbotic
@@ -4523,8 +4827,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 336
 - name: Synctera
   slug: synctera
@@ -4544,8 +4849,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 315
 - name: Synthesia
   slug: synthesia
@@ -4554,10 +4860,9 @@
   provider: ashby
   provider_identifier: synthesia
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:synthesia with 61 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Synthesia Jobs | Synthesia Jobs'); 61 jobs
   rank: 143
 - name: T-Mobile
   slug: t-mobile
@@ -4566,8 +4871,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 445
 - name: Tailscale
   slug: tailscale
@@ -4587,8 +4893,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 282
 - name: Target
   slug: target
@@ -4597,8 +4904,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 430
 - name: Temporal
   slug: temporal
@@ -4607,10 +4915,10 @@
   provider: ashby
   provider_identifier: temporal
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:temporal with 56 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Temporal Technologies Jobs | Temporal Technologies
+    Jobs'); 56 jobs
   rank: 88
 - name: Tempus AI
   slug: tempus-ai
@@ -4619,8 +4927,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 351
 - name: Tenable
   slug: tenable
@@ -4629,8 +4938,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 230
 - name: Tencent
   slug: tencent
@@ -4639,19 +4949,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 288
 - name: Tesla
   slug: tesla
-  careers_url: null
+  careers_url: https://www.tesla.com/careers/search
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 64
 - name: Texas Instruments
   slug: texas-instruments
@@ -4660,8 +4972,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 305
 - name: The Home Depot
   slug: the-home-depot
@@ -4670,8 +4983,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 432
 - name: Thinking Machines Lab
   slug: thinking-machines-lab
@@ -4691,8 +5005,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 253
 - name: Toast
   slug: toast
@@ -4720,11 +5035,12 @@
   slug: tower-research-capital
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: towerresearchcapital
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 85 jobs
   rank: 194
 - name: Toyota Research Institute
   slug: toyota-research-institute
@@ -4733,8 +5049,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 461
 - name: Treasury Prime
   slug: treasury-prime
@@ -4743,8 +5060,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 175
 - name: TSMC
   slug: tsmc
@@ -4753,18 +5071,20 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 311
 - name: Twelve
   slug: twelve
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: twelve
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Twelve Jobs | Twelve Jobs'); 7 jobs
   rank: 397
 - name: Twilio
   slug: twilio
@@ -4790,7 +5110,7 @@
   rank: 32
 - name: Uber
   slug: uber
-  careers_url: null
+  careers_url: https://www.uber.com/us/en/careers/list/
   jobs_url: null
   provider: smartrecruiters
   provider_identifier: uber
@@ -4804,11 +5124,12 @@
   slug: uipath
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: ashby
+  provider_identifier: uipath
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('UiPath Jobs | UiPath Jobs'); 114 jobs
   rank: 244
 - name: Uniswap Labs
   slug: uniswap-labs
@@ -4817,8 +5138,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 184
 - name: Unit
   slug: unit
@@ -4827,10 +5149,9 @@
   provider: ashby
   provider_identifier: unit
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:unit with 4 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Unit Jobs | Unit Jobs'); 4 jobs
   rank: 174
 - name: United Airlines
   slug: united-airlines
@@ -4839,8 +5160,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 491
 - name: Unity
   slug: unity
@@ -4849,8 +5171,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 283
 - name: UPS
   slug: ups
@@ -4859,8 +5182,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 437
 - name: USAA
   slug: usaa
@@ -4869,8 +5193,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 426
 - name: Valve
   slug: valve
@@ -4879,8 +5204,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 279
 - name: Vanguard
   slug: vanguard
@@ -4889,8 +5215,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 410
 - name: Vanta
   slug: vanta
@@ -4899,10 +5226,9 @@
   provider: ashby
   provider_identifier: vanta
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:vanta with 107 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Vanta Jobs | Vanta Jobs'); 107 jobs
   rank: 122
 - name: Varda Space Industries
   slug: varda-space-industries
@@ -4919,11 +5245,12 @@
   slug: vast
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: vast
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 163 jobs
   rank: 344
 - name: Veeam
   slug: veeam
@@ -4932,8 +5259,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 238
 - name: Veeva Systems
   slug: veeva-systems
@@ -4942,8 +5270,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 358
 - name: Vercel
   slug: vercel
@@ -4963,8 +5292,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 443
 - name: Verkada
   slug: verkada
@@ -4984,18 +5314,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 198
 - name: Visa
   slug: visa
-  careers_url: null
+  careers_url: https://corporate.visa.com/en/jobs.html
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 412
 - name: Waabi
   slug: waabi
@@ -5004,10 +5337,9 @@
   provider: lever
   provider_identifier: waabi
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:waabi with 83 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Waabi | Waabi jobs'); 83 jobs
   rank: 107
 - name: Walmart Global Tech
   slug: walmart-global-tech
@@ -5016,8 +5348,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 429
 - name: Warner Bros. Discovery
   slug: warner-bros-discovery
@@ -5026,28 +5359,32 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 293
 - name: Watershed
   slug: watershed
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: watershed
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 8 jobs
   rank: 399
 - name: Wayfair
   slug: wayfair
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: wayfair
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:wayfair with 1 jobs — confirm the board actually
+    belongs to this company
   rank: 269
 - name: Waymo
   slug: waymo
@@ -5067,8 +5404,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 389
 - name: Weaviate
   slug: weaviate
@@ -5077,20 +5415,21 @@
   provider: ashby
   provider_identifier: weaviate
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:weaviate with 1 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Weaviate Jobs | Weaviate Jobs'); 1 jobs
   rank: 136
 - name: Western Digital
   slug: western-digital
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: smartrecruiters
+  provider_identifier: westerndigital
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: slug probe hit smartrecruiters:westerndigital with 365 jobs — confirm the
+    board actually belongs to this company
   rank: 320
 - name: Whatnot
   slug: whatnot
@@ -5099,8 +5438,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 265
 - name: Wise
   slug: wise
@@ -5115,15 +5455,17 @@
   rank: 156
 - name: Workday
   slug: workday
-  careers_url: null
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  careers_url: https://workday.wd5.myworkdayjobs.com/en-US/Workday
+  jobs_url: https://workday.wd5.myworkdayjobs.com/en-US/Workday
+  provider: workday
+  provider_identifier: workday
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 57
+  workday_host: workday.wd5.myworkdayjobs.com
+  workday_site: Workday
 - name: Writer
   slug: writer
   careers_url: null
@@ -5131,10 +5473,9 @@
   provider: ashby
   provider_identifier: writer
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:writer with 50 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('WRITER Jobs | WRITER Jobs'); 50 jobs
   rank: 78
 - name: XTX Markets
   slug: xtx-markets
@@ -5143,8 +5484,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 197
 - name: Yelp
   slug: yelp
@@ -5153,8 +5495,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 272
 - name: Zendesk
   slug: zendesk
@@ -5163,8 +5506,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 210
 - name: Zillow
   slug: zillow
@@ -5173,8 +5517,9 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 271
 - name: Zipline
   slug: zipline
@@ -5183,28 +5528,32 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: failed
   last_verified: null
+  notes: no careers_url configured and slug probes found nothing
   rank: 331
 - name: Zocdoc
   slug: zocdoc
   careers_url: null
   jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  provider: greenhouse
+  provider_identifier: zocdoc
   enabled: true
-  discovery_status: pending
-  last_verified: null
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; greenhouse board name matches; 51 jobs
   rank: 390
 - name: Zoom
   slug: zoom
-  careers_url: null
+  careers_url: https://careers.zoom.us
   jobs_url: null
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: pending
+  discovery_status: needs_review
   last_verified: null
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 202
 - name: Zoox
   slug: zoox
@@ -5213,10 +5562,9 @@
   provider: lever
   provider_identifier: zoox
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit lever:zoox with 243 jobs — confirm the board actually belongs
-    to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Zoox | Zoox jobs'); 243 jobs
   rank: 66
 - name: Zscaler
   slug: zscaler

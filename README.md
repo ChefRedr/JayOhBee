@@ -158,6 +158,16 @@ and unknown-form-field behavior. No live websites required.
 
 ## Current status / roadmap
 
+Discovery results for the 500 target companies (2026-08-27):
+
+```text
+Verified & runnable: 208
+  Greenhouse: 119    Ashby: 67    Lever: 15    Workday: 7
+Needs review:         53   (probe hits pending manual confirmation)
+Failed:              239   (custom career sites — add a URL to
+                            data/careers_urls.yaml and re-run discover)
+```
+
 - [x] 500-company registry from `top_500_swe_companies.csv`
 - [x] Automated ATS discovery with verification (`jobbot discover`)
 - [x] Fetch adapters: Greenhouse, Lever, Ashby, Workday, SmartRecruiters
