@@ -136,6 +136,30 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                 if answer:
                     el.fill(answer.value)
                     report.filled.append(label)
+                    # location-style autocomplete: commit by picking the
+                    # matching visible option, else clear (typed-only text
+                    # does not register as an answer)
+                    import time as _time
+
+                    _time.sleep(0.7)
+                    opts = page.locator("[role='option']:visible")
+                    if opts.count() > 0:
+                        texts_ = opts.all_inner_texts()
+                        choice = pick_option(answer.value, texts_)
+                        if choice is None and len(texts_) >= 1:
+                            # containment the other way: option "Evanston, IL, USA"
+                            # for answer "Evanston, IL" — first option wins only
+                            # if the answer text appears in it
+                            head = texts_[0].lower()
+                            if answer.value.split(",")[0].strip().lower() in head:
+                                choice = texts_[0]
+                        if choice is not None:
+                            opts.nth(texts_.index(choice)).click()
+                        else:
+                            el.fill("")
+                            report.filled.pop()
+                            if required:
+                                report.unknown_required.append(f"autocomplete: {label or 'unknown'}")
                 elif required:
                     report.unknown_required.append(f"field: {label or 'unknown'}")
                 continue
@@ -164,8 +188,19 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                     choice = (pick_affirmative(option_labels) if answer.value == ACK
                               else pick_option(answer.value, option_labels))
                 if choice:
-                    radios.nth(option_labels.index(choice)).check(force=True)
-                    report.filled.append(label)
+                    radio = radios.nth(option_labels.index(choice))
+                    radio.check(force=True)
+                    if not radio.is_checked():
+                        # custom-styled radios ignore programmatic checks —
+                        # click the visible option element instead
+                        radio.evaluate(
+                            "el => (el.closest('label') || el.parentElement?.nextElementSibling "
+                            "|| el.parentElement)?.click()"
+                        )
+                    if radio.is_checked():
+                        report.filled.append(label)
+                    elif required:
+                        report.unknown_required.append(f"choice (unclickable): {label or 'unknown'}")
                 elif required:
                     report.unknown_required.append(f"choice: {label or 'unknown'}")
                 continue

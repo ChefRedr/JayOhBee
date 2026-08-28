@@ -132,7 +132,8 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
         ("how_did_you_hear", ["how did you hear", "how you heard"], a.get("how_did_you_hear", "")),
         # Demographic/EEO — answered only when explicitly configured.
         ("gender", ["gender"], a.get("gender", "")),
-        ("race", ["race", "ethnicity", "hispanic or latino"], a.get("race", "")),
+        ("race", ["race", "ethnicity", "hispanic or latino", "hispanic latino"],
+         a.get("race", "")),
         ("veteran_status", ["veteran"], a.get("veteran_status", "")),
         ("disability_status", ["disability"], a.get("disability_status", "")),
     ]
