@@ -91,3 +91,46 @@ def test_student_derived_answers(profile):
     # override still wins
     profile.answers["current_company"] = "Acme Corp"
     assert resolve("Current employer", profile).value == "Acme Corp"
+
+
+def test_auto_acknowledge_gated(profile):
+    label = "Please read the arbitration agreement below and acknowledge"
+    assert resolve(label, profile) is None  # opt-in not set -> review
+    profile.answers["auto_acknowledge"] = "yes"
+    r = resolve(label, profile)
+    assert r is not None and r.value == "__ACK__"
+    assert resolve("I hereby certify that my answers are true", profile).value == "__ACK__"
+    # factual questions about agreements are NOT acknowledgments
+    r = resolve("Are you currently subject to any agreement with a former employer?", profile)
+    assert r is None  # restrictive_agreements unconfigured -> review
+    profile.answers["restrictive_agreements"] = "no"
+    assert resolve("Are you currently subject to any agreement with a former employer?", profile).value == "no"
+    # hard stops survive the opt-in
+    assert resolve("Do you have an active security clearance?", profile) is None
+    assert resolve("Why do you want to work here? I agree this is required.", profile) is None
+
+
+def test_language_checkboxes(profile):
+    assert resolve("English (ENG)", profile).value == "yes"
+    assert resolve("Spanish (SPA)", profile).value == "no"
+    assert resolve("Cantonese (CANT)", profile).value == "no"
+
+
+def test_new_topics(profile):
+    profile.answers.update({
+        "open_to_office": "yes", "interview_language": "Python",
+        "active_immigration_case": "no", "essential_functions": "yes",
+    })
+    assert resolve("Are you able to work from our US office three days per week?", profile).value == "yes"
+    assert resolve("What is your preferred programming language for interviews?", profile).value == "Python"
+    assert resolve("Do you currently have an active immigration case (ex H-1B)?", profile).value == "no"
+    assert resolve("Can you perform the essential functions of this role?", profile).value == "yes"
+    assert resolve("End date year", profile).value == "2026"
+
+
+def test_pick_affirmative():
+    from jobbot.applications.form_mapping import pick_affirmative
+    assert pick_affirmative(["I Agree", "I Do Not Agree"]) == "I Agree"
+    assert pick_affirmative(["Acknowledge/Confirm"]) == "Acknowledge/Confirm"
+    assert pick_affirmative(["Yes", "Agree"]) is None  # ambiguous
+    assert pick_affirmative(["Decline", "Disagree"]) is None

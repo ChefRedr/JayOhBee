@@ -28,8 +28,12 @@ adapters fill hosted forms from `config/applicant.yaml`) →
 
 - **Never guess application answers.** `applications/form_mapping.py:resolve`
   returns None for anything not explicitly configured; that must route the
-  application to `needs_review`. Essay/clearance/legal questions are in
+  application to `needs_review`. Essay/clearance/criminal questions are in
   `_ALWAYS_REVIEW` and must never be auto-answered even if configured keys match.
+  Acknowledgment questions (arbitration, "I certify", privacy notices) are
+  auto-accepted ONLY because the user explicitly opted in via
+  `answers.auto_acknowledge` (their 2026-08-28 instruction: "agree to all
+  agreements"); removing that key restores review routing.
 - **No CAPTCHA bypass, fingerprint spoofing, or anti-bot evasion.** When
   blocked, mark `needs_review` and stop.
 - **Submitted ≠ clicked.** Only return `ApplicationStatus.SUBMITTED` after

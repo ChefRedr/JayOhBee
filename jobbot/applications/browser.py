@@ -10,7 +10,7 @@ import logging
 import re
 from dataclasses import dataclass, field
 
-from jobbot.applications.form_mapping import pick_option, resolve
+from jobbot.applications.form_mapping import ACK, pick_affirmative, pick_option, resolve
 from jobbot.config import ApplicantProfile
 
 log = logging.getLogger("jobbot.apply")
@@ -230,7 +230,8 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
                 answer = resolve(label, profile)
                 options = el.locator("option").all_inner_texts()
                 if answer:
-                    choice = pick_option(answer.value, options)
+                    choice = (pick_affirmative(options) if answer.value == ACK
+                              else pick_option(answer.value, options))
                     if choice:
                         el.select_option(label=choice)
                         report.filled.append(label)
@@ -256,9 +257,11 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
 
             if itype == "checkbox":
                 answer = resolve(label, profile)
-                if answer and answer.value.strip().lower() in ("yes", "true", "y"):
+                if answer and (answer.value == ACK or answer.value.strip().lower() in ("yes", "true", "y")):
                     el.check()
                     report.filled.append(label)
+                elif answer:
+                    pass  # explicit "no": leave unchecked without flagging
                 elif required:
                     report.unknown_required.append(f"checkbox: {label or 'unknown'}")
                 continue
@@ -274,6 +277,26 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
             if el.input_value():
                 continue  # pre-filled (e.g. parsed from resume)
             answer = resolve(label, profile)
+            if answer and answer.value == ACK:
+                # acknowledgment rendered as a dropdown: open it and pick the
+                # affirmative option; never type the sentinel into a field
+                committed = False
+                with contextlib.suppress(Exception):
+                    import time as _time
+
+                    el.click()
+                    _time.sleep(0.6)
+                    options_loc = page.locator("[role='option']:visible")
+                    if options_loc.count() > 0:
+                        options = options_loc.all_inner_texts()
+                        choice = pick_affirmative(options)
+                        if choice is not None:
+                            options_loc.nth(options.index(choice)).click()
+                            report.filled.append(label)
+                            committed = True
+                if not committed and required:
+                    report.unknown_required.append(f"acknowledgment: {label or 'unknown'}")
+                continue
             if answer:
                 el.fill(answer.value)
                 report.filled.append(label)

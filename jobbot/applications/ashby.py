@@ -18,7 +18,7 @@ from jobbot.applications.browser import (
     save_debug_screenshot,
     visible_captcha,
 )
-from jobbot.applications.form_mapping import pick_option, resolve
+from jobbot.applications.form_mapping import ACK, pick_affirmative, pick_option, resolve
 from jobbot.config import ApplicantProfile
 from jobbot.models.application import ApplicationResult, ApplicationStatus
 from jobbot.models.job import Job
@@ -85,11 +85,37 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
             if select.count() > 0:
                 answer = resolve(label, profile)
                 options = select.first.locator("option").all_inner_texts()
-                if answer and (choice := pick_option(answer.value, options)):
+                choice = None
+                if answer:
+                    choice = (pick_affirmative(options) if answer.value == ACK
+                              else pick_option(answer.value, options))
+                if choice:
                     select.first.select_option(label=choice)
                     report.filled.append(label)
                 elif required:
                     report.unknown_required.append(f"select: {label or 'unknown'}")
+                continue
+
+            checkboxes = entry.locator("input[type='checkbox']")
+            if checkboxes.count() > 0:
+                any_checked, any_resolved = False, False
+                for c_idx in range(checkboxes.count()):
+                    cb = checkboxes.nth(c_idx)
+                    opt_label = cb.evaluate(
+                        "el => ((el.closest('label') || el.parentElement?.nextElementSibling "
+                        "|| el.parentElement)?.textContent || '').trim()"
+                    ) or label
+                    ans = resolve(opt_label, profile)
+                    if ans is None and checkboxes.count() == 1:
+                        ans = resolve(label, profile)
+                    if ans:
+                        any_resolved = True
+                        if ans.value == ACK or ans.value.strip().lower() in ("yes", "true", "y"):
+                            cb.check(force=True)
+                            any_checked = True
+                            report.filled.append(opt_label[:60])
+                if required and not any_checked and not any_resolved:
+                    report.unknown_required.append(f"checkbox group: {label or 'unknown'}")
                 continue
 
             # text/textarea first: mixed entries (e.g. phone with a country
@@ -103,6 +129,10 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                 if el.input_value():
                     continue
                 answer = resolve(label, profile)
+                if answer and answer.value == ACK:
+                    if required:
+                        report.unknown_required.append(f"acknowledgment: {label or 'unknown'}")
+                    continue
                 if answer:
                     el.fill(answer.value)
                     report.filled.append(label)
@@ -129,7 +159,11 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                         }"""
                     ))
                 answer = resolve(label, profile)
-                if answer and (choice := pick_option(answer.value, option_labels)):
+                choice = None
+                if answer:
+                    choice = (pick_affirmative(option_labels) if answer.value == ACK
+                              else pick_option(answer.value, option_labels))
+                if choice:
                     radios.nth(option_labels.index(choice)).check(force=True)
                     report.filled.append(label)
                 elif required:

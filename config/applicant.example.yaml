@@ -47,6 +47,19 @@ answers:
   previously_employed_here: "no"
   willing_to_relocate: "yes"
   over_18: "yes"
+  # Opt-in: auto-accept acknowledgment questions (arbitration acknowledgements,
+  # "I certify...", privacy notices). Clearance/criminal/essay questions always
+  # go to manual review regardless.
+  # auto_acknowledge: "yes"
+  # student_or_new_grad: "yes"
+  # interviewed_before: "no"
+  # active_immigration_case: "no"
+  # restrictive_agreements: "no"
+  # essential_functions: "yes"
+  # open_to_office: "yes"
+  # interview_language: "Python"
+  # education_start_year: ""
+  # education_start_month: ""
   # gpa: "3.8"
   # how_did_you_hear: "Company careers page"
   # Uncomment ONLY if you want EEO questions answered automatically;

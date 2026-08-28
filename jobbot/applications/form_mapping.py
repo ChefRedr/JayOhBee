@@ -15,6 +15,38 @@ class Resolved:
     matched_topic: str
 
 
+# sentinel: "select the affirmative option" for acknowledgment questions
+ACK = "__ACK__"
+
+# Auto-acknowledgment (answers.auto_acknowledge: "yes") applies ONLY to labels
+# matching these acknowledgment phrasings — never to bare "agreement" text,
+# which can be a factual question ("are you subject to an agreement...").
+_ACK_PATTERNS = [
+    "acknowledge", "i agree", "agree to the", "arbitration agreement",
+    "i certify", "i hereby", "privacy policy", "privacy notice",
+    "recruitment privacy", "consent to the processing", "terms of use",
+    "terms and conditions",
+]
+
+_LANGUAGE_NO = ["spanish", "french", "german", "japanese", "cantonese",
+                "mandarin", "korean", "italian", "portuguese", "hindi",
+                "arabic", "russian", "dutch", "polish", "hebrew", "turkish"]
+
+
+def pick_affirmative(options: list[str]) -> str | None:
+    """The single agree/accept/yes option, or None if ambiguous."""
+    good = []
+    for o in options:
+        n = _norm(o)
+        if not n:
+            continue
+        if any(neg in n for neg in ("not ", "n t ", "decline", "disagree", "do not")):
+            continue
+        if n.startswith(("yes", "i agree", "agree", "accept", "acknowledge", "confirm", "i acknowledge")):
+            good.append(o)
+    return good[0] if len(good) == 1 else None
+
+
 def _norm(label: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", label.lower())).strip()
 
@@ -77,6 +109,23 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
         # factual: an applicant with a future graduation date is a student/new grad
         ("student_or_new_grad", ["student or new grad", "student or recent grad"],
          a.get("student_or_new_grad", "yes" if p.graduation_year else "")),
+        ("open_to_office", ["in office", "in-office", "onsite", "on-site", "in person",
+                            "in-person", "days per week", "days a week", "work from our",
+                            "from our office", "work from the office", "hybrid"],
+         a.get("open_to_office", "")),
+        ("interview_language", ["preferred programming language", "language for interviews",
+                                "programming language for"], a.get("interview_language", "")),
+        ("active_immigration_case", ["active immigration case", "pending immigration"],
+         a.get("active_immigration_case", "")),
+        ("restrictive_agreements", ["non compete", "noncompete", "agreement with a former",
+                                    "restrictive covenant", "agreement with any former"],
+         a.get("restrictive_agreements", "")),
+        ("essential_functions", ["essential functions"], a.get("essential_functions", "")),
+        ("education_end_year", ["end date year", "graduation year"], p.graduation_year),
+        ("education_end_month", ["end date month"], p.graduation_month),
+        ("education_start_year", ["start date year"], a.get("education_start_year", "")),
+        ("education_start_month", ["start date month"], a.get("education_start_month", "")),
+        ("education_history", ["education history"], p.school),
         ("gpa", ["gpa", "grade point"], a.get("gpa", "")),
         ("salary", ["salary", "compensation expectation", "expected pay"],
          a.get("salary", p.minimum_salary)),
@@ -90,10 +139,12 @@ def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
 
 
 # Labels that must never be auto-answered even if a rule matched loosely.
+# (non-compete questions moved to the configurable restrictive_agreements
+# topic; agreement acknowledgments are handled by the auto_acknowledge opt-in)
 _ALWAYS_REVIEW = [
     "why do you want", "why are you interested", "cover letter", "essay",
     "tell us about", "describe a time", "security clearance", "conflict of interest",
-    "non compete", "criminal", "background check authorization",
+    "criminal",
 ]
 
 
@@ -121,6 +172,16 @@ def resolve(label: str, profile: ApplicantProfile) -> Resolved | None:
             if value:
                 return Resolved(value=str(value), matched_topic=topic)
             return None  # matched a known topic but no answer configured -> review
+    # spoken-language checkboxes: English yes, other named languages no
+    if profile.answers.get("spoken_languages_english", "yes").lower() in ("yes", "true"):
+        if norm.startswith("english"):
+            return Resolved(value="yes", matched_topic="spoken_language")
+        if any(norm.startswith(lang) for lang in _LANGUAGE_NO):
+            return Resolved(value="no", matched_topic="spoken_language")
+    # acknowledgment questions, only when the applicant opted in
+    if profile.answers.get("auto_acknowledge", "").lower() in ("yes", "true"):
+        if any(pat in norm for pat in _ACK_PATTERNS):
+            return Resolved(value=ACK, matched_topic="agreement")
     return None
 
 
