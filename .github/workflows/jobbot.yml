@@ -1,0 +1,114 @@
+# Scheduled job-hunting runs.
+#
+# Persistent state: GitHub runners are ephemeral, so the SQLite database is
+# stored on a dedicated `state` branch. Each run restores state/jobbot.db from
+# that branch and force-pushes a fresh single-commit branch afterwards (no
+# history bloat, main stays clean).
+#
+# Required secrets:
+#   APPLICANT_YAML               — full contents of config/applicant.yaml
+#   RESUME_BASE64                — base64 of the resume PDF (path in profile
+#                                  must be /home/runner/resume.pdf)
+#   GOOGLE_SERVICE_ACCOUNT_JSON  — service-account JSON for Sheets (optional)
+#   SHEETS_SPREADSHEET_ID        — target spreadsheet id (optional)
+#   SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASSWORD /
+#   NOTIFY_EMAIL_FROM / NOTIFY_EMAIL_TO — email notifications (optional)
+# Repository variable:
+#   AUTO_APPLY — "true" to actually submit applications; anything else = dry run
+
+name: jobbot
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours at :17, off the top of the hour
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "jobbot command to run"
+        type: choice
+        default: run
+        options: [run, scan, apply, retry, validate-companies, status, discover]
+
+concurrency:
+  group: jobbot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  jobbot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    env:
+      AUTO_APPLY: ${{ vars.AUTO_APPLY || 'false' }}
+      SHEETS_SPREADSHEET_ID: ${{ secrets.SHEETS_SPREADSHEET_ID }}
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      NOTIFY_EMAIL_FROM: ${{ secrets.NOTIFY_EMAIL_FROM }}
+      NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install jobbot
+        run: pip install -e .
+
+      - name: Install Playwright browser
+        run: playwright install chromium --with-deps
+
+      - name: Write applicant profile and resume from secrets
+        if: ${{ secrets.APPLICANT_YAML != '' }}
+        env:
+          APPLICANT_YAML: ${{ secrets.APPLICANT_YAML }}
+          RESUME_BASE64: ${{ secrets.RESUME_BASE64 }}
+        run: |
+          printf '%s' "$APPLICANT_YAML" > config/applicant.yaml
+          if [ -n "$RESUME_BASE64" ]; then
+            printf '%s' "$RESUME_BASE64" | base64 -d > /home/runner/resume.pdf
+          fi
+
+      - name: Restore state from state branch
+        run: |
+          mkdir -p state
+          if git fetch origin state 2>/dev/null; then
+            git show FETCH_HEAD:jobbot.db > state/jobbot.db
+            echo "restored state/jobbot.db"
+          else
+            echo "no state branch yet — starting fresh"
+          fi
+
+      - name: Run jobbot
+        run: python -m jobbot ${{ github.event.inputs.command || 'run' }}
+
+      - name: Persist state to state branch
+        if: always()
+        run: |
+          [ -f state/jobbot.db ] || { echo "no db to persist"; exit 0; }
+          tmp=$(mktemp -d)
+          cp state/jobbot.db "$tmp/jobbot.db"
+          cd "$tmp"
+          git init -q -b state
+          git config user.name "jobbot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add jobbot.db
+          git commit -q -m "state $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" state
+
+      - name: Commit registry updates (discover/validate runs)
+        if: always()
+        run: |
+          if ! git diff --quiet config/companies.yaml; then
+            git config user.name "jobbot"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add config/companies.yaml
+            git commit -q -m "registry: update from scheduled run"
+            git push -q
+          fi

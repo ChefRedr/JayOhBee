@@ -40,6 +40,11 @@ def detect_from_url(url: str) -> ATSCandidate | None:
 
     if host in ("boards.greenhouse.io", "job-boards.greenhouse.io", "boards.eu.greenhouse.io",
                 "job-boards.eu.greenhouse.io"):
+        embed = re.search(r"[?&]for=([A-Za-z0-9_-]+)", url)
+        if embed:
+            return ATSCandidate(Provider.GREENHOUSE, embed.group(1), url)
+        if segments and segments[0].lower() == "embed":
+            return ATSCandidate(Provider.GREENHOUSE, None, url)
         return ATSCandidate(Provider.GREENHOUSE, first_real_segment(), url)
     if host == "boards-api.greenhouse.io":
         # /v1/boards/{token}/...

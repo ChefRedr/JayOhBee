@@ -1,0 +1,23 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "id": "11111111-2222-3333-4444-555555555555",
+      "title": "Software Engineer - New Grad (2026)",
+      "location": "San Francisco",
+      "department": "Engineering",
+      "isListed": true,
+      "publishedAt": "2026-08-21T00:00:00Z",
+      "jobUrl": "https://jobs.ashbyhq.com/examplecorp/11111111-2222-3333-4444-555555555555",
+      "applyUrl": "https://jobs.ashbyhq.com/examplecorp/11111111-2222-3333-4444-555555555555/application",
+      "descriptionPlain": "We welcome new graduates.",
+      "compensation": {"compensationTierSummary": "$120K - $150K"}
+    },
+    {
+      "id": "99999999-8888-7777-6666-555555555555",
+      "title": "Hidden Role",
+      "isListed": false,
+      "jobUrl": "https://jobs.ashbyhq.com/examplecorp/hidden"
+    }
+  ]
+}

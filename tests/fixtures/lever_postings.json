@@ -1,0 +1,20 @@
+[
+  {
+    "id": "aaaa-bbbb-cccc",
+    "text": "Software Engineer I - Backend",
+    "hostedUrl": "https://jobs.lever.co/examplecorp/aaaa-bbbb-cccc",
+    "applyUrl": "https://jobs.lever.co/examplecorp/aaaa-bbbb-cccc/apply",
+    "createdAt": 1756100000000,
+    "descriptionPlain": "Entry level backend role. 0-2 years experience.",
+    "categories": {"location": "New York, NY", "team": "Platform"}
+  },
+  {
+    "id": "dddd-eeee-ffff",
+    "text": "Staff Engineer, Infrastructure",
+    "hostedUrl": "https://jobs.lever.co/examplecorp/dddd-eeee-ffff",
+    "applyUrl": "https://jobs.lever.co/examplecorp/dddd-eeee-ffff/apply",
+    "createdAt": 1756000000000,
+    "descriptionPlain": "Requires 8+ years of experience.",
+    "categories": {"location": "Remote", "team": "Infra"}
+  }
+]

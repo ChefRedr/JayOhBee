@@ -1,0 +1,23 @@
+{
+  "jobs": [
+    {
+      "id": 4011001,
+      "title": "Software Engineer, New Grad",
+      "absolute_url": "https://boards.greenhouse.io/examplecorp/jobs/4011001",
+      "location": {"name": "San Francisco, CA"},
+      "content": "&lt;p&gt;Join our team. 0-1 years of experience required.&lt;/p&gt;",
+      "first_published": "2026-08-20T10:00:00Z",
+      "departments": [{"name": "Engineering"}]
+    },
+    {
+      "id": 4011002,
+      "title": "Senior Software Engineer, Payments",
+      "absolute_url": "https://boards.greenhouse.io/examplecorp/jobs/4011002",
+      "location": {"name": "Remote"},
+      "content": "&lt;p&gt;Requires 5+ years of experience.&lt;/p&gt;",
+      "first_published": "2026-08-19T10:00:00Z",
+      "departments": [{"name": "Payments"}]
+    }
+  ],
+  "meta": {"total": 2}
+}
