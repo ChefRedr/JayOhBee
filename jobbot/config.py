@@ -60,6 +60,9 @@ class FilterConfig:
     max_years_experience: int = 2
     location_allow: list[str] = field(default_factory=list)  # empty = allow all
     location_deny: list[str] = field(default_factory=list)
+    # title keywords that align with the applicant's background; used only to
+    # ORDER applications (best-fit first), never to include/exclude jobs
+    rank_boost_terms: list[str] = field(default_factory=list)
 
 
 def load_filters(path: Path | None = None) -> FilterConfig:

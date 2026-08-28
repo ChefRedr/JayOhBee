@@ -72,6 +72,10 @@ def evaluate(job: Job, cfg: FilterConfig) -> FilterDecision:
     adjacent = _contains_any(title, cfg.adjacent_title_terms)
     if not positive and not adjacent:
         return FilterDecision(False, "title does not match any target role")
+    # "new grad" alone also matches sales/ops postings — the title must
+    # additionally look like an engineering role
+    if not re.search(r"software|engineer|developer|\bswe\b|\bsde\b|programmer", title, re.IGNORECASE):
+        return FilterDecision(False, "matched entry-level marker but not an engineering title")
     if not positive and adjacent:
         marker = _contains_any(combined, cfg.entry_level_markers)
         if not marker:

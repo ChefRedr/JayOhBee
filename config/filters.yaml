@@ -81,6 +81,30 @@ reject_internships: true
 # of experience (e.g. "3+ years", "5 years of experience").
 max_years_experience: 2
 
+# Title keywords matching the applicant's resume, used to rank which role to
+# apply to FIRST at each company (some companies limit applications). Ordering
+# only — never affects eligibility.
+rank_boost_terms:
+  - full stack
+  - full-stack
+  - fullstack
+  - frontend
+  - front-end
+  - front end
+  - backend
+  - back-end
+  - back end
+  - web
+  - mobile
+  - ios
+  - android
+  - machine learning
+  - ai
+  - cloud
+  - platform
+  - distributed
+  - data
+
 # Optional location gating (whole-word matching). Empty allow-list means every
 # location passes unless denied. Deny-first: US-only via a foreign-marker deny
 # list, so ambiguous strings ("2 Locations", "Hybrid", city-only) still pass.

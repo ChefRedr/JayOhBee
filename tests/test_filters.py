@@ -78,3 +78,18 @@ def test_experience_range_uses_minimum(cfg):
 def test_unrelated_title_rejected(cfg):
     assert not evaluate(make_job("Product Designer"), cfg).eligible
     assert not evaluate(make_job("Account Executive"), cfg).eligible
+
+
+def test_new_grad_nonengineering_titles_rejected(cfg):
+    for title in [
+        "Sales Development Representative - New Grad",
+        "Payment Operations (New Grad / Early Career)",
+        "Deployment Strategist, New Grad",
+        "New Graduate Talent Intake 2026/2027",
+        "Recruiter, Early Career",
+    ]:
+        decision = evaluate(make_job(title), cfg)
+        assert not decision.eligible, title
+    # engineering titles with the marker still pass
+    assert evaluate(make_job("Kernel Engineer - New Grad"), cfg).eligible
+    assert evaluate(make_job("New Grad SWE"), cfg).eligible

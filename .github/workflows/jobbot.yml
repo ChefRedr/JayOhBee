@@ -32,6 +32,10 @@ on:
         type: choice
         default: run
         options: [run, scan, apply, retry, validate-companies, status, discover]
+      limit:
+        description: "optional --limit (apply/retry only)"
+        type: string
+        default: ""
 
 concurrency:
   group: jobbot
@@ -103,7 +107,15 @@ jobs:
           fi
 
       - name: Run jobbot
-        run: python -m jobbot ${{ github.event.inputs.command || 'run' }}
+        env:
+          JOBBOT_CMD: ${{ github.event.inputs.command || 'run' }}
+          JOBBOT_LIMIT: ${{ github.event.inputs.limit || '' }}
+        run: |
+          if [ -n "$JOBBOT_LIMIT" ]; then
+            python -m jobbot "$JOBBOT_CMD" --limit "$JOBBOT_LIMIT"
+          else
+            python -m jobbot "$JOBBOT_CMD"
+          fi
 
       - name: Upload debug screenshots (treat as sensitive)
         if: always()

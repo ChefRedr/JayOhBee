@@ -134,3 +134,13 @@ def test_non_retryable_failure_not_retried(db, profile, monkeypatch):
     fail = ApplicationResult(ApplicationStatus.FAILED, reason="bad form", retryable=False)
     run_attempt(db, profile, fail, job.identity, monkeypatch)
     assert not db.last_attempt_retryable(job.identity)
+
+
+def test_title_fit_score_ranks_new_grad_and_resume_alignment():
+    boosts = ["frontend", "full stack"]
+    ng = runner.title_fit_score("Software Engineer, New Grad", boosts)
+    swe1 = runner.title_fit_score("Software Engineer I", boosts)
+    plain = runner.title_fit_score("Software Engineer", boosts)
+    fe = runner.title_fit_score("Software Engineer, Frontend", boosts)
+    assert ng > swe1 > plain
+    assert fe > plain  # resume keyword breaks the tie

@@ -28,6 +28,34 @@ from jobbot.storage.database import Database
 log = logging.getLogger("jobbot.runner")
 
 MAX_APPLICATION_ATTEMPTS = 3
+# some companies limit how many roles you can apply to, so each apply pass
+# takes at most this many per company — best-fit titles first
+MAX_PER_COMPANY_PER_PASS = 3
+
+_TITLE_TIERS = [
+    (50, r"new grad|new graduate|university graduate|college graduate"),
+    (40, r"early career|entry.level|associate software|graduate software"),
+    (30, r"\bsoftware engineer (i|1)\b|\bengineer (i|1)\b|\bjunior\b"),
+    (20, r"software (engineer|developer)"),
+    (10, r"engineer"),
+]
+
+
+def title_fit_score(title: str, boost_terms: list[str]) -> int:
+    """Deterministic best-fit ranking for application ORDER (not eligibility):
+    entry-level markers dominate, resume-aligned keywords break ties."""
+    import re
+
+    t = title.lower()
+    score = 0
+    for points, pattern in _TITLE_TIERS:
+        if re.search(pattern, t):
+            score += points
+            break
+    for term in boost_terms:
+        if re.search(rf"\b{re.escape(term.lower())}\b", t):
+            score += 5
+    return score
 
 _APP_TO_JOB_STATUS = {
     ApplicationStatus.SUBMITTED: JobStatus.APPLIED,
@@ -241,6 +269,19 @@ def apply_pending(limit: int | None = None, include_failed: bool = False) -> dic
     if include_failed:
         statuses.append(JobStatus.FAILED)
     rows = db.jobs_with_status(*statuses)
+
+    # best-fit ordering with a per-company cap: if a company limits
+    # applications, the strongest-aligned role gets the slot
+    boosts = load_filters().rank_boost_terms
+    rows = sorted(rows, key=lambda r: -title_fit_score(r["title"], boosts))
+    per_company: dict[str, int] = {}
+    picked = []
+    for row in rows:
+        if per_company.get(row["company"], 0) >= MAX_PER_COMPANY_PER_PASS:
+            continue
+        per_company[row["company"]] = per_company.get(row["company"], 0) + 1
+        picked.append(row)
+    rows = picked
     if limit:
         rows = rows[:limit]
     for row in rows:
