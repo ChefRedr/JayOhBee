@@ -298,7 +298,10 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
                     report.unknown_required.append(f"acknowledgment: {label or 'unknown'}")
                 continue
             if answer:
-                el.fill(answer.value)
+                # keystrokes, not programmatic sets: React-based forms
+                # (ashby, new greenhouse) ignore values without input events
+                el.click()
+                el.press_sequentially(answer.value, delay=20)
                 report.filled.append(label)
                 # combobox inputs (greenhouse dropdown questions) filter an
                 # option list — commit the typed answer by picking the match

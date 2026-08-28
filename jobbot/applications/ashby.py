@@ -134,7 +134,8 @@ def fill_ashby_form(page, profile: ApplicantProfile) -> FillReport:
                         report.unknown_required.append(f"acknowledgment: {label or 'unknown'}")
                     continue
                 if answer:
-                    el.fill(answer.value)
+                    el.click()
+                    el.press_sequentially(answer.value, delay=20)
                     report.filled.append(label)
                     # location-style autocomplete: commit by picking the
                     # matching visible option, else clear (typed-only text
