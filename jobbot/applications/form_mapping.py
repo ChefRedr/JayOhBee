@@ -19,6 +19,12 @@ def _norm(label: str) -> str:
     return re.sub(r"[^a-z0-9 ]", " ", label.lower()).strip()
 
 
+def _matches(pattern: str, norm_label: str) -> bool:
+    """Whole-word containment: 'city' must not match 'capacity',
+    'major' must not match 'majority'."""
+    return re.search(rf"\b{re.escape(pattern)}\b", norm_label) is not None
+
+
 # Ordered (topic, patterns, profile getter). First match wins; patterns are
 # substrings checked against the normalized label.
 def _rules(p: ApplicantProfile) -> list[tuple[str, list[str], str]]:
@@ -79,8 +85,10 @@ def resolve(label: str, profile: ApplicantProfile) -> Resolved | None:
     for phrase in _ALWAYS_REVIEW:
         if phrase in norm:
             return None
+    if "high school" in norm:  # never answer high-school questions with the university
+        return None
     for topic, patterns, value in _rules(profile):
-        if any(pat in norm for pat in patterns):
+        if any(_matches(pat, norm) for pat in patterns):
             if value:
                 return Resolved(value=str(value), matched_topic=topic)
             return None  # matched a known topic but no answer configured -> review
@@ -99,15 +107,16 @@ def pick_option(answer: str, options: list[str]) -> str | None:
         return options_n[answer_n]
 
     if answer_n in ("yes", "no", "true", "false", "y", "n"):
-        want_yes = answer_n in ("yes", "true", "y")
-        yes_like = [o for n, o in options_n.items() if n.startswith("yes") or n == "i am" or n.startswith("i do ")]
-        no_like = [o for n, o in options_n.items()
-                   if n.startswith("no") and not n.startswith("not sure") or n.startswith("i do not")]
-        pool = yes_like if want_yes else no_like
+        want = "yes" if answer_n in ("yes", "true", "y") else "no"
+        # whole-word only: "no" must not match "Not sure" or "Not applicable"
+        pool = [o for n, o in options_n.items() if re.match(rf"{want}\b", n)]
         if len(pool) == 1:
             return pool[0]
 
-    containing = [o for n, o in options_n.items() if answer_n and answer_n in n]
+    containing = [
+        o for n, o in options_n.items()
+        if answer_n and re.search(rf"\b{re.escape(answer_n)}\b", n)
+    ]
     if len(containing) == 1:
         return containing[0]
     return None

@@ -158,14 +158,14 @@ and unknown-form-field behavior. No live websites required.
 
 ## Current status / roadmap
 
-Discovery results for the 500 target companies (2026-08-27):
+Discovery results for the 500 target companies (2026-08-27, three passes):
 
 ```text
-Verified & runnable: 208
-  Greenhouse: 119    Ashby: 67    Lever: 15    Workday: 7
-Needs review:         53   (probe hits pending manual confirmation)
-Failed:              239   (custom career sites — add a URL to
-                            data/careers_urls.yaml and re-run discover)
+Verified & runnable: 277
+  Greenhouse: 136    Ashby: 79    Workday: 30    Lever: 19    SmartRecruiters: 13
+Needs review:        186   (mostly custom career sites needing a browser,
+                            plus probe hits pending manual confirmation)
+Failed:               37   (add a URL to data/careers_urls.yaml and re-run)
 ```
 
 - [x] 500-company registry from `top_500_swe_companies.csv`
@@ -173,9 +173,9 @@ Failed:              239   (custom career sites — add a URL to
 - [x] Fetch adapters: Greenhouse, Lever, Ashby, Workday, SmartRecruiters
 - [x] Deterministic entry-level filter + SQLite dedup
 - [x] Google Sheets log + email notifications
-- [x] Playwright auto-apply: Greenhouse, Lever (others queue for manual review)
+- [x] Playwright auto-apply: Greenhouse, Lever, Ashby (others queue for manual review)
 - [x] Scheduled GitHub Actions runs with persistent state
-- [ ] Ashby application adapter (next largest provider by coverage)
+- [x] Cross-model safety review of the application layer (findings fixed + regression-tested)
 - [ ] Workday application adapter (accounts/login make this the hardest)
 - [ ] Browser-assisted discovery for JS-only careers pages
 - [ ] External signal sources (zero2sudo etc.) as additional discovery inputs

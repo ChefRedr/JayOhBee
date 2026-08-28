@@ -24,6 +24,7 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
     provider = "greenhouse"
 
     def apply(self, job: Job, profile: ApplicantProfile, dry_run: bool = True) -> ApplicationResult:
+        clicked = False
         url = job.apply_url or job.job_url
         try:
             with launch_page() as page:
@@ -65,6 +66,7 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
                         ApplicationStatus.NEEDS_REVIEW, reason="submit button not found",
                         application_url=url,
                     )
+                clicked = True  # from here on, submission state is unknown on error
                 submit.click()
                 page.wait_for_timeout(6000)
 
@@ -89,6 +91,14 @@ class GreenhouseApplicationAdapter(ApplicationAdapter):
                 )
         except Exception as exc:  # noqa: BLE001
             log.error("greenhouse apply failed for %s: %s", url, exc)
+            if clicked:
+                # submit may have gone through — retrying could double-apply
+                return ApplicationResult(
+                    ApplicationStatus.NEEDS_REVIEW,
+                    reason=f"error after submit was clicked ({type(exc).__name__}) — "
+                           "submission state unknown, verify manually",
+                    application_url=url,
+                )
             return ApplicationResult(
                 ApplicationStatus.FAILED, reason=f"{type(exc).__name__}: {exc}",
                 application_url=url, retryable="Timeout" in type(exc).__name__,

@@ -46,14 +46,16 @@
 - name: Accenture
   slug: accenture
   careers_url: https://www.accenture.com/us-en/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://accenture.wd103.myworkdayjobs.com/AccentureCareers/userHome&#34;,&#34;analytics-engagement&#34;:&#34;true&#34;,&#34;analytics-link-type&#34;:&#34;engagement&#34;,&#34;analytics-link-name&#34;:&#34;Access
+  provider: workday
+  provider_identifier: accenture
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 496
+  workday_host: accenture.wd103.myworkdayjobs.com
+  workday_site: AccentureCareers
 - name: Adobe
   slug: adobe
   careers_url: https://careers.adobe.com/us/en/search-results
@@ -182,12 +184,12 @@
   slug: alma
   careers_url: https://helloalma.com/careers/
   jobs_url: null
-  provider: unknown
+  provider: greenhouse
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected greenhouse but could not verify an identifier
   rank: 383
 - name: Amazon
   slug: amazon
@@ -231,9 +233,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 492
 - name: American Express
   slug: american-express
@@ -262,12 +265,12 @@
   slug: amgen
   careers_url: https://careers.amgen.com
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 368
 - name: Amplitude
   slug: amplitude
@@ -287,9 +290,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 306
 - name: Anaplan
   slug: anaplan
@@ -376,9 +380,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 318
 - name: Apptronik
   slug: apptronik
@@ -398,9 +403,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 466
 - name: Arista Networks
   slug: arista-networks
@@ -409,10 +415,9 @@
   provider: smartrecruiters
   provider_identifier: aristanetworks
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:aristanetworks with 229 jobs — confirm the
-    board actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Arista Networks'); 229 jobs
   rank: 326
 - name: Arm
   slug: arm
@@ -443,9 +448,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 314
 - name: Astranis
   slug: astranis
@@ -465,21 +471,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 371
 - name: AT&T
   slug: at-t
   careers_url: https://www.att.jobs
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://att.wd1.myworkdayjobs.com/en-US/ATTGeneral/login
+  provider: workday
+  provider_identifier: att
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 444
+  workday_host: att.wd1.myworkdayjobs.com
+  workday_site: ATTGeneral
 - name: Atlassian
   slug: atlassian
   careers_url: https://www.atlassian.com/company/careers/all-jobs
@@ -523,21 +532,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 245
 - name: Axiom Space
   slug: axiom-space
   careers_url: https://www.axiomspace.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://axiomspace.wd5.myworkdayjobs.com/External_Career_Site
+  provider: workday
+  provider_identifier: axiomspace
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 343
+  workday_host: axiomspace.wd5.myworkdayjobs.com
+  workday_site: External_Career_Site
 - name: Axonius
   slug: axonius
   careers_url: null
@@ -552,14 +564,16 @@
 - name: Bank of America
   slug: bank-of-america
   careers_url: https://careers.bankofamerica.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://ghr.wd1.myworkdayjobs.com/en-us/lateral-us/login
+  provider: workday
+  provider_identifier: ghr
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 2000 jobs at discovery
   rank: 407
+  workday_host: ghr.wd1.myworkdayjobs.com
+  workday_site: lateral-us
 - name: Baseten
   slug: baseten
   careers_url: null
@@ -611,9 +625,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 405
 - name: BlackSky
   slug: blacksky
@@ -656,9 +671,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 338
 - name: Bluevine
   slug: bluevine
@@ -686,24 +702,26 @@
 - name: Boeing
   slug: boeing
   careers_url: https://jobs.boeing.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login
+  provider: workday
+  provider_identifier: boeing
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 472
+  workday_host: boeing.wd1.myworkdayjobs.com
+  workday_site: EXTERNAL_CAREERS
 - name: Booking.com
   slug: booking-com
   careers_url: https://careers.booking.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 274
 - name: Boomi
   slug: boomi
@@ -712,21 +730,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 248
 - name: Booz Allen Hamilton
   slug: booz-allen-hamilton
   careers_url: https://careers.boozallen.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://bah.wd1.myworkdayjobs.com/BAH_Jobs
+  provider: workday
+  provider_identifier: bah
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 476
+  workday_host: bah.wd1.myworkdayjobs.com
+  workday_site: BAH_Jobs
 - name: Bosch
   slug: bosch
   careers_url: null
@@ -745,21 +766,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 495
 - name: Boston Dynamics
   slug: boston-dynamics
   careers_url: https://bostondynamics.com/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics/introduceYourself
+  provider: workday
+  provider_identifier: bostondynamics
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 328
+  workday_host: bostondynamics.wd1.myworkdayjobs.com
+  workday_site: Boston_Dynamics
 - name: Box
   slug: box
   careers_url: https://careers.box.com
@@ -767,9 +791,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 204
 - name: Braze
   slug: braze
@@ -820,13 +845,13 @@
 - name: Bumble
   slug: bumble
   careers_url: https://team.bumble.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://jobs.lever.co/bumbleinc
+  provider: lever
+  provider_identifier: bumbleinc
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 24 jobs at discovery
   rank: 261
 - name: ByteDance
   slug: bytedance
@@ -835,10 +860,9 @@
   provider: smartrecruiters
   provider_identifier: bytedance
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:bytedance with 2 jobs — confirm the board
-    actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('bytedance'); 2 jobs
   rank: 252
 - name: CACI
   slug: caci
@@ -847,10 +871,9 @@
   provider: smartrecruiters
   provider_identifier: caci
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:caci with 14 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('CACI'); 14 jobs
   rank: 477
 - name: Cadence Design Systems
   slug: cadence-design-systems
@@ -859,9 +882,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 316
 - name: Canva
   slug: canva
@@ -877,13 +901,13 @@
 - name: Capella Space
   slug: capella-space
   careers_url: https://www.capellaspace.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards-api.greenhouse.io/v1/boards/capellaspace/departments
+  provider: greenhouse
+  provider_identifier: capellaspace
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 0 jobs at discovery
   rank: 347
 - name: Capital One
   slug: capital-one
@@ -939,9 +963,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 483
 - name: Cato Networks
   slug: cato-networks
@@ -1002,12 +1027,12 @@
   slug: charles-schwab
   careers_url: https://www.schwabjobs.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 411
 - name: Charm Industrial
   slug: charm-industrial
@@ -1028,9 +1053,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 446
 - name: Checkout.com
   slug: checkout-com
@@ -1051,9 +1077,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 270
 - name: Chime
   slug: chime
@@ -1115,14 +1142,16 @@
 - name: Citi
   slug: citi
   careers_url: https://jobs.citi.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://citi.wd5.myworkdayjobs.com/en-US/2/userHome
+  provider: workday
+  provider_identifier: citi
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 408
+  workday_host: citi.wd5.myworkdayjobs.com
+  workday_site: '2'
 - name: ClickUp
   slug: clickup
   careers_url: null
@@ -1141,21 +1170,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 225
 - name: Cloudera
   slug: cloudera
   careers_url: https://www.cloudera.com/careers.html
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://cloudera.wd5.myworkdayjobs.com/External_Career
+  provider: workday
+  provider_identifier: cloudera
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 243
+  workday_host: cloudera.wd5.myworkdayjobs.com
+  workday_site: External_Career
 - name: Cloudflare
   slug: cloudflare
   careers_url: null
@@ -1185,9 +1217,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 419
 - name: Cockroach Labs
   slug: cockroach-labs
@@ -1204,12 +1237,12 @@
   slug: coda
   careers_url: https://coda.io
   jobs_url: null
-  provider: unknown
+  provider: greenhouse
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected greenhouse but could not verify an identifier
   rank: 206
 - name: Coder
   slug: coder
@@ -1252,9 +1285,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 239
 - name: Coinbase
   slug: coinbase
@@ -1281,24 +1315,26 @@
 - name: Comcast/NBCUniversal
   slug: comcast-nbcuniversal
   careers_url: https://jobs.comcast.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://comcast.wd115.myworkdayjobs.com/en-US/Comcast_Careers/login
+  provider: workday
+  provider_identifier: comcast
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 737 jobs at discovery
   rank: 295
+  workday_host: comcast.wd115.myworkdayjobs.com
+  workday_site: Comcast_Careers
 - name: Commonwealth Fusion Systems
   slug: commonwealth-fusion-systems
   careers_url: https://cfs.energy/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://jobs.lever.co/cfsenergy
+  provider: lever
+  provider_identifier: cfsenergy
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 77 jobs at discovery
   rank: 393
 - name: Commure
   slug: commure
@@ -1488,9 +1524,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 322
 - name: Deloitte
   slug: deloitte
@@ -1510,9 +1547,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 490
 - name: Devoted Health
   slug: devoted-health
@@ -1521,21 +1559,20 @@
   provider: smartrecruiters
   provider_identifier: devotedhealth
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:devotedhealth with 2 jobs — confirm the board
-    actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Devoted Health'); 2 jobs
   rank: 378
 - name: Dexcom
   slug: dexcom
   careers_url: https://careers.dexcom.com
   jobs_url: null
-  provider: unknown
+  provider: successfactors
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected successfactors but could not verify an identifier
   rank: 373
 - name: Dexterity
   slug: dexterity
@@ -1563,12 +1600,12 @@
   slug: digital-realty
   careers_url: https://www.digitalrealty.com/about/careers
   jobs_url: null
-  provider: unknown
+  provider: oracle
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected oracle but could not verify an identifier
   rank: 449
 - name: DigitalOcean
   slug: digitalocean
@@ -1620,12 +1657,12 @@
   slug: docusign
   careers_url: https://careers.docusign.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 209
 - name: DoorDash
   slug: doordash
@@ -1691,9 +1728,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 218
 - name: eBay
   slug: ebay
@@ -1757,12 +1795,12 @@
   slug: emerson
   careers_url: https://www.emerson.com/en-us/careers
   jobs_url: null
-  provider: unknown
+  provider: oracle
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected oracle but could not verify an identifier
   rank: 488
 - name: Epic Games
   slug: epic-games
@@ -1794,9 +1832,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 448
 - name: Esri
   slug: esri
@@ -1816,9 +1855,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 262
 - name: Exa
   slug: exa
@@ -1838,9 +1878,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 273
 - name: EY
   slug: ey
@@ -1882,9 +1923,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 436
 - name: Fervo Energy
   slug: fervo-energy
@@ -1893,9 +1935,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 395
 - name: Fidelity Investments
   slug: fidelity-investments
@@ -1904,9 +1947,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 409
 - name: Figma
   slug: figma
@@ -1948,9 +1992,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 341
 - name: Fireworks AI
   slug: fireworks-ai
@@ -1970,31 +2015,34 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 417
 - name: Fiserv
   slug: fiserv
   careers_url: https://careers.fiserv.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://fiserv.wd5.myworkdayjobs.com/EXT/job/Sunnyvale-California/DevOps-Engineering-Manager_R-10392874/apply
+  provider: workday
+  provider_identifier: fiserv
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 459 jobs at discovery
   rank: 416
+  workday_host: fiserv.wd5.myworkdayjobs.com
+  workday_site: EXT
 - name: Five Rings
   slug: five-rings
   careers_url: https://fiverings.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://job-boards.greenhouse.io/fiveringsllc/jobs/5255334008
+  provider: greenhouse
+  provider_identifier: fiveringsllc
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 15 jobs at discovery
   rank: 195
 - name: Five9
   slug: five9
@@ -2054,14 +2102,13 @@
 - name: Form Energy
   slug: form-energy
   careers_url: https://formenergy.com/careers/
-  jobs_url: null
+  jobs_url: https://jobs.ashbyhq.com/formenergy/embed?version=2
   provider: ashby
   provider_identifier: formenergy
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit ashby:formenergy with 181 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 181 jobs at discovery
   rank: 392
 - name: FourKites
   slug: fourkites
@@ -2126,10 +2173,9 @@
   provider: smartrecruiters
   provider_identifier: geico
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:geico with 1 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('GEICO'); 1 jobs
   rank: 424
 - name: Gemini
   slug: gemini
@@ -2149,9 +2195,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 473
 - name: General Motors
   slug: general-motors
@@ -2160,9 +2207,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 460
 - name: Generate Biomedicines
   slug: generate-biomedicines
@@ -2178,14 +2226,16 @@
 - name: Genesys
   slug: genesys
   careers_url: https://www.genesys.com/company/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://genesys.wd1.myworkdayjobs.com/Genesys?source=genesyscareers
+  provider: workday
+  provider_identifier: genesys
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 250
+  workday_host: genesys.wd1.myworkdayjobs.com
+  workday_site: Genesys
 - name: Ginkgo Bioworks
   slug: ginkgo-bioworks
   careers_url: null
@@ -2201,12 +2251,12 @@
   slug: github
   careers_url: https://github.careers
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 223
 - name: GitLab
   slug: gitlab
@@ -2294,10 +2344,9 @@
   provider: smartrecruiters
   provider_identifier: grab
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:grab with 401 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Grab'); 401 jobs
   rank: 300
 - name: Grafana Labs
   slug: grafana-labs
@@ -2314,12 +2363,12 @@
   slug: grammarly
   careers_url: https://www.grammarly.com/careers
   jobs_url: null
-  provider: unknown
+  provider: greenhouse
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected greenhouse but could not verify an identifier
   rank: 208
 - name: Groq
   slug: groq
@@ -2340,9 +2389,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 362
 - name: Gusto
   slug: gusto
@@ -2369,13 +2419,13 @@
 - name: Harness
   slug: harness
   careers_url: https://www.harness.io/company/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/harnessinc
+  provider: greenhouse
+  provider_identifier: harnessinc
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 82 jobs at discovery
   rank: 221
 - name: Harvey
   slug: harvey
@@ -2391,13 +2441,13 @@
 - name: Headlands Technologies
   slug: headlands-technologies
   careers_url: https://www.headlandstech.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://job-boards.greenhouse.io/headlandstechnologiesllc/jobs/4227758009
+  provider: greenhouse
+  provider_identifier: headlandstechnologiesllc
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 7 jobs at discovery
   rank: 196
 - name: Headway
   slug: headway
@@ -2413,13 +2463,13 @@
 - name: Helion Energy
   slug: helion-energy
   careers_url: https://www.helionenergy.com/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://jobs.ashbyhq.com/helion/0cbe8d0c-3a85-483f-b9e0-7460d6f3bd1b
+  provider: ashby
+  provider_identifier: helion
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 104 jobs at discovery
   rank: 394
 - name: Hewlett Packard Enterprise
   slug: hewlett-packard-enterprise
@@ -2428,9 +2478,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 324
 - name: Highnote
   slug: highnote
@@ -2462,20 +2513,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 386
 - name: Honeywell
   slug: honeywell
   careers_url: https://careers.honeywell.com
   jobs_url: null
-  provider: unknown
+  provider: oracle
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected oracle but could not verify an identifier
   rank: 480
 - name: Hopper
   slug: hopper
@@ -2506,9 +2558,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 323
 - name: HubSpot
   slug: hubspot
@@ -2517,9 +2570,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 201
 - name: Hudson River Trading
   slug: hudson-river-trading
@@ -2570,14 +2624,16 @@
 - name: Illumina
   slug: illumina
   careers_url: https://www.illumina.com/company/careers.html
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://illumina.wd1.myworkdayjobs.com/illumina-careers
+  provider: workday
+  provider_identifier: illumina
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 361
+  workday_host: illumina.wd1.myworkdayjobs.com
+  workday_site: illumina-careers
 - name: Illumio
   slug: illumio
   careers_url: null
@@ -2596,9 +2652,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 192
 - name: Impulse Space
   slug: impulse-space
@@ -2607,9 +2664,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 350
 - name: Included Health
   slug: included-health
@@ -2670,14 +2728,13 @@
 - name: Intercom
   slug: intercom
   careers_url: https://www.intercom.com/careers
-  jobs_url: null
+  jobs_url: https://job-boards.greenhouse.io/intercom/jobs/7247950
   provider: greenhouse
   provider_identifier: intercom
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit greenhouse:intercom with 120 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 120 jobs at discovery
   rank: 211
 - name: Intercontinental Exchange
   slug: intercontinental-exchange
@@ -2686,9 +2743,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 420
 - name: Intuit
   slug: intuit
@@ -2709,9 +2767,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 374
 - name: Island
   slug: island
@@ -2765,9 +2824,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 484
 - name: JPMorgan Chase
   slug: jpmorgan-chase
@@ -2806,12 +2866,12 @@
   slug: kla
   careers_url: https://www.kla.com/careers
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 319
 - name: Klarna
   slug: klarna
@@ -2843,9 +2903,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 500
 - name: Kraken
   slug: kraken
@@ -2865,20 +2926,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 474
 - name: Lam Research
   slug: lam-research
   careers_url: https://careers.lamresearch.com
   jobs_url: null
-  provider: unknown
+  provider: successfactors
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected successfactors but could not verify an identifier
   rank: 317
 - name: Lambda
   slug: lambda
@@ -2920,9 +2982,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 475
 - name: Liberty Mutual
   slug: liberty-mutual
@@ -2931,9 +2994,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 425
 - name: Linear
   slug: linear
@@ -2988,9 +3052,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 469
 - name: Loft Orbital
   slug: loft-orbital
@@ -3011,9 +3076,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 433
 - name: Lucid Motors
   slug: lucid-motors
@@ -3033,9 +3099,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 447
 - name: Lyft
   slug: lyft
@@ -3089,9 +3156,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 303
 - name: Mastercard
   slug: mastercard
@@ -3124,9 +3192,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 455
 - name: McKinsey & Company
   slug: mckinsey-company
@@ -3135,9 +3204,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 494
 - name: MediaTek
   slug: mediatek
@@ -3157,9 +3227,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 372
 - name: Mercado Libre
   slug: mercado-libre
@@ -3221,12 +3292,12 @@
   slug: micron-technology
   careers_url: https://careers.micron.com
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 302
 - name: Microsoft
   slug: microsoft
@@ -3292,9 +3363,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 467
 - name: Modal
   slug: modal
@@ -3322,24 +3394,26 @@
 - name: Moderna
   slug: moderna
   careers_url: https://www.modernatx.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://modernatx.wd1.myworkdayjobs.com/M_tx
+  provider: workday
+  provider_identifier: modernatx
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 365
+  workday_host: modernatx.wd1.myworkdayjobs.com
+  workday_site: M_tx
 - name: Monday.com
   slug: monday-com
   careers_url: https://monday.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://jobs.ashbyhq.com/monday.com/1afbbaba-7032-4345-92ba-4d169133bc56
+  provider: ashby
+  provider_identifier: monday.com
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 42 jobs at discovery
   rank: 205
 - name: MongoDB
   slug: mongodb
@@ -3356,12 +3430,12 @@
   slug: moody-s
   careers_url: https://careers.moodys.com
   jobs_url: null
-  provider: unknown
+  provider: successfactors
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected successfactors but could not verify an identifier
   rank: 422
 - name: MoonPay
   slug: moonpay
@@ -3404,9 +3478,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 418
 - name: Navan
   slug: navan
@@ -3435,12 +3510,12 @@
   slug: netapp
   careers_url: https://careers.netapp.com
   jobs_url: null
-  provider: unknown
+  provider: successfactors
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected successfactors but could not verify an identifier
   rank: 242
 - name: NetEase
   slug: netease
@@ -3479,14 +3554,16 @@
 - name: Nike
   slug: nike
   careers_url: https://jobs.nike.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://nike.wd1.myworkdayjobs.com/nke/job/Beaverton-Oregon/Lead-Process-Analyst_R-88191/apply
+  provider: workday
+  provider_identifier: nike
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 755 jobs at discovery
   rank: 434
+  workday_host: nike.wd1.myworkdayjobs.com
+  workday_site: nke
 - name: Nintendo
   slug: nintendo
   careers_url: null
@@ -3505,9 +3582,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 470
 - name: Northwestern Mutual
   slug: northwestern-mutual
@@ -3516,10 +3594,9 @@
   provider: smartrecruiters
   provider_identifier: northwesternmutual
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:northwesternmutual with 69 jobs — confirm
-    the board actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Northwestern Mutual'); 69 jobs
   rank: 428
 - name: Notion
   slug: notion
@@ -3572,9 +3649,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 241
 - name: NVIDIA
   slug: nvidia
@@ -3593,12 +3671,12 @@
   slug: nxp-semiconductors
   careers_url: https://www.nxp.com/careers
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 307
 - name: Okta
   slug: okta
@@ -3614,13 +3692,13 @@
 - name: Old Mission
   slug: old-mission
   careers_url: https://www.oldmissioncapital.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/embed/job_board/js?for=oldmissioncapital
+  provider: greenhouse
+  provider_identifier: oldmissioncapital
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 35 jobs at discovery
   rank: 200
 - name: OneTrust
   slug: onetrust
@@ -3697,9 +3775,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 377
 - name: PagerDuty
   slug: pagerduty
@@ -3889,9 +3968,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 423
 - name: Project44
   slug: project44
@@ -3911,9 +3991,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 454
 - name: Pulumi
   slug: pulumi
@@ -3922,9 +4003,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 219
 - name: Pure Storage
   slug: pure-storage
@@ -3990,20 +4072,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 231
 - name: Recursion
   slug: recursion
   careers_url: https://www.recursion.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/embed/job_board/js?for=recursionpharmaceuticals
+  provider: greenhouse
+  provider_identifier: recursionpharmaceuticals
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 14 jobs at discovery
   rank: 352
 - name: Reddit
   slug: reddit
@@ -4045,20 +4128,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 367
 - name: Relativity Space
   slug: relativity-space
   careers_url: https://www.relativityspace.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/embed/job_board/js?for=relativity
+  provider: greenhouse
+  provider_identifier: relativity
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 351 jobs at discovery
   rank: 340
 - name: Replicate
   slug: replicate
@@ -4145,12 +4229,12 @@
   slug: rivian
   careers_url: https://careers.rivian.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 457
 - name: Ro
   slug: ro
@@ -4210,14 +4294,16 @@
 - name: Rockwell Automation
   slug: rockwell-automation
   careers_url: https://www.rockwellautomation.com/en-us/company/careers.html
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://rockwellautomation.wd1.myworkdayjobs.com/en-US/External_Rockwell_Automation/introduceYourself
+  provider: workday
+  provider_identifier: rockwellautomation
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 487
+  workday_host: rockwellautomation.wd1.myworkdayjobs.com
+  workday_site: External_Rockwell_Automation
 - name: Roku
   slug: roku
   careers_url: null
@@ -4236,9 +4322,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 471
 - name: Rubrik
   slug: rubrik
@@ -4266,14 +4353,16 @@
 - name: S&P Global
   slug: s-p-global
   careers_url: https://careers.spglobal.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://spgi.wd5.myworkdayjobs.com/SPGI_Careers
+  provider: workday
+  provider_identifier: spgi
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 421
+  workday_host: spgi.wd5.myworkdayjobs.com
+  workday_site: SPGI_Careers
 - name: Safe Superintelligence
   slug: safe-superintelligence
   careers_url: null
@@ -4292,9 +4381,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 478
 - name: Sakana AI
   slug: sakana-ai
@@ -4383,9 +4473,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 486
 - name: Schrödinger
   slug: schr-dinger
@@ -4424,12 +4515,12 @@
   slug: seagate-technology
   careers_url: https://www.seagate.com/jobs/
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 321
 - name: Semgrep
   slug: semgrep
@@ -4449,9 +4540,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 229
 - name: Sentry
   slug: sentry
@@ -4517,9 +4609,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 479
 - name: Siemens Healthineers
   slug: siemens-healthineers
@@ -4546,24 +4639,26 @@
 - name: Sierra Space
   slug: sierra-space
   careers_url: https://www.sierraspace.com/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://sierraspace.wd1.myworkdayjobs.com/Sierra_Space_External_Career_Site
+  provider: workday
+  provider_identifier: sierraspace
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 168 jobs at discovery
   rank: 339
+  workday_host: sierraspace.wd1.myworkdayjobs.com
+  workday_site: Sierra_Space_External_Career_Site
 - name: SiriusXM
   slug: siriusxm
   careers_url: https://careers.siriusxm.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 296
 - name: SK hynix
   slug: sk-hynix
@@ -4629,9 +4724,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 227
 - name: SoFi
   slug: sofi
@@ -4647,24 +4743,24 @@
 - name: Sonar
   slug: sonar
   careers_url: https://www.sonarsource.com/company/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://jobs.lever.co/sonarsource
+  provider: lever
+  provider_identifier: sonarsource
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 121 jobs at discovery
   rank: 226
 - name: Sony Interactive Entertainment
   slug: sony-interactive-entertainment
   careers_url: https://sonyinteractive.com/en/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://job-boards.greenhouse.io/siei/jobs/6138372004
+  provider: greenhouse
+  provider_identifier: siei
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 56 jobs at discovery
   rank: 286
 - name: Sourcegraph
   slug: sourcegraph
@@ -4681,12 +4777,12 @@
   slug: southwest-airlines
   careers_url: https://careers.southwestair.com
   jobs_url: null
-  provider: unknown
+  provider: workday
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected workday but could not verify an identifier
   rank: 493
 - name: SpaceX
   slug: spacex
@@ -4717,20 +4813,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 435
 - name: State Farm
   slug: state-farm
   careers_url: https://jobs.statefarm.com
   jobs_url: null
-  provider: unknown
+  provider: icims
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected icims but could not verify an identifier
   rank: 427
 - name: Stellantis
   slug: stellantis
@@ -4750,9 +4847,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 308
 - name: StockX
   slug: stockx
@@ -4772,9 +4870,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 342
 - name: Stripe
   slug: stripe
@@ -4839,9 +4938,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 193
 - name: Symbotic
   slug: symbotic
@@ -4850,9 +4950,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 336
 - name: Synctera
   slug: synctera
@@ -4873,9 +4974,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 315
 - name: Synthesia
   slug: synthesia
@@ -4895,9 +4997,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 445
 - name: Tailscale
   slug: tailscale
@@ -4917,21 +5020,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 282
 - name: Target
   slug: target
   careers_url: https://corporate.target.com/careers
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://target.wd5.myworkdayjobs.com/targetcareers/login?redirect=%2Ftargetcareers%2FuserHome
+  provider: workday
+  provider_identifier: target
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 430
+  workday_host: target.wd5.myworkdayjobs.com
+  workday_site: targetcareers
 - name: Temporal
   slug: temporal
   careers_url: null
@@ -4951,20 +5057,21 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 351
 - name: Tenable
   slug: tenable
   careers_url: https://careers.tenable.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/tenableinc/jobs/4019356008
+  provider: greenhouse
+  provider_identifier: tenableinc
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 230
 - name: Tencent
   slug: tencent
@@ -4993,24 +5100,26 @@
   slug: texas-instruments
   careers_url: https://careers.ti.com
   jobs_url: null
-  provider: unknown
+  provider: oracle
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: detected oracle but could not verify an identifier
   rank: 305
 - name: The Home Depot
   slug: the-home-depot
   careers_url: https://careers.homedepot.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://homedepot.wd5.myworkdayjobs.com/CareerDepot/login
+  provider: workday
+  provider_identifier: homedepot
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 432
+  workday_host: homedepot.wd5.myworkdayjobs.com
+  workday_site: CareerDepot
 - name: Thinking Machines Lab
   slug: thinking-machines-lab
   careers_url: null
@@ -5029,9 +5138,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 253
 - name: Toast
   slug: toast
@@ -5073,9 +5183,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 461
 - name: Treasury Prime
   slug: treasury-prime
@@ -5185,9 +5296,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 491
 - name: Unity
   slug: unity
@@ -5196,9 +5308,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 283
 - name: UPS
   slug: ups
@@ -5207,21 +5320,24 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 437
 - name: USAA
   slug: usaa
   careers_url: https://www.usaajobs.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://usaa.wd1.myworkdayjobs.com/USAAJOBSWD/login
+  provider: workday
+  provider_identifier: usaa
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 170 jobs at discovery
   rank: 426
+  workday_host: usaa.wd1.myworkdayjobs.com
+  workday_site: USAAJOBSWD
 - name: Valve
   slug: valve
   careers_url: null
@@ -5240,9 +5356,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 410
 - name: Vanta
   slug: vanta
@@ -5280,13 +5397,13 @@
 - name: Veeam
   slug: veeam
   careers_url: https://careers.veeam.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://job-boards.eu.greenhouse.io/veeamsoftware/jobs/4959219101#application-form
+  provider: greenhouse
+  provider_identifier: veeamsoftware
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 232 jobs at discovery
   rank: 238
 - name: Veeva Systems
   slug: veeva-systems
@@ -5295,9 +5412,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 358
 - name: Vercel
   slug: vercel
@@ -5317,9 +5435,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 443
 - name: Verkada
   slug: verkada
@@ -5335,13 +5454,13 @@
 - name: Virtu Financial
   slug: virtu-financial
   careers_url: https://www.virtu.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://boards.greenhouse.io/embed/job_board/js?for=virtu
+  provider: greenhouse
+  provider_identifier: virtu
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 47 jobs at discovery
   rank: 198
 - name: Visa
   slug: visa
@@ -5373,9 +5492,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 429
 - name: Warner Bros. Discovery
   slug: warner-bros-discovery
@@ -5384,9 +5504,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 293
 - name: Watershed
   slug: watershed
@@ -5406,10 +5527,9 @@
   provider: smartrecruiters
   provider_identifier: wayfair
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:wayfair with 1 jobs — confirm the board actually
-    belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: slug probe; board name matches ('Wayfair'); 1 jobs
   rank: 269
 - name: Waymo
   slug: waymo
@@ -5429,9 +5549,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 389
 - name: Weaviate
   slug: weaviate
@@ -5447,14 +5568,13 @@
 - name: Western Digital
   slug: western-digital
   careers_url: https://jobs.westerndigital.com
-  jobs_url: null
+  jobs_url: https://careers.smartrecruiters.com/WesternDigital
   provider: smartrecruiters
-  provider_identifier: westerndigital
+  provider_identifier: WesternDigital
   enabled: true
-  discovery_status: needs_review
-  last_verified: null
-  notes: slug probe hit smartrecruiters:westerndigital with 365 jobs — confirm the
-    board actually belongs to this company
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 365 jobs at discovery
   rank: 320
 - name: Whatnot
   slug: whatnot
@@ -5463,9 +5583,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 265
 - name: Wise
   slug: wise
@@ -5505,13 +5626,13 @@
 - name: XTX Markets
   slug: xtx-markets
   careers_url: https://www.xtxmarkets.com
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://job-boards.greenhouse.io/xtxmarketstechnologies
+  provider: greenhouse
+  provider_identifier: xtxmarketstechnologies
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 9 jobs at discovery
   rank: 197
 - name: Yelp
   slug: yelp
@@ -5520,32 +5641,37 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 272
 - name: Zendesk
   slug: zendesk
   careers_url: https://www.zendesk.com/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://zendesk.wd1.myworkdayjobs.com/zendesk
+  provider: workday
+  provider_identifier: zendesk
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 210
+  workday_host: zendesk.wd1.myworkdayjobs.com
+  workday_site: zendesk
 - name: Zillow
   slug: zillow
   careers_url: https://www.zillow.com/careers/
-  jobs_url: null
-  provider: unknown
-  provider_identifier: null
+  jobs_url: https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External
+  provider: workday
+  provider_identifier: zillow
   enabled: true
-  discovery_status: failed
-  last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  discovery_status: verified
+  last_verified: '2026-08-27'
+  notes: verified via careers page; 40 jobs at discovery
   rank: 271
+  workday_host: zillow.wd5.myworkdayjobs.com
+  workday_site: Zillow_Group_External
 - name: Zipline
   slug: zipline
   careers_url: https://www.flyzipline.com/careers
@@ -5553,9 +5679,10 @@
   provider: unknown
   provider_identifier: null
   enabled: true
-  discovery_status: failed
+  discovery_status: needs_review
   last_verified: null
-  notes: no careers_url configured and slug probes found nothing
+  notes: careers page reachable but no supported ATS detected (may need a browser)
+  requires_browser: true
   rank: 331
 - name: Zocdoc
   slug: zocdoc

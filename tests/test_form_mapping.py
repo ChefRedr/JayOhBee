@@ -61,3 +61,21 @@ def test_pick_option_exact_and_yes_no():
 def test_pick_option_ambiguous_returns_none():
     assert pick_option("yes", ["Yes, with conditions", "Yes, immediately", "No"]) is None
     assert pick_option("blue", ["Red", "Green"]) is None
+
+
+def test_word_boundary_matching_prevents_guessing(profile):
+    # H3 regression: substring matches must not fire inside longer words
+    assert resolve("What is your production capacity?", profile) is None
+    assert resolve("Do you agree with the majority opinion?", profile) is None
+    assert resolve("Did you attend high school in the US?", profile) is None
+    # while real questions still resolve
+    profile.city, profile.state = "Austin", "TX"
+    assert resolve("City", profile).value == "Austin, TX"
+    assert resolve("Major", profile).value == "Computer Science"
+
+
+def test_pick_option_no_never_matches_not_sure():
+    # M1 regression
+    assert pick_option("no", ["Yes", "Not sure"]) is None
+    assert pick_option("no", ["Yes", "Not applicable"]) is None
+    assert pick_option("no", ["Yes", "No, I do not"]) == "No, I do not"

@@ -135,11 +135,21 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
         report.blocked_reason = "CAPTCHA present"
         return report
 
-    form = page.locator(form_selector).first
-    if form.count() == 0:
+    forms = page.locator(form_selector)
+    if forms.count() == 0:
         report.blocked_reason = "no application form found on page"
         return report
+    # pages can carry search/newsletter forms before the application form —
+    # pick the matching form with the most controls, not the first in the DOM
+    form = forms.first
+    if forms.count() > 1:
+        best = -1
+        for f_idx in range(forms.count()):
+            n = forms.nth(f_idx).locator("input, select, textarea").count()
+            if n > best:
+                best, form = n, forms.nth(f_idx)
 
+    radio_groups: dict[str, dict] = {}
     controls = form.locator("input, select, textarea")
     for i in range(controls.count()):
         el = controls.nth(i)
@@ -174,19 +184,32 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
                         el.select_option(label=choice)
                         report.filled.append(label)
                         continue
-                if required and not el.input_value():
-                    report.unknown_required.append(f"select: {label or 'unknown'}")
+                if required:
+                    # a placeholder option can carry a non-empty value, so
+                    # judge by the selected option's text, not input_value()
+                    selected = (el.evaluate(
+                        "el => el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : ''"
+                    ) or "").strip().lower()
+                    if not selected or selected.startswith(("select", "please select", "choose", "--", "-")):
+                        report.unknown_required.append(f"select: {label or 'unknown'}")
                 continue
 
-            if itype in ("checkbox", "radio"):
+            if itype == "radio":
+                # radios come one option at a time; judge the group after the loop
+                name = el.get_attribute("name") or f"__radio_{i}"
+                group = radio_groups.setdefault(name, {"label": label, "checked": False, "required": False})
+                group["required"] = group["required"] or required
+                with contextlib.suppress(Exception):
+                    group["checked"] = group["checked"] or el.is_checked()
+                continue
+
+            if itype == "checkbox":
                 answer = resolve(label, profile)
-                if answer and answer.value.strip().lower() in ("yes", "true", "y") and itype == "checkbox":
+                if answer and answer.value.strip().lower() in ("yes", "true", "y"):
                     el.check()
                     report.filled.append(label)
-                elif required and itype == "checkbox":
+                elif required:
                     report.unknown_required.append(f"checkbox: {label or 'unknown'}")
-                # radio groups are handled per-group below via their labels;
-                # unknown required radios surface through post-fill validation
                 continue
 
             # text-like inputs and textareas
@@ -203,4 +226,10 @@ def fill_form(page, profile: ApplicantProfile, form_selector: str = "form") -> F
             with contextlib.suppress(Exception):
                 if _is_required(el, _label_for(page, el)):
                     report.unknown_required.append("unprocessable required field")
+
+    # the generic filler never auto-answers radio groups; a required group
+    # with nothing pre-selected must be reviewed by a human, not skipped
+    for group in radio_groups.values():
+        if group["required"] and not group["checked"]:
+            report.unknown_required.append(f"radio group: {group['label'] or 'unknown'}")
     return report

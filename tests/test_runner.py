@@ -109,3 +109,28 @@ def test_dry_run_leaves_job_eligible(db, profile, monkeypatch):
     run_attempt(db, profile, skipped, job.identity, monkeypatch, dry_run=True)
     assert db.get_job(job.identity)["status"] == "eligible"
     assert not db.has_completed_application(job.identity)
+
+
+def test_interrupted_attempts_go_to_review_not_retry(db, profile, monkeypatch, tmp_path):
+    # H1 regression: application_started rows are flagged, never re-attempted
+    job = seed_job(db)
+    db.set_job_status(job.identity, JobStatus.APPLICATION_STARTED)
+    monkeypatch.setattr(runner, "load_applicant", lambda: profile)
+    monkeypatch.setattr(profile, "validate", lambda: [], raising=False)
+    monkeypatch.setattr(runner, "Database", lambda: db)
+    monkeypatch.setattr(runner, "SheetsLog", lambda: NullSheets())
+    monkeypatch.setattr(db, "close", lambda: None)
+    called = []
+    monkeypatch.setattr(runner, "attempt_application", lambda *a, **k: called.append(a))
+    runner.apply_pending()
+    row = db.get_job(job.identity)
+    assert row["status"] == "needs_review"
+    assert "interrupted" in row["status_reason"]
+    assert not called
+
+
+def test_non_retryable_failure_not_retried(db, profile, monkeypatch):
+    job = seed_job(db)
+    fail = ApplicationResult(ApplicationStatus.FAILED, reason="bad form", retryable=False)
+    run_attempt(db, profile, fail, job.identity, monkeypatch)
+    assert not db.last_attempt_retryable(job.identity)

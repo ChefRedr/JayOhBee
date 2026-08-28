@@ -228,13 +228,24 @@ def apply_pending(limit: int | None = None, include_failed: bool = False) -> dic
         log.error("applicant profile invalid: %s", problems)
         return metrics
 
-    statuses = [JobStatus.ELIGIBLE, JobStatus.APPLICATION_STARTED]
+    # a run that died mid-attempt may have clicked submit already — never
+    # auto-retry those, hand them to a human instead
+    for row in db.jobs_with_status(JobStatus.APPLICATION_STARTED):
+        db.set_job_status(
+            row["identity"], JobStatus.NEEDS_REVIEW,
+            "interrupted application attempt — submission state unknown, verify manually",
+        )
+        log.warning("flagged interrupted attempt for review: %s", row["identity"])
+
+    statuses = [JobStatus.ELIGIBLE]
     if include_failed:
         statuses.append(JobStatus.FAILED)
     rows = db.jobs_with_status(*statuses)
     if limit:
         rows = rows[:limit]
     for row in rows:
+        if row["status"] == str(JobStatus.FAILED) and not db.last_attempt_retryable(row["identity"]):
+            continue
         try:
             attempt_application(row["identity"], db, sheets, profile, metrics, dry_run)
         except Exception as exc:  # noqa: BLE001

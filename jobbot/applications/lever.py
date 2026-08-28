@@ -26,6 +26,7 @@ class LeverApplicationAdapter(ApplicationAdapter):
     provider = "lever"
 
     def apply(self, job: Job, profile: ApplicantProfile, dry_run: bool = True) -> ApplicationResult:
+        clicked = False
         url = job.apply_url or f"{job.job_url.rstrip('/')}/apply"
         try:
             with launch_page() as page:
@@ -60,6 +61,7 @@ class LeverApplicationAdapter(ApplicationAdapter):
                         ApplicationStatus.NEEDS_REVIEW, reason="submit button not found",
                         application_url=url,
                     )
+                clicked = True  # from here on, submission state is unknown on error
                 submit.click()
                 page.wait_for_timeout(6000)
 
@@ -82,6 +84,14 @@ class LeverApplicationAdapter(ApplicationAdapter):
                 )
         except Exception as exc:  # noqa: BLE001
             log.error("lever apply failed for %s: %s", url, exc)
+            if clicked:
+                # submit may have gone through — retrying could double-apply
+                return ApplicationResult(
+                    ApplicationStatus.NEEDS_REVIEW,
+                    reason=f"error after submit was clicked ({type(exc).__name__}) — "
+                           "submission state unknown, verify manually",
+                    application_url=url,
+                )
             return ApplicationResult(
                 ApplicationStatus.FAILED, reason=f"{type(exc).__name__}: {exc}",
                 application_url=url, retryable="Timeout" in type(exc).__name__,

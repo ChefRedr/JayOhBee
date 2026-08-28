@@ -137,6 +137,15 @@ class Database:
         ).fetchone()
         return row["n"]
 
+    def last_attempt_retryable(self, job_identity: str) -> bool:
+        """Whether the most recent application attempt is safe to retry."""
+        row = self.conn.execute(
+            "SELECT retryable FROM applications WHERE job_identity = ? "
+            "ORDER BY id DESC LIMIT 1",
+            (job_identity,),
+        ).fetchone()
+        return bool(row["retryable"]) if row else True
+
     def has_completed_application(self, job_identity: str) -> bool:
         """Seen-vs-applied distinction: only a submitted application counts as done."""
         row = self.conn.execute(

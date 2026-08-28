@@ -9,9 +9,9 @@ from jobbot.models.job import Job
 
 INTERNSHIP_RE = re.compile(r"\bintern(ship)?s?\b|\bco[- ]?op\b", re.IGNORECASE)
 
-# "3+ years", "4 + years", "five (5) years of experience", "3-5 years"
+# "3+ years", "4 + years", "five (5) years", "3-5 years", "2 yrs"
 YEARS_RE = re.compile(
-    r"(?:(\d{1,2})\s*(?:-|–|to)\s*)?(\d{1,2})\s*\+?\s*(?:\(\d+\)\s*)?years?",
+    r"\(?(?:(\d{1,2})\)?\s*(?:-|–|to)\s*)?\(?(\d{1,2})\)?\s*\+?\s*(?:years?|yrs?)\b",
     re.IGNORECASE,
 )
 
@@ -26,6 +26,14 @@ def _contains_any(text: str, terms: list[str]) -> str | None:
     lowered = text.lower()
     for term in terms:
         if term.lower() in lowered:
+            return term
+    return None
+
+
+def _contains_word(text: str, terms: list[str]) -> str | None:
+    lowered = text.lower()
+    for term in terms:
+        if re.search(rf"\b{re.escape(term.lower())}\b", lowered):
             return term
     return None
 
@@ -73,10 +81,12 @@ def evaluate(job: Job, cfg: FilterConfig) -> FilterDecision:
     if years is not None and years > cfg.max_years_experience:
         return FilterDecision(False, f"requires {years}+ years experience")
 
+    # locations match on whole words ("NY" must not match "Sunnyvale");
+    # a job with NO location deliberately passes the allow-list (remote/unknown)
     location = job.location or ""
-    if cfg.location_deny and _contains_any(location, cfg.location_deny):
+    if cfg.location_deny and _contains_word(location, cfg.location_deny):
         return FilterDecision(False, f"location denied: {location!r}")
-    if cfg.location_allow and location and not _contains_any(location, cfg.location_allow):
+    if cfg.location_allow and location and not _contains_word(location, cfg.location_allow):
         return FilterDecision(False, f"location not in allow list: {location!r}")
 
     return FilterDecision(True, "matches entry-level SWE rules")

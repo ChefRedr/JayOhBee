@@ -99,3 +99,11 @@ def test_ashby_exception_fails_retryable_on_timeout(fake_page):
         result = AshbyApplicationAdapter().apply(_job(), _profile(), dry_run=False)
     assert result.status == ApplicationStatus.FAILED
     assert result.retryable
+
+
+def test_ashby_post_click_exception_is_review_not_retryable(fake_page):
+    # H1 regression: an error AFTER submit.click() must never be retried
+    fake_page.inner_text.side_effect = RuntimeError("page vanished")
+    result = _apply(FillReport(filled=["a"]), dry_run=False, page=fake_page)
+    assert result.status == ApplicationStatus.NEEDS_REVIEW
+    assert "submission state unknown" in result.reason
