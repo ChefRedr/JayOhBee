@@ -81,6 +81,160 @@ reject_internships: true
 # of experience (e.g. "3+ years", "5 years of experience").
 max_years_experience: 2
 
-# Optional location gating. Empty allow-list means every location passes.
+# Optional location gating (whole-word matching). Empty allow-list means every
+# location passes unless denied. Deny-first: US-only via a foreign-marker deny
+# list, so ambiguous strings ("2 Locations", "Hybrid", city-only) still pass.
 location_allow: []
-location_deny: []
+location_deny:
+  # regions
+  - Europe
+  - EMEA
+  - APAC
+  - LATAM
+  # countries
+  - United Kingdom
+  - UK
+  - England
+  - Scotland
+  - Wales
+  - Ireland
+  - Canada
+  - India
+  - Germany
+  - France
+  - Netherlands
+  - Spain
+  - Portugal
+  - Italy
+  - Poland
+  - Czech Republic
+  - Czechia
+  - Slovakia
+  - Sweden
+  - Norway
+  - Denmark
+  - Finland
+  - Estonia
+  - Lithuania
+  - Latvia
+  - Switzerland
+  - Austria
+  - Belgium
+  - Luxembourg
+  - Hungary
+  - Romania
+  - Bulgaria
+  - Serbia
+  - Croatia
+  - Greece
+  - Turkey
+  - Israel
+  - United Arab Emirates
+  - Saudi Arabia
+  - Qatar
+  - Egypt
+  - Nigeria
+  - Kenya
+  - South Africa
+  - China
+  - Hong Kong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - Malaysia
+  - Indonesia
+  - Thailand
+  - Vietnam
+  - Philippines
+  - Australia
+  - New Zealand
+  - Brazil
+  - Mexico
+  - Argentina
+  - Chile
+  - Colombia
+  - Peru
+  - Costa Rica
+  # cities / foreign subdivisions
+  - London
+  - Dublin
+  - Belfast
+  - Paris
+  - Berlin
+  - Munich
+  - Amsterdam
+  - Stockholm
+  - Malmö
+  - Copenhagen
+  - Oslo
+  - Helsinki
+  - Tallinn
+  - Zurich
+  - Geneva
+  - Vienna
+  - Brussels
+  - Madrid
+  - Barcelona
+  - Lisbon
+  - Milan
+  - Rome
+  - Warsaw
+  - Krakow
+  - Prague
+  - Bucharest
+  - Budapest
+  - Athens
+  - Istanbul
+  - Tel Aviv
+  - Dubai
+  - Abu Dhabi
+  - Riyadh
+  - Bangalore
+  - Bengaluru
+  - Karnataka
+  - Hyderabad
+  - Chennai
+  - Mumbai
+  - Pune
+  - Delhi
+  - Gurgaon
+  - Gurugram
+  - Noida
+  - Tokyo
+  - Osaka
+  - Seoul
+  - Beijing
+  - Shanghai
+  - Shenzhen
+  - Taipei
+  - Sydney
+  - Melbourne
+  - Brisbane
+  - Auckland
+  - Toronto
+  - Vancouver
+  - BC
+  - Montreal
+  - Ottawa
+  - Calgary
+  - Waterloo
+  - Mexico City
+  - Guadalajara
+  - São Paulo
+  - Sao Paulo
+  - Buenos Aires
+  - Bogotá
+  - Bogota
+  - Santiago
+  - Lima
+  - Kuala Lumpur
+  - Petaling Jaya
+  - Jakarta
+  - Manila
+  - Hanoi
+  - Cairo
+  - Lagos
+  - Nairobi
+  - Cape Town
+  - Johannesburg
