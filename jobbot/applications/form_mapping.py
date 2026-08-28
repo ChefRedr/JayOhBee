@@ -16,7 +16,7 @@ class Resolved:
 
 
 def _norm(label: str) -> str:
-    return re.sub(r"[^a-z0-9 ]", " ", label.lower()).strip()
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", label.lower())).strip()
 
 
 def _matches(pattern: str, norm_label: str) -> bool:
