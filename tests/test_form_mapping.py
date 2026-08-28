@@ -79,3 +79,15 @@ def test_pick_option_no_never_matches_not_sure():
     assert pick_option("no", ["Yes", "Not sure"]) is None
     assert pick_option("no", ["Yes", "Not applicable"]) is None
     assert pick_option("no", ["Yes", "No, I do not"]) == "No, I do not"
+
+
+def test_student_derived_answers(profile):
+    profile.city, profile.state = "Evanston", "IL"
+    assert resolve("Where are you currently located?", profile).value == "Evanston, IL"
+    assert resolve("Which state, province, or region do you currently live in?", profile).value == "Evanston, IL"
+    assert "State University (student)" == resolve("Current Company", profile).value
+    assert "2026" in resolve("When can you start a new role?", profile).value
+    assert resolve("Do you currently have unrestricted work authorization?", profile).value == "yes"
+    # override still wins
+    profile.answers["current_company"] = "Acme Corp"
+    assert resolve("Current employer", profile).value == "Acme Corp"
