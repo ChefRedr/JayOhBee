@@ -70,7 +70,6 @@ jobs:
         run: playwright install chromium --with-deps
 
       - name: Write applicant profile and resume from secrets
-        if: ${{ secrets.APPLICANT_YAML != '' }}
         env:
           APPLICANT_YAML: ${{ secrets.APPLICANT_YAML }}
           # GitHub caps secrets at 48KB, so the resume base64 is split into
@@ -82,6 +81,10 @@ jobs:
           RESUME_BASE64_5: ${{ secrets.RESUME_BASE64_5 }}
           RESUME_BASE64_6: ${{ secrets.RESUME_BASE64_6 }}
         run: |
+          if [ -z "$APPLICANT_YAML" ]; then
+            echo "APPLICANT_YAML secret not set — application stage will be skipped"
+            exit 0
+          fi
           printf '%s' "$APPLICANT_YAML" > config/applicant.yaml
           resume_b64="${RESUME_BASE64_1}${RESUME_BASE64_2}${RESUME_BASE64_3}${RESUME_BASE64_4}${RESUME_BASE64_5}${RESUME_BASE64_6}"
           if [ -n "$resume_b64" ]; then
